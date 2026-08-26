@@ -5,6 +5,7 @@ const state = {
   topics: [],
   flashcards: [],
   problems: [],
+  guide: {},
   view: 'home',
   progress: loadProgress(),
   session: null, // active flashcard or problem session
@@ -39,14 +40,16 @@ function topicById(id) {
 }
 
 async function loadData() {
-  const [topics, flashcards, problems] = await Promise.all([
+  const [topics, flashcards, problems, guide] = await Promise.all([
     fetch('data/topics.json').then(r => r.json()),
     fetch('data/flashcards.json').then(r => r.json()),
     fetch('data/problems.json').then(r => r.json()),
+    fetch('data/guide.json').then(r => r.json()),
   ]);
   state.topics = topics;
   state.flashcards = flashcards.concat(loadCustomCards());
   state.problems = problems;
+  state.guide = guide;
 }
 
 function setView(view) {
@@ -64,6 +67,7 @@ document.getElementById('tabs').addEventListener('click', (e) => {
 function render() {
   const app = document.getElementById('app');
   if (state.view === 'home') return renderHome(app);
+  if (state.view === 'guide') return renderGuideHub(app);
   if (state.view === 'flashcards') return renderFlashcardsHub(app);
   if (state.view === 'problems') return renderProblemsHub(app);
 }
@@ -388,6 +392,62 @@ function startWalkthrough(steps) {
     if (nextStepBtn) nextStepBtn.addEventListener('click', () => { revealed += 1; draw(); });
   }
   draw();
+}
+
+/* ---------- STUDY GUIDE ---------- */
+function mdToHtml(md) {
+  const lines = md.split('\n');
+  let html = '';
+  let inList = false;
+  const inline = (s) => s
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>');
+  function closeList() { if (inList) { html += '</ul>'; inList = false; } }
+  lines.forEach(raw => {
+    const line = raw.trim();
+    if (!line) { closeList(); return; }
+    if (line.startsWith('## ')) { closeList(); html += `<h3>${inline(line.slice(3))}</h3>`; return; }
+    if (line.startsWith('- ')) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inline(line.slice(2))}</li>`;
+      return;
+    }
+    closeList();
+    html += `<p>${inline(line)}</p>`;
+  });
+  closeList();
+  return html;
+}
+
+function renderGuideHub(app) {
+  app.innerHTML = `
+    <h1 class="hero">Study Guide</h1>
+    <p class="hero-sub">Prose explanations connecting the concepts within each topic, and to each other, so you can see why a formula applies rather than just memorizing it.</p>
+    <div class="guide-topic-list" id="guide-topic-list"></div>
+  `;
+  const list = document.getElementById('guide-topic-list');
+  state.topics.forEach(t => {
+    const item = document.createElement('div');
+    item.className = 'guide-topic-item';
+    item.style.setProperty('--accent', t.color);
+    item.innerHTML = `<span>${t.name}</span><span class="arrow">read \u2192</span>`;
+    item.addEventListener('click', () => renderGuideArticle(t.id));
+    list.appendChild(item);
+  });
+}
+
+function renderGuideArticle(topicId) {
+  const app = document.getElementById('app');
+  const t = topicById(topicId);
+  const md = state.guide[topicId] || 'No guide written for this topic yet.';
+  app.innerHTML = `
+    <button class="btn small guide-back-btn" id="guide-back">\u2190 All topics</button>
+    <h1 class="hero" style="color:${t.color}">${t.name}</h1>
+    <div class="guide-article">${mdToHtml(md)}</div>
+  `;
+  document.getElementById('guide-back').addEventListener('click', () => renderGuideHub(app));
 }
 
 /* ---------- INIT ---------- */

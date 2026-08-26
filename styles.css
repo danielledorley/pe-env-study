@@ -316,6 +316,54 @@ main#app {
   font-size: 0.85rem;
 }
 
+/* Study guide */
+.guide-topic-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.guide-topic-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent, var(--slate-2));
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+.guide-topic-item:hover { border-color: var(--slate-2); }
+.guide-topic-item .arrow { font-family: var(--mono); color: #A9A184; }
+
+.guide-article {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+.guide-article h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 28px 0 10px;
+  color: var(--accent, var(--slate-2));
+}
+.guide-article h3:first-child { margin-top: 0; }
+.guide-article p { margin: 0 0 14px; }
+.guide-article ul { margin: 0 0 14px; padding-left: 22px; }
+.guide-article li { margin-bottom: 6px; }
+.guide-article strong { color: var(--ink); }
+.guide-article code {
+  font-family: var(--mono);
+  background: rgba(0,0,0,0.05);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.guide-back-btn { margin-bottom: 18px; }
+
 @media (max-width: 520px) {
   .brand-sub { display: none; }
   .flashcard { padding: 20px; min-height: 200px; }
