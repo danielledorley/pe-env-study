@@ -39,5 +39,11 @@ I didn't pull content from the PDFs in your "PE Exam Prep" Drive folder (the NCE
 
 The fix is easy: when you build out your own cards, **write them in your own words** from what you've studied, rather than pasting handbook text. Formulas, definitions, and facts themselves aren't copyrightable — only NCEES's/School of PE's specific wording and layout are — so a card like "Darcy's Law: Q = -KA(dh/dl)" is totally fine; a paragraph lifted verbatim from the handbook isn't.
 
+## Step-by-step walkthroughs
+Any problem with a `steps` array (see `data/problems.json`) gets a "Show step-by-step walkthrough" button after you answer — it reveals the reasoning one basic step at a time (what formula to use, why, the arithmetic, a sanity check). To add walkthroughs to your own problems, give them a `steps` array of `{ "title": "...", "detail": "..." }` objects.
+
+## Importing from Quizlet
+Flashcards tab → **Import from Quizlet**. On Quizlet's website (not the app): open your set → ⋯ menu → **Export** → set "between term and definition" to comma and "between cards" to new line → **Copy text** → paste into the import box, pick a topic, and add. Imported cards are stored in your browser (`localStorage`, key `pe-study-custom-cards-v1`) alongside the built-in ones. To make them permanent (so they survive clearing browser data, or show up if you redeploy), copy them into `data/flashcards.json` — open your browser's dev console and run `localStorage.getItem('pe-study-custom-cards-v1')` to get the JSON to paste in.
+
 ## Progress tracking
 Flashcard progress uses a simple 5-box leitner system stored in your browser's `localStorage` (key `pe-study-progress-v1`) — cards you get right move to a higher box and come back less often; cards you miss reset to box 0. This is per-browser, not synced anywhere.

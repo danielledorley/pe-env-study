@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'pe-study-progress-v1';
+const CUSTOM_CARDS_KEY = 'pe-study-custom-cards-v1';
 
 const state = {
   topics: [],
@@ -8,6 +9,18 @@ const state = {
   progress: loadProgress(),
   session: null, // active flashcard or problem session
 };
+
+function loadCustomCards() {
+  try {
+    return JSON.parse(localStorage.getItem(CUSTOM_CARDS_KEY)) || [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCustomCards(cards) {
+  localStorage.setItem(CUSTOM_CARDS_KEY, JSON.stringify(cards));
+}
 
 function loadProgress() {
   try {
@@ -32,7 +45,7 @@ async function loadData() {
     fetch('data/problems.json').then(r => r.json()),
   ]);
   state.topics = topics;
-  state.flashcards = flashcards;
+  state.flashcards = flashcards.concat(loadCustomCards());
   state.problems = problems;
 }
 
@@ -108,16 +121,76 @@ function renderFlashcardsHub(app) {
   app.innerHTML = `
     <h1 class="hero">Flashcards</h1>
     <p class="hero-sub">Pick a topic, or study everything due today.</p>
-    <div class="filter-chips">
-      <button class="chip" data-topic="">All topics</button>
-      ${state.topics.map(t => `<button class="chip" data-topic="${t.id}">${t.name}</button>`).join('')}
+    <div class="row between" style="margin-bottom:14px;">
+      <div class="filter-chips" style="margin-bottom:0;">
+        <button class="chip" data-topic="">All topics</button>
+        ${state.topics.map(t => `<button class="chip" data-topic="${t.id}">${t.name}</button>`).join('')}
+      </div>
+      <button class="btn small" id="toggle-import">Import from Quizlet</button>
     </div>
+    <div id="import-panel" style="display:none;"></div>
     <div id="flashcard-session"></div>
   `;
   app.querySelectorAll('.chip').forEach(chip => {
     chip.addEventListener('click', () => startFlashcardSession(chip.dataset.topic));
   });
+  document.getElementById('toggle-import').addEventListener('click', () => {
+    const panel = document.getElementById('import-panel');
+    const showing = panel.style.display !== 'none';
+    panel.style.display = showing ? 'none' : 'block';
+    if (!showing) renderImportPanel(panel);
+  });
   startFlashcardSession('');
+}
+
+function renderImportPanel(panel) {
+  panel.innerHTML = `
+    <div class="problem-card" style="margin-bottom:20px;">
+      <div class="eyebrow">Import from Quizlet</div>
+      <p style="font-size:0.85rem; color:#5C6B5E; margin-top:0;">
+        On Quizlet (website, not the app): open your set → ⋯ menu → <strong>Export</strong> → choose "between term and definition" = <strong>comma</strong>, "between cards" = <strong>new line</strong> → Copy text. Paste it below.
+      </p>
+      <textarea id="import-text" rows="8" style="width:100%; font-family:var(--mono); font-size:0.82rem; padding:10px; border:1px solid var(--line); border-radius:7px; background:var(--paper-raised);" placeholder="term,definition&#10;term,definition&#10;..."></textarea>
+      <div class="row" style="margin-top:12px;">
+        <label style="font-family:var(--mono); font-size:0.75rem;">Assign to topic:
+          <select id="import-topic" style="margin-left:6px; font-family:var(--mono); padding:4px;">
+            ${state.topics.map(t => `<option value="${t.id}">${t.name}</option>`).join('')}
+          </select>
+        </label>
+        <button class="btn primary small" id="do-import">Add cards</button>
+      </div>
+      <div id="import-result" style="margin-top:10px; font-family:var(--mono); font-size:0.78rem;"></div>
+    </div>
+  `;
+  document.getElementById('do-import').addEventListener('click', () => {
+    const raw = document.getElementById('import-text').value.trim();
+    const topic = document.getElementById('import-topic').value;
+    const resultEl = document.getElementById('import-result');
+    if (!raw) { resultEl.textContent = 'Paste some text first.'; return; }
+    const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+    const newCards = [];
+    lines.forEach((line, i) => {
+      // Split on first comma or tab — whichever the export used
+      const sep = line.includes('\t') ? '\t' : ',';
+      const idx = line.indexOf(sep);
+      if (idx === -1) return;
+      const front = line.slice(0, idx).trim();
+      const back = line.slice(idx + 1).trim();
+      if (front && back) {
+        newCards.push({ id: `custom-${Date.now()}-${i}`, topic, front, back });
+      }
+    });
+    if (!newCards.length) {
+      resultEl.textContent = 'Couldn\'t parse any cards — check the separator matches what you exported.';
+      return;
+    }
+    const existing = loadCustomCards();
+    const merged = existing.concat(newCards);
+    saveCustomCards(merged);
+    state.flashcards = state.flashcards.concat(newCards);
+    resultEl.textContent = `Added ${newCards.length} card${newCards.length === 1 ? '' : 's'} to ${topicById(topic).name}. They're saved in this browser — see the README to make them permanent in data/flashcards.json.`;
+    document.getElementById('import-text').value = '';
+  });
 }
 
 function startFlashcardSession(topicId) {
@@ -258,6 +331,7 @@ function renderProblemSession() {
       <div class="problem-question">${prob.question}</div>
       ${prob.choices.map((c, i) => `<button class="choice" data-index="${i}">${c}</button>`).join('')}
       <div id="explanation-slot"></div>
+      <div id="walkthrough-slot"></div>
     </div>
     <div class="session-controls" style="margin-top:16px;">
       <button class="btn" id="next-question" style="display:none;">Next question →</button>
@@ -280,6 +354,16 @@ function answerProblem(prob, chosenIndex) {
     else if (i === chosenIndex) btn.classList.add('incorrect');
   });
   document.getElementById('explanation-slot').innerHTML = `<div class="explanation">${prob.explanation || ''}</div>`;
+  if (prob.steps && prob.steps.length) {
+    document.getElementById('walkthrough-slot').innerHTML = `
+      <button class="btn small" id="show-walkthrough" style="margin-top:12px;">Show step-by-step walkthrough</button>
+      <div id="walkthrough-steps" style="margin-top:10px;"></div>
+    `;
+    document.getElementById('show-walkthrough').addEventListener('click', (e) => {
+      e.target.style.display = 'none';
+      startWalkthrough(prob.steps);
+    });
+  }
   const nextBtn = document.getElementById('next-question');
   nextBtn.style.display = 'inline-block';
   nextBtn.addEventListener('click', () => {
@@ -287,6 +371,23 @@ function answerProblem(prob, chosenIndex) {
     s.answered = false;
     renderProblemSession();
   });
+}
+
+function startWalkthrough(steps) {
+  let revealed = 0;
+  const mount = document.getElementById('walkthrough-steps');
+  function draw() {
+    mount.innerHTML = steps.slice(0, revealed + 1).map((s, i) => `
+      <div class="explanation" style="border-top:${i === 0 ? 'none' : ''}; padding-top:${i === 0 ? '0' : ''}; margin-top:${i === 0 ? '0' : '10px'};">
+        <strong>Step ${i + 1}: ${s.title}</strong><br>${s.detail}
+      </div>
+    `).join('') + (revealed + 1 < steps.length
+      ? `<button class="btn small" id="next-step" style="margin-top:10px;">Next step →</button>`
+      : '');
+    const nextStepBtn = document.getElementById('next-step');
+    if (nextStepBtn) nextStepBtn.addEventListener('click', () => { revealed += 1; draw(); });
+  }
+  draw();
 }
 
 /* ---------- INIT ---------- */

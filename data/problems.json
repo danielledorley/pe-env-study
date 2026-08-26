@@ -2,10 +2,18 @@
   {
     "id": "pw1",
     "topic": "water",
-    "question": "Groundwater flows through a confined aquifer with hydraulic conductivity K = 25 ft/day, cross-sectional area A = 500 ft², and hydraulic gradient of 0.002. What is the flow rate?",
-    "choices": ["12.5 ft³/day", "25 ft³/day", "50 ft³/day", "100 ft³/day"],
+    "question": "Groundwater flows through a confined aquifer with hydraulic conductivity K = 25 ft/day, cross-sectional area A = 500 ft\u00b2, and hydraulic gradient of 0.002. What is the flow rate?",
+    "choices": ["12.5 ft\u00b3/day", "25 ft\u00b3/day", "50 ft\u00b3/day", "100 ft\u00b3/day"],
     "answerIndex": 0,
-    "explanation": "Darcy's Law: Q = K·A·i = 25 ft/day × 500 ft² × 0.002 = 25 ft³/day."
+    "explanation": "Darcy's Law: Q = K\u00b7A\u00b7i = 25 ft/day \u00d7 500 ft\u00b2 \u00d7 0.002 = 25 ft\u00b3/day.",
+    "steps": [
+      { "title": "Identify what's being asked", "detail": "We want a flow rate Q through the aquifer. Whenever the problem gives you K (hydraulic conductivity), an area, and a gradient, that's your cue to reach for Darcy's Law." },
+      { "title": "Write the formula", "detail": "Darcy's Law: Q = K \u00b7 A \u00b7 i, where K is hydraulic conductivity, A is the cross-sectional area the water flows through, and i is the hydraulic gradient (how steeply head changes over distance)." },
+      { "title": "Plug in the numbers", "detail": "Q = 25 ft/day \u00d7 500 ft\u00b2 \u00d7 0.002" },
+      { "title": "Do the arithmetic in stages", "detail": "First: 25 \u00d7 500 = 12,500. Then: 12,500 \u00d7 0.002 = 25." },
+      { "title": "Check the units", "detail": "ft/day \u00d7 ft\u00b2 \u00d7 (unitless gradient) = ft\u00b3/day \u2014 a volume per time, which is what a flow rate should look like. That confirms we set it up correctly." },
+      { "title": "Answer", "detail": "Q = 25 ft\u00b3/day." }
+    ]
   },
   {
     "id": "pa1",
@@ -13,15 +21,31 @@
     "question": "A stack test shows a particulate control device reduces inlet loading from 2.0 gr/scf to 0.05 gr/scf. What is the collection efficiency?",
     "choices": ["87.5%", "92.5%", "97.5%", "99.5%"],
     "answerIndex": 2,
-    "explanation": "Efficiency = (Cin - Cout)/Cin × 100 = (2.00 - 0.05)/2.00 × 100 = 97.5%."
+    "explanation": "Efficiency = (Cin - Cout)/Cin \u00d7 100 = (2.00 - 0.05)/2.00 \u00d7 100 = 97.5%.",
+    "steps": [
+      { "title": "Understand what 'collection efficiency' means", "detail": "It's the fraction of pollutant the device removed, out of what came in. If nothing got through, efficiency = 100%. If nothing was removed, efficiency = 0%." },
+      { "title": "Write the formula", "detail": "Efficiency (%) = (Cin \u2212 Cout) / Cin \u00d7 100, where Cin is the concentration going into the device and Cout is what comes out." },
+      { "title": "Plug in the numbers", "detail": "Efficiency = (2.0 \u2212 0.05) / 2.0 \u00d7 100" },
+      { "title": "Do the arithmetic in stages", "detail": "Numerator: 2.0 \u2212 0.05 = 1.95. Divide: 1.95 / 2.0 = 0.975. Convert to percent: 0.975 \u00d7 100 = 97.5." },
+      { "title": "Sanity check", "detail": "The outlet loading (0.05) is small compared to inlet (2.0), so we'd expect efficiency to be high \u2014 97.5% fits that intuition." },
+      { "title": "Answer", "detail": "97.5%." }
+    ]
   },
   {
     "id": "ps1",
     "topic": "waste",
-    "question": "A municipal solid waste stream has a density of 400 lb/yd³. What volume of landfill airspace (in yd³) is needed to place 10,000 tons of waste, assuming no compaction credit?",
-    "choices": ["25,000 yd³", "40,000 yd³", "50,000 yd³", "62,500 yd³"],
+    "question": "A municipal solid waste stream has a density of 400 lb/yd\u00b3. What volume of landfill airspace (in yd\u00b3) is needed to place 10,000 tons of waste, assuming no compaction credit?",
+    "choices": ["25,000 yd\u00b3", "40,000 yd\u00b3", "50,000 yd\u00b3", "62,500 yd\u00b3"],
     "answerIndex": 2,
-    "explanation": "10,000 tons × 2,000 lb/ton = 20,000,000 lb. Volume = 20,000,000 lb ÷ 400 lb/yd³ = 50,000 yd³."
+    "explanation": "10,000 tons \u00d7 2,000 lb/ton = 20,000,000 lb. Volume = 20,000,000 lb \u00f7 400 lb/yd\u00b3 = 50,000 yd\u00b3.",
+    "steps": [
+      { "title": "Get everything into consistent units", "detail": "You're given weight in tons but density in lb/yd\u00b3. Convert tons to pounds first: 1 ton = 2,000 lb." },
+      { "title": "Convert the waste weight", "detail": "10,000 tons \u00d7 2,000 lb/ton = 20,000,000 lb." },
+      { "title": "Relate weight, density, and volume", "detail": "Density = weight / volume, so rearranged: volume = weight / density." },
+      { "title": "Plug in and divide", "detail": "Volume = 20,000,000 lb \u00f7 400 lb/yd\u00b3 = 50,000 yd\u00b3." },
+      { "title": "Sanity check", "detail": "Higher density waste takes less airspace per ton; this density (400 lb/yd\u00b3) is a fairly typical uncompacted MSW value, so 50,000 yd\u00b3 for 10,000 tons is a reasonable order of magnitude." },
+      { "title": "Answer", "detail": "50,000 yd\u00b3." }
+    ]
   },
   {
     "id": "psite1",
@@ -29,7 +53,15 @@
     "question": "A contaminant has a retardation factor R = 4 in an aquifer where groundwater velocity is 0.5 ft/day. How far will the contaminant plume travel in 2 years (365 days/yr)?",
     "choices": ["45.6 ft", "91.25 ft", "182.5 ft", "365 ft"],
     "answerIndex": 1,
-    "explanation": "Contaminant velocity = groundwater velocity / R = 0.5/4 = 0.125 ft/day. Distance = 0.125 × 730 days = 91.25 ft."
+    "explanation": "Contaminant velocity = groundwater velocity / R = 0.5/4 = 0.125 ft/day. Distance = 0.125 \u00d7 730 days = 91.25 ft.",
+    "steps": [
+      { "title": "Understand what R does", "detail": "Retardation factor R tells you how much slower a contaminant moves compared to the water it's dissolved in \u2014 sorption onto soil particles holds it back. R = 4 means the contaminant moves 4 times slower than groundwater." },
+      { "title": "Find the contaminant's velocity", "detail": "Contaminant velocity = groundwater velocity \u00f7 R = 0.5 ft/day \u00f7 4 = 0.125 ft/day." },
+      { "title": "Convert the time period to days", "detail": "2 years \u00d7 365 days/year = 730 days." },
+      { "title": "Multiply velocity by time to get distance", "detail": "Distance = 0.125 ft/day \u00d7 730 days = 91.25 ft." },
+      { "title": "Sanity check", "detail": "Without retardation, groundwater itself would travel 0.5 \u00d7 730 = 365 ft in that time. Since the contaminant moves 4\u00d7 slower, it should cover roughly a quarter of that \u2014 365/4 \u2248 91.25 ft. Matches." },
+      { "title": "Answer", "detail": "91.25 ft." }
+    ]
   },
   {
     "id": "paep1",
@@ -37,6 +69,14 @@
     "question": "Alternative A has a present worth of benefits of $500,000 and present worth of costs of $350,000. Alternative B has PW benefits of $420,000 and PW costs of $300,000. Based on B/C ratio alone, which is more favorable?",
     "choices": ["Alternative A (B/C = 1.43)", "Alternative B (B/C = 1.40)", "They are equal", "Cannot be determined from B/C alone"],
     "answerIndex": 0,
-    "explanation": "B/C(A) = 500,000/350,000 = 1.43. B/C(B) = 420,000/300,000 = 1.40. A has the higher ratio, so it's more favorable by this metric (note: for mutually exclusive alternatives, an incremental B/C analysis is the technically correct method on the actual exam)."
+    "explanation": "B/C(A) = 500,000/350,000 = 1.43. B/C(B) = 420,000/300,000 = 1.40. A has the higher ratio, so it's more favorable by this metric (note: for mutually exclusive alternatives, an incremental B/C analysis is the technically correct method on the actual exam).",
+    "steps": [
+      { "title": "Recall what B/C ratio measures", "detail": "Benefit-cost ratio = present worth of benefits \u00f7 present worth of costs. A ratio above 1 means the project's benefits outweigh its costs in today's dollars." },
+      { "title": "Calculate Alternative A's ratio", "detail": "B/C(A) = $500,000 \u00f7 $350,000 = 1.43." },
+      { "title": "Calculate Alternative B's ratio", "detail": "B/C(B) = $420,000 \u00f7 $300,000 = 1.40." },
+      { "title": "Compare", "detail": "1.43 > 1.40, so A looks more favorable by this simple ratio comparison." },
+      { "title": "Know the exam nuance", "detail": "For mutually exclusive alternatives (pick only one), the rigorous method is incremental B/C analysis on the cost/benefit difference between alternatives \u2014 comparing raw ratios can occasionally rank projects incorrectly. Simple ratio comparison is a fine first pass, but know this distinction going into the exam." },
+      { "title": "Answer", "detail": "Alternative A (B/C = 1.43)." }
+    ]
   }
 ]
