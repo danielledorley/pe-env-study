@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pw1",
+    "topic": "water",
+    "question": "Groundwater flows through a confined aquifer with hydraulic conductivity K = 25 ft/day, cross-sectional area A = 500 ft², and hydraulic gradient of 0.002. What is the flow rate?",
+    "choices": ["12.5 ft³/day", "25 ft³/day", "50 ft³/day", "100 ft³/day"],
+    "answerIndex": 0,
+    "explanation": "Darcy's Law: Q = K·A·i = 25 ft/day × 500 ft² × 0.002 = 25 ft³/day."
+  },
+  {
+    "id": "pa1",
+    "topic": "air",
+    "question": "A stack test shows a particulate control device reduces inlet loading from 2.0 gr/scf to 0.05 gr/scf. What is the collection efficiency?",
+    "choices": ["87.5%", "92.5%", "97.5%", "99.5%"],
+    "answerIndex": 2,
+    "explanation": "Efficiency = (Cin - Cout)/Cin × 100 = (2.00 - 0.05)/2.00 × 100 = 97.5%."
+  },
+  {
+    "id": "ps1",
+    "topic": "waste",
+    "question": "A municipal solid waste stream has a density of 400 lb/yd³. What volume of landfill airspace (in yd³) is needed to place 10,000 tons of waste, assuming no compaction credit?",
+    "choices": ["25,000 yd³", "40,000 yd³", "50,000 yd³", "62,500 yd³"],
+    "answerIndex": 2,
+    "explanation": "10,000 tons × 2,000 lb/ton = 20,000,000 lb. Volume = 20,000,000 lb ÷ 400 lb/yd³ = 50,000 yd³."
+  },
+  {
+    "id": "psite1",
+    "topic": "site",
+    "question": "A contaminant has a retardation factor R = 4 in an aquifer where groundwater velocity is 0.5 ft/day. How far will the contaminant plume travel in 2 years (365 days/yr)?",
+    "choices": ["45.6 ft", "91.25 ft", "182.5 ft", "365 ft"],
+    "answerIndex": 1,
+    "explanation": "Contaminant velocity = groundwater velocity / R = 0.5/4 = 0.125 ft/day. Distance = 0.125 × 730 days = 91.25 ft."
+  },
+  {
+    "id": "paep1",
+    "topic": "aep",
+    "question": "Alternative A has a present worth of benefits of $500,000 and present worth of costs of $350,000. Alternative B has PW benefits of $420,000 and PW costs of $300,000. Based on B/C ratio alone, which is more favorable?",
+    "choices": ["Alternative A (B/C = 1.43)", "Alternative B (B/C = 1.40)", "They are equal", "Cannot be determined from B/C alone"],
+    "answerIndex": 0,
+    "explanation": "B/C(A) = 500,000/350,000 = 1.43. B/C(B) = 420,000/300,000 = 1.40. A has the higher ratio, so it's more favorable by this metric (note: for mutually exclusive alternatives, an incremental B/C analysis is the technically correct method on the actual exam)."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "w1",
+    "topic": "water",
+    "front": "Darcy's Law — what does it relate, and what is the basic equation?",
+    "back": "Relates groundwater flow rate to hydraulic conductivity and hydraulic gradient.\nQ = -K·A·(dh/dl)\nQ = flow rate, K = hydraulic conductivity, A = cross-sectional area, dh/dl = hydraulic gradient."
+  },
+  {
+    "id": "w2",
+    "topic": "water",
+    "front": "What is the difference between transmissivity and hydraulic conductivity?",
+    "back": "Hydraulic conductivity (K) is a property of the material per unit thickness. Transmissivity (T) is K integrated over the full saturated thickness of an aquifer: T = K·b, where b is aquifer thickness."
+  },
+  {
+    "id": "w3",
+    "topic": "water",
+    "front": "Name the four main steps of conventional surface water treatment, in order.",
+    "back": "Coagulation/flocculation → Sedimentation → Filtration → Disinfection."
+  },
+  {
+    "id": "a1",
+    "topic": "air",
+    "front": "What is a criteria pollutant? Name the six.",
+    "back": "Pollutants regulated under NAAQS because of documented health/welfare effects: CO, Pb, NO2, O3, PM (PM10/PM2.5), SO2."
+  },
+  {
+    "id": "a2",
+    "topic": "air",
+    "front": "What does a baghouse (fabric filter) control, and by what mechanism?",
+    "back": "Controls particulate matter. Dirty air passes through fabric bags; particles are captured by impaction, interception, and diffusion, then removed by periodic cleaning (shaking, reverse air, or pulse-jet)."
+  },
+  {
+    "id": "s1",
+    "topic": "waste",
+    "front": "What is the typical purpose of a landfill's composite liner system?",
+    "back": "To prevent leachate from migrating into groundwater — typically a geomembrane over a compacted clay layer, paired with a leachate collection system above it."
+  },
+  {
+    "id": "s2",
+    "topic": "waste",
+    "front": "RCRA Subtitle C vs Subtitle D — what's the distinction?",
+    "back": "Subtitle C governs hazardous waste (cradle-to-grave management). Subtitle D governs non-hazardous solid waste, including municipal solid waste landfills."
+  },
+  {
+    "id": "site1",
+    "topic": "site",
+    "front": "What is retardation factor (R) used for, and what does R = 1 mean?",
+    "back": "R describes how much a contaminant's transport is slowed relative to groundwater flow due to sorption. R = 1 means no retardation — the contaminant moves at the same velocity as groundwater (e.g., a conservative tracer like chloride)."
+  },
+  {
+    "id": "ehs1",
+    "topic": "ehs",
+    "front": "What is the difference between hazard and risk in a risk assessment context?",
+    "back": "Hazard is the inherent potential of a substance/situation to cause harm. Risk is the probability that harm will actually occur, combining hazard with exposure (dose, frequency, pathway)."
+  },
+  {
+    "id": "aep1",
+    "topic": "aep",
+    "front": "Benefit-cost ratio (B/C) — how is it defined and interpreted?",
+    "back": "B/C = PW(benefits) / PW(costs), using present worth at the given interest rate. B/C > 1 means the project is economically favorable; the alternative with the highest B/C (among mutually exclusive options, using incremental analysis) is generally preferred."
+  }
+]

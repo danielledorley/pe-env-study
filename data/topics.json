@@ -1,0 +1,8 @@
+[
+  { "id": "water", "name": "Water", "color": "#3E6C8E", "description": "Hydraulics, water treatment, distribution, hydrology" },
+  { "id": "air", "name": "Air", "color": "#8FA998", "description": "Air quality, emissions, control technologies, dispersion" },
+  { "id": "waste", "name": "Solid & Hazardous Waste", "color": "#B8763E", "description": "Landfills, characterization, treatment, regulations" },
+  { "id": "site", "name": "Site Assessment & Remediation", "color": "#7A5C61", "description": "Hydrogeology, fate and transport, remediation technologies" },
+  { "id": "ehs", "name": "Environmental Health & Safety", "color": "#A8433D", "description": "Risk assessment, industrial hygiene, regulations" },
+  { "id": "aep", "name": "Associated Engineering Principles", "color": "#5C7C5B", "description": "Engineering economics, project management, statistics" }
+]
