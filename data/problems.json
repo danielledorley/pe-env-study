@@ -1,82 +1,144 @@
 [
   {
-    "id": "pw1",
-    "topic": "water",
-    "question": "Groundwater flows through a confined aquifer with hydraulic conductivity K = 25 ft/day, cross-sectional area A = 500 ft\u00b2, and hydraulic gradient of 0.002. What is the flow rate?",
-    "choices": ["12.5 ft\u00b3/day", "25 ft\u00b3/day", "50 ft\u00b3/day", "100 ft\u00b3/day"],
-    "answerIndex": 0,
-    "explanation": "Darcy's Law: Q = K\u00b7A\u00b7i = 25 ft/day \u00d7 500 ft\u00b2 \u00d7 0.002 = 25 ft\u00b3/day.",
-    "steps": [
-      { "title": "Identify what's being asked", "detail": "We want a flow rate Q through the aquifer. Whenever the problem gives you K (hydraulic conductivity), an area, and a gradient, that's your cue to reach for Darcy's Law." },
-      { "title": "Write the formula", "detail": "Darcy's Law: Q = K \u00b7 A \u00b7 i, where K is hydraulic conductivity, A is the cross-sectional area the water flows through, and i is the hydraulic gradient (how steeply head changes over distance)." },
-      { "title": "Plug in the numbers", "detail": "Q = 25 ft/day \u00d7 500 ft\u00b2 \u00d7 0.002" },
-      { "title": "Do the arithmetic in stages", "detail": "First: 25 \u00d7 500 = 12,500. Then: 12,500 \u00d7 0.002 = 25." },
-      { "title": "Check the units", "detail": "ft/day \u00d7 ft\u00b2 \u00d7 (unitless gradient) = ft\u00b3/day \u2014 a volume per time, which is what a flow rate should look like. That confirms we set it up correctly." },
-      { "title": "Answer", "detail": "Q = 25 ft\u00b3/day." }
-    ]
-  },
-  {
-    "id": "pa1",
-    "topic": "air",
-    "question": "A stack test shows a particulate control device reduces inlet loading from 2.0 gr/scf to 0.05 gr/scf. What is the collection efficiency?",
-    "choices": ["87.5%", "92.5%", "97.5%", "99.5%"],
+    "id": "basics-p1",
+    "topic": "basics",
+    "question": "How many liters of volume are occupied by 4.0 grams of methane (CH4, MW = 16 g/mol) at STP (273 K, 1 atm), using R = 0.08206 L\u00b7atm/mol\u00b7K?",
+    "choices": ["2.24 L", "3.65 L", "5.61 L", "8.21 L"],
     "answerIndex": 2,
-    "explanation": "Efficiency = (Cin - Cout)/Cin \u00d7 100 = (2.00 - 0.05)/2.00 \u00d7 100 = 97.5%.",
+    "explanation": "n = 4.0/16 = 0.25 mol. V = nRT/P = 0.25 \u00d7 0.08206 \u00d7 273 / 1 = 5.60 L.",
     "steps": [
-      { "title": "Understand what 'collection efficiency' means", "detail": "It's the fraction of pollutant the device removed, out of what came in. If nothing got through, efficiency = 100%. If nothing was removed, efficiency = 0%." },
-      { "title": "Write the formula", "detail": "Efficiency (%) = (Cin \u2212 Cout) / Cin \u00d7 100, where Cin is the concentration going into the device and Cout is what comes out." },
-      { "title": "Plug in the numbers", "detail": "Efficiency = (2.0 \u2212 0.05) / 2.0 \u00d7 100" },
-      { "title": "Do the arithmetic in stages", "detail": "Numerator: 2.0 \u2212 0.05 = 1.95. Divide: 1.95 / 2.0 = 0.975. Convert to percent: 0.975 \u00d7 100 = 97.5." },
-      { "title": "Sanity check", "detail": "The outlet loading (0.05) is small compared to inlet (2.0), so we'd expect efficiency to be high \u2014 97.5% fits that intuition." },
-      { "title": "Answer", "detail": "97.5%." }
+      { "title": "Identify the tool", "detail": "Grams, molecular weight, and a request for volume at given T and P is a signal to reach for the Ideal Gas Law: PV = nRT." },
+      { "title": "Convert mass to moles", "detail": "n = mass / MW = 4.0 g / 16 g/mol = 0.25 mol." },
+      { "title": "Rearrange for volume", "detail": "V = nRT / P." },
+      { "title": "Plug in", "detail": "V = (0.25 mol)(0.08206 L\u00b7atm/mol\u00b7K)(273 K) / (1 atm)." },
+      { "title": "Do the arithmetic", "detail": "0.25 \u00d7 0.08206 = 0.0205. 0.0205 \u00d7 273 = 5.60. Divided by 1 atm stays 5.60." },
+      { "title": "Answer", "detail": "V \u2248 5.60 L (closest choice: 5.61 L)." }
     ]
   },
   {
-    "id": "ps1",
-    "topic": "waste",
-    "question": "A municipal solid waste stream has a density of 400 lb/yd\u00b3. What volume of landfill airspace (in yd\u00b3) is needed to place 10,000 tons of waste, assuming no compaction credit?",
-    "choices": ["25,000 yd\u00b3", "40,000 yd\u00b3", "50,000 yd\u00b3", "62,500 yd\u00b3"],
-    "answerIndex": 2,
-    "explanation": "10,000 tons \u00d7 2,000 lb/ton = 20,000,000 lb. Volume = 20,000,000 lb \u00f7 400 lb/yd\u00b3 = 50,000 yd\u00b3.",
-    "steps": [
-      { "title": "Get everything into consistent units", "detail": "You're given weight in tons but density in lb/yd\u00b3. Convert tons to pounds first: 1 ton = 2,000 lb." },
-      { "title": "Convert the waste weight", "detail": "10,000 tons \u00d7 2,000 lb/ton = 20,000,000 lb." },
-      { "title": "Relate weight, density, and volume", "detail": "Density = weight / volume, so rearranged: volume = weight / density." },
-      { "title": "Plug in and divide", "detail": "Volume = 20,000,000 lb \u00f7 400 lb/yd\u00b3 = 50,000 yd\u00b3." },
-      { "title": "Sanity check", "detail": "Higher density waste takes less airspace per ton; this density (400 lb/yd\u00b3) is a fairly typical uncompacted MSW value, so 50,000 yd\u00b3 for 10,000 tons is a reasonable order of magnitude." },
-      { "title": "Answer", "detail": "50,000 yd\u00b3." }
-    ]
-  },
-  {
-    "id": "psite1",
-    "topic": "site",
-    "question": "A contaminant has a retardation factor R = 4 in an aquifer where groundwater velocity is 0.5 ft/day. How far will the contaminant plume travel in 2 years (365 days/yr)?",
-    "choices": ["45.6 ft", "91.25 ft", "182.5 ft", "365 ft"],
+    "id": "aw-p1",
+    "topic": "air-waste",
+    "question": "A cyclone removes particulate at an efficiency of 60% inlet loading 3.0 gr/scf. What is the outlet loading?",
+    "choices": ["0.6 gr/scf", "1.2 gr/scf", "1.8 gr/scf", "2.4 gr/scf"],
     "answerIndex": 1,
-    "explanation": "Contaminant velocity = groundwater velocity / R = 0.5/4 = 0.125 ft/day. Distance = 0.125 \u00d7 730 days = 91.25 ft.",
+    "explanation": "Efficiency = (Cin - Cout)/Cin. 0.60 = (3.0 - Cout)/3.0. Cout = 3.0(1-0.60) = 1.2 gr/scf.",
     "steps": [
-      { "title": "Understand what R does", "detail": "Retardation factor R tells you how much slower a contaminant moves compared to the water it's dissolved in \u2014 sorption onto soil particles holds it back. R = 4 means the contaminant moves 4 times slower than groundwater." },
-      { "title": "Find the contaminant's velocity", "detail": "Contaminant velocity = groundwater velocity \u00f7 R = 0.5 ft/day \u00f7 4 = 0.125 ft/day." },
-      { "title": "Convert the time period to days", "detail": "2 years \u00d7 365 days/year = 730 days." },
-      { "title": "Multiply velocity by time to get distance", "detail": "Distance = 0.125 ft/day \u00d7 730 days = 91.25 ft." },
-      { "title": "Sanity check", "detail": "Without retardation, groundwater itself would travel 0.5 \u00d7 730 = 365 ft in that time. Since the contaminant moves 4\u00d7 slower, it should cover roughly a quarter of that \u2014 365/4 \u2248 91.25 ft. Matches." },
-      { "title": "Answer", "detail": "91.25 ft." }
+      { "title": "Recall the efficiency formula", "detail": "Efficiency = (Cin \u2212 Cout) / Cin. We're given efficiency and Cin, and asked to solve for Cout." },
+      { "title": "Rearrange for Cout", "detail": "Cout = Cin \u00d7 (1 \u2212 efficiency)." },
+      { "title": "Plug in", "detail": "Cout = 3.0 gr/scf \u00d7 (1 \u2212 0.60) = 3.0 \u00d7 0.40." },
+      { "title": "Do the arithmetic", "detail": "3.0 \u00d7 0.40 = 1.2." },
+      { "title": "Sanity check", "detail": "60% efficiency means 60% of the particulate is removed, so 40% should remain \u2014 1.2 out of 3.0 is exactly 40%. Checks out." },
+      { "title": "Answer", "detail": "1.2 gr/scf." }
     ]
   },
   {
-    "id": "paep1",
-    "topic": "aep",
-    "question": "Alternative A has a present worth of benefits of $500,000 and present worth of costs of $350,000. Alternative B has PW benefits of $420,000 and PW costs of $300,000. Based on B/C ratio alone, which is more favorable?",
-    "choices": ["Alternative A (B/C = 1.43)", "Alternative B (B/C = 1.40)", "They are equal", "Cannot be determined from B/C alone"],
-    "answerIndex": 0,
-    "explanation": "B/C(A) = 500,000/350,000 = 1.43. B/C(B) = 420,000/300,000 = 1.40. A has the higher ratio, so it's more favorable by this metric (note: for mutually exclusive alternatives, an incremental B/C analysis is the technically correct method on the actual exam).",
+    "id": "aw-p2",
+    "topic": "air-waste",
+    "question": "A landfill cell holds 8,000 tons of compacted MSW at a specific weight of 1,200 lb/yd\u00b3. What volume of airspace (yd\u00b3) does this occupy?",
+    "choices": ["6,667 yd\u00b3", "9,600 yd\u00b3", "13,333 yd\u00b3", "16,000 yd\u00b3"],
+    "answerIndex": 2,
+    "explanation": "8,000 tons \u00d7 2,000 lb/ton = 16,000,000 lb. Volume = 16,000,000 / 1,200 = 13,333 yd\u00b3.",
     "steps": [
-      { "title": "Recall what B/C ratio measures", "detail": "Benefit-cost ratio = present worth of benefits \u00f7 present worth of costs. A ratio above 1 means the project's benefits outweigh its costs in today's dollars." },
-      { "title": "Calculate Alternative A's ratio", "detail": "B/C(A) = $500,000 \u00f7 $350,000 = 1.43." },
-      { "title": "Calculate Alternative B's ratio", "detail": "B/C(B) = $420,000 \u00f7 $300,000 = 1.40." },
-      { "title": "Compare", "detail": "1.43 > 1.40, so A looks more favorable by this simple ratio comparison." },
-      { "title": "Know the exam nuance", "detail": "For mutually exclusive alternatives (pick only one), the rigorous method is incremental B/C analysis on the cost/benefit difference between alternatives \u2014 comparing raw ratios can occasionally rank projects incorrectly. Simple ratio comparison is a fine first pass, but know this distinction going into the exam." },
-      { "title": "Answer", "detail": "Alternative A (B/C = 1.43)." }
+      { "title": "Match units", "detail": "Weight is in tons, but specific weight is in lb/yd\u00b3 \u2014 convert tons to pounds first." },
+      { "title": "Convert", "detail": "8,000 tons \u00d7 2,000 lb/ton = 16,000,000 lb." },
+      { "title": "Relate weight, density, and volume", "detail": "Volume = weight / specific weight." },
+      { "title": "Divide", "detail": "16,000,000 lb \u00f7 1,200 lb/yd\u00b3 = 13,333 yd\u00b3." },
+      { "title": "Sanity check", "detail": "This specific weight (1,200 lb/yd\u00b3) is in the typical compacted MSW range, so the resulting airspace volume for 8,000 tons being in the low five figures of cubic yards is reasonable." },
+      { "title": "Answer", "detail": "13,333 yd\u00b3." }
+    ]
+  },
+  {
+    "id": "wr-p1",
+    "topic": "water-resources",
+    "question": "Water flows at 8 cfs through a 12-inch diameter pipe. What is the velocity?",
+    "choices": ["4.1 ft/s", "6.4 ft/s", "10.2 ft/s", "12.7 ft/s"],
+    "answerIndex": 2,
+    "explanation": "A = pi(D^2)/4 = pi(1.0)^2/4 = 0.785 ft^2. v = Q/A = 8/0.785 = 10.2 ft/s.",
+    "steps": [
+      { "title": "Convert diameter to feet", "detail": "12 inches = 1.0 ft." },
+      { "title": "Find the cross-sectional area", "detail": "A = \u03c0D\u00b2/4 = \u03c0(1.0)\u00b2/4 = 0.785 ft\u00b2." },
+      { "title": "Apply continuity", "detail": "Q = A\u00b7v, so v = Q/A." },
+      { "title": "Plug in and divide", "detail": "v = 8 ft\u00b3/s \u00f7 0.785 ft\u00b2 = 10.2 ft/s." },
+      { "title": "Sanity check", "detail": "A 1-ft pipe carrying 8 cfs at roughly 10 ft/s is a believable velocity for a pressurized water main \u2014 typical design velocities run a few ft/s up to ~10-15 ft/s." },
+      { "title": "Answer", "detail": "10.2 ft/s." }
+    ]
+  },
+  {
+    "id": "wt-p1",
+    "topic": "water-treatment",
+    "question": "A rapid mix tank must provide 30 seconds of detention time for a flow of 2 MGD. What tank volume (ft\u00b3) is needed? (1 MGD = 1.547 cfs)",
+    "choices": ["46 ft\u00b3", "93 ft\u00b3", "186 ft\u00b3", "279 ft\u00b3"],
+    "answerIndex": 1,
+    "explanation": "Q = 2 x 1.547 = 3.094 cfs. V = Q x t = 3.094 cfs x 30 s = 92.8 ft^3.",
+    "steps": [
+      { "title": "Convert flow to consistent units", "detail": "Q = 2 MGD \u00d7 1.547 cfs/MGD = 3.094 cfs (cubic feet per second)." },
+      { "title": "Recall the detention time relationship", "detail": "Detention time t = Volume / Flow rate, so Volume = Q \u00d7 t." },
+      { "title": "Plug in", "detail": "V = 3.094 ft\u00b3/s \u00d7 30 s." },
+      { "title": "Do the arithmetic", "detail": "3.094 \u00d7 30 = 92.8." },
+      { "title": "Sanity check", "detail": "Rapid mix tanks are meant to be small and fast \u2014 tens of seconds of detention \u2014 so a volume under 100 ft\u00b3 (about the size of a small room) for a 2 MGD plant is reasonable." },
+      { "title": "Answer", "detail": "\u2248 93 ft\u00b3." }
+    ]
+  },
+  {
+    "id": "ww-p1",
+    "topic": "wastewater",
+    "question": "A wastewater sample has an initial DO of 8.0 mg/L. After 5 days of incubation, the DO is 3.5 mg/L. What is the BOD5 (assuming no dilution)?",
+    "choices": ["3.5 mg/L", "4.5 mg/L", "5.5 mg/L", "8.0 mg/L"],
+    "answerIndex": 1,
+    "explanation": "BOD5 = initial DO - final DO = 8.0 - 3.5 = 4.5 mg/L.",
+    "steps": [
+      { "title": "Recall what BOD5 measures", "detail": "It's the oxygen consumed by microorganisms breaking down organic matter over 5 days \u2014 literally the drop in dissolved oxygen." },
+      { "title": "Write the relationship", "detail": "BOD5 = DO_initial \u2212 DO_final (for an undiluted sample)." },
+      { "title": "Plug in", "detail": "BOD5 = 8.0 mg/L \u2212 3.5 mg/L." },
+      { "title": "Subtract", "detail": "8.0 \u2212 3.5 = 4.5." },
+      { "title": "Answer", "detail": "4.5 mg/L." }
+    ]
+  },
+  {
+    "id": "site-p1",
+    "topic": "site",
+    "question": "A contaminant has a retardation factor R = 3 in an aquifer where groundwater velocity is 0.6 ft/day. How far does the contaminant travel in 3 years (365 days/yr)?",
+    "choices": ["146 ft", "219 ft", "365 ft", "657 ft"],
+    "answerIndex": 0,
+    "explanation": "Contaminant velocity = 0.6/3 = 0.2 ft/day. Time = 3 x 365 = 1,095 days. Distance = 0.2 x 1,095 = 219 ft.",
+    "steps": [
+      { "title": "Understand R", "detail": "Retardation factor R = 3 means the contaminant travels 3 times slower than the groundwater carrying it, due to sorption onto soil." },
+      { "title": "Find contaminant velocity", "detail": "v_contaminant = v_groundwater / R = 0.6 / 3 = 0.2 ft/day." },
+      { "title": "Convert time to days", "detail": "3 years \u00d7 365 days/year = 1,095 days." },
+      { "title": "Multiply for distance", "detail": "Distance = 0.2 ft/day \u00d7 1,095 days = 219 ft." },
+      { "title": "Sanity check", "detail": "Without retardation, the groundwater itself would travel 0.6 \u00d7 1,095 = 657 ft. Since the contaminant moves 3\u00d7 slower, it should cover about a third of that \u2014 657/3 = 219 ft. Matches." },
+      { "title": "Answer", "detail": "219 ft." }
+    ]
+  },
+  {
+    "id": "ehs-p1",
+    "topic": "ehs",
+    "question": "A radiation source reads 40 mrem/hr at a distance of 2 ft. What is the dose rate at 4 ft, using the inverse square law?",
+    "choices": ["10 mrem/hr", "20 mrem/hr", "40 mrem/hr", "80 mrem/hr"],
+    "answerIndex": 0,
+    "explanation": "I2 = I1(d1/d2)^2 = 40 x (2/4)^2 = 40 x 0.25 = 10 mrem/hr.",
+    "steps": [
+      { "title": "Recall the inverse square law", "detail": "Radiation intensity falls off with the square of the distance: I2 = I1 \u00d7 (d1/d2)\u00b2." },
+      { "title": "Plug in values", "detail": "I2 = 40 mrem/hr \u00d7 (2 ft / 4 ft)\u00b2." },
+      { "title": "Simplify the ratio first", "detail": "2/4 = 0.5, and 0.5\u00b2 = 0.25." },
+      { "title": "Multiply", "detail": "I2 = 40 \u00d7 0.25 = 10 mrem/hr." },
+      { "title": "Sanity check", "detail": "Doubling the distance should quarter the dose rate (since it's an inverse-square relationship) \u2014 40 down to 10 is exactly a quarter. Checks out." },
+      { "title": "Answer", "detail": "10 mrem/hr." }
+    ]
+  },
+  {
+    "id": "pm-p1",
+    "topic": "pm-econ",
+    "question": "A treatment system has a fixed annual cost of $60,000 and a variable cost of $8 per ton treated. If the facility charges $20 per ton, how many tons must be treated per year to break even?",
+    "choices": ["2,000 tons", "3,000 tons", "5,000 tons", "7,500 tons"],
+    "answerIndex": 2,
+    "explanation": "Breakeven units = Fixed Cost / (Price - Variable Cost) = 60,000 / (20 - 8) = 5,000 tons.",
+    "steps": [
+      { "title": "Recall the breakeven formula", "detail": "Breakeven quantity = Fixed Costs / (Price per unit \u2212 Variable cost per unit). The denominator is the 'contribution margin' \u2014 how much each unit contributes toward covering fixed costs after its own variable cost." },
+      { "title": "Find the contribution margin", "detail": "$20/ton \u2212 $8/ton = $12/ton." },
+      { "title": "Divide fixed costs by contribution margin", "detail": "$60,000 \u00f7 $12/ton = 5,000 tons." },
+      { "title": "Sanity check", "detail": "At 5,000 tons: revenue = 5,000 \u00d7 $20 = $100,000. Total cost = $60,000 + 5,000\u00d7$8 = $60,000+$40,000 = $100,000. Revenue equals cost \u2014 breakeven confirmed." },
+      { "title": "Answer", "detail": "5,000 tons." }
     ]
   }
 ]

@@ -1,8 +1,10 @@
 [
-  { "id": "water", "name": "Water", "color": "#3E6C8E", "description": "Hydraulics, water treatment, distribution, hydrology" },
-  { "id": "air", "name": "Air", "color": "#8FA998", "description": "Air quality, emissions, control technologies, dispersion" },
-  { "id": "waste", "name": "Solid & Hazardous Waste", "color": "#B8763E", "description": "Landfills, characterization, treatment, regulations" },
+  { "id": "basics", "name": "Environmental Basics", "color": "#5C7C5B", "description": "Chemistry, biology/microbiology, water chemistry fundamentals" },
+  { "id": "air-waste", "name": "Air and Solid Waste", "color": "#B8763E", "description": "Air quality, emissions, landfills, RCRA, hazardous waste" },
+  { "id": "water-resources", "name": "Water Resources", "color": "#3E6C8E", "description": "Hydraulics, pumps, open channel flow, hydrology, groundwater" },
+  { "id": "water-treatment", "name": "Water Treatment", "color": "#4C8FA3", "description": "Coagulation, sedimentation, filtration, softening, disinfection" },
+  { "id": "wastewater", "name": "Wastewater", "color": "#6E8B74", "description": "Collection systems, BOD, activated sludge, digestion, disinfection" },
   { "id": "site", "name": "Site Assessment & Remediation", "color": "#7A5C61", "description": "Hydrogeology, fate and transport, remediation technologies" },
-  { "id": "ehs", "name": "Environmental Health & Safety", "color": "#A8433D", "description": "Risk assessment, industrial hygiene, regulations" },
-  { "id": "aep", "name": "Associated Engineering Principles", "color": "#5C7C5B", "description": "Engineering economics, project management, statistics" }
+  { "id": "ehs", "name": "Environmental Health & Safety", "color": "#A8433D", "description": "Industrial hygiene, exposure limits, GHS, safety, radiation" },
+  { "id": "pm-econ", "name": "Project Management, Economics & Data", "color": "#8A6DAB", "description": "Engineering economics, scheduling, data management" }
 ]

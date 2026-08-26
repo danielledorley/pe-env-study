@@ -1,62 +1,44 @@
 [
-  {
-    "id": "w1",
-    "topic": "water",
-    "front": "Darcy's Law — what does it relate, and what is the basic equation?",
-    "back": "Relates groundwater flow rate to hydraulic conductivity and hydraulic gradient.\nQ = -K·A·(dh/dl)\nQ = flow rate, K = hydraulic conductivity, A = cross-sectional area, dh/dl = hydraulic gradient."
-  },
-  {
-    "id": "w2",
-    "topic": "water",
-    "front": "What is the difference between transmissivity and hydraulic conductivity?",
-    "back": "Hydraulic conductivity (K) is a property of the material per unit thickness. Transmissivity (T) is K integrated over the full saturated thickness of an aquifer: T = K·b, where b is aquifer thickness."
-  },
-  {
-    "id": "w3",
-    "topic": "water",
-    "front": "Name the four main steps of conventional surface water treatment, in order.",
-    "back": "Coagulation/flocculation → Sedimentation → Filtration → Disinfection."
-  },
-  {
-    "id": "a1",
-    "topic": "air",
-    "front": "What is a criteria pollutant? Name the six.",
-    "back": "Pollutants regulated under NAAQS because of documented health/welfare effects: CO, Pb, NO2, O3, PM (PM10/PM2.5), SO2."
-  },
-  {
-    "id": "a2",
-    "topic": "air",
-    "front": "What does a baghouse (fabric filter) control, and by what mechanism?",
-    "back": "Controls particulate matter. Dirty air passes through fabric bags; particles are captured by impaction, interception, and diffusion, then removed by periodic cleaning (shaking, reverse air, or pulse-jet)."
-  },
-  {
-    "id": "s1",
-    "topic": "waste",
-    "front": "What is the typical purpose of a landfill's composite liner system?",
-    "back": "To prevent leachate from migrating into groundwater — typically a geomembrane over a compacted clay layer, paired with a leachate collection system above it."
-  },
-  {
-    "id": "s2",
-    "topic": "waste",
-    "front": "RCRA Subtitle C vs Subtitle D — what's the distinction?",
-    "back": "Subtitle C governs hazardous waste (cradle-to-grave management). Subtitle D governs non-hazardous solid waste, including municipal solid waste landfills."
-  },
-  {
-    "id": "site1",
-    "topic": "site",
-    "front": "What is retardation factor (R) used for, and what does R = 1 mean?",
-    "back": "R describes how much a contaminant's transport is slowed relative to groundwater flow due to sorption. R = 1 means no retardation — the contaminant moves at the same velocity as groundwater (e.g., a conservative tracer like chloride)."
-  },
-  {
-    "id": "ehs1",
-    "topic": "ehs",
-    "front": "What is the difference between hazard and risk in a risk assessment context?",
-    "back": "Hazard is the inherent potential of a substance/situation to cause harm. Risk is the probability that harm will actually occur, combining hazard with exposure (dose, frequency, pathway)."
-  },
-  {
-    "id": "aep1",
-    "topic": "aep",
-    "front": "Benefit-cost ratio (B/C) — how is it defined and interpreted?",
-    "back": "B/C = PW(benefits) / PW(costs), using present worth at the given interest rate. B/C > 1 means the project is economically favorable; the alternative with the highest B/C (among mutually exclusive options, using incremental analysis) is generally preferred."
-  }
+  { "id": "basics-1", "topic": "basics", "front": "What's the difference between molar concentration and mass (weight) concentration, and when would you use each?", "back": "Molar concentration (mol/L) counts particles/moles per volume \u2014 useful for reaction stoichiometry. Mass concentration (mg/L) is weight per volume \u2014 how water quality is usually reported. Convert between them using molecular weight: mg/L = mol/L \u00d7 MW \u00d7 1000." },
+  { "id": "basics-2", "topic": "basics", "front": "What does bioconcentration factor (BCF) describe?", "back": "The ratio of a chemical's concentration in an organism's tissue to its concentration in the surrounding water at equilibrium. A high BCF means the compound accumulates readily in living tissue (bioaccumulation)." },
+  { "id": "basics-3", "topic": "basics", "front": "State the Ideal Gas Law and what each variable means.", "back": "PV = nRT\nP = pressure, V = volume, n = moles, R = universal gas constant, T = absolute temperature (Kelvin or Rankine). Used constantly in air-quality problems to relate gas volume, pressure, and temperature." },
+  { "id": "basics-4", "topic": "basics", "front": "What is carbonate buffering, in plain terms?", "back": "Natural water resists pH swings because carbonate species (CO2, HCO3-, CO3^2-) shift between each other, absorbing or releasing H+ ions. This is why alkalinity (buffering capacity) matters for treatment processes like coagulation and softening." },
+  { "id": "basics-5", "topic": "basics", "front": "In a redox reaction, what happens to the substance that is oxidized vs. the one that is reduced?", "back": "Oxidized = loses electrons (LEO). Reduced = gains electrons (GER). \"LEO the lion says GER.\" The oxidizing agent gets reduced; the reducing agent gets oxidized." },
+  { "id": "aw-1", "topic": "air-waste", "front": "What's the NCEES exam split for the Air section, principles vs. pollution control?", "back": "Air is roughly 14-22 questions total, split about evenly: Principles (sampling/measurement, codes & regs, chemistry, fate & transport, atmospheric science) and Pollution Control (sources, emissions inventory/calcs, treatment & control tech, minimization)." },
+  { "id": "aw-2", "topic": "air-waste", "front": "Cyclone separators: how does removal efficiency generally change with particle size?", "back": "Efficiency increases with particle size \u2014 larger particles have more inertia and are flung to the cyclone wall more effectively. The 'cut diameter' is the particle size collected at 50% efficiency; particles larger than that are collected at higher efficiency, smaller ones at lower." },
+  { "id": "aw-3", "topic": "air-waste", "front": "RCRA Subtitle C vs Subtitle D \u2014 what's the split?", "back": "Subtitle C = hazardous waste, cradle-to-grave (generators, transporters, TSDFs). Subtitle D = non-hazardous solid waste, including MSW landfill design/operating criteria." },
+  { "id": "aw-4", "topic": "air-waste", "front": "What are the four RCRA characteristics that can make a waste hazardous (the 'characteristic wastes')?", "back": "Ignitability, Corrosivity, Reactivity, Toxicity (often remembered as ICRT). A waste that isn't specifically listed can still be regulated as hazardous if it exhibits one of these characteristics (e.g., toxicity via the TCLP test)." },
+  { "id": "aw-5", "topic": "air-waste", "front": "What does the landfill settlement relationship SWp = SWi + p/(a + bp) describe?", "back": "How the specific weight (unit weight) of landfilled waste increases with overburden pressure p as more waste/cover is placed on top. SWi is the initial compacted specific weight; a and b are empirical constants fit to the waste type." },
+  { "id": "aw-6", "topic": "air-waste", "front": "What is TCLP and what is it used for?", "back": "Toxicity Characteristic Leaching Procedure \u2014 a lab test that simulates leaching in a landfill to determine whether a waste is hazardous due to toxicity, by comparing extract concentrations to regulatory thresholds for specific contaminants." },
+  { "id": "wr-1", "topic": "water-resources", "front": "Write the Continuity Equation and explain the 'exam hint' version of it.", "back": "A1v1 = A2v2 (Q = Av). Exam hint: if pipe diameter doesn't change along a section, velocity must stay the same — useful for quickly eliminating answer choices." },
+  { "id": "wr-2", "topic": "water-resources", "front": "What are the three components of total energy head (Bernoulli) in a closed conduit?", "back": "H = velocity head (v²/2g) + pressure head (P/γ) + elevation head (z). Friction and minor losses reduce H as flow moves downstream." },
+  { "id": "wr-3", "topic": "water-resources", "front": "Darcy-Weisbach vs. Hazen-Williams — when is each typically used?", "back": "Darcy-Weisbach is the more fundamental/general friction-loss equation, works for any fluid and flow regime (needs a friction factor from Reynolds number and roughness). Hazen-Williams is an empirical shortcut specifically for water in the turbulent regime — faster to use, but water-only." },
+  { "id": "wr-4", "topic": "water-resources", "front": "What is NPSH (Net Positive Suction Head), and why does it matter for pump selection?", "back": "NPSH is the head available at the pump suction above the liquid's vapor pressure. If NPSH available < NPSH required, the pump cavitates — vapor bubbles form and collapse, damaging the impeller and hurting performance." },
+  { "id": "wr-5", "topic": "water-resources", "front": "What does the Rational Method (Q = CiA) estimate, and what does each term mean?", "back": "Peak runoff rate for small drainage areas. C = runoff coefficient (land-use dependent), i = rainfall intensity for the design storm duration/frequency, A = drainage area. Used heavily in stormwater sizing." },
+  { "id": "wr-6", "topic": "water-resources", "front": "What is the Froude number used for in open channel flow?", "back": "It classifies flow as subcritical (Fr < 1, calm/deep), critical (Fr = 1), or supercritical (Fr > 1, fast/shallow). A hydraulic jump occurs when flow transitions from supercritical to subcritical." },
+  { "id": "wt-1", "topic": "water-treatment", "front": "Put the conventional water treatment train in order and name the goal of each step.", "back": "Coagulation (destabilize colloids with a coagulant) → Flocculation (gentle mixing to grow flocs) → Sedimentation (settle flocs out) → Filtration (remove remaining fine particles) → Disinfection (inactivate pathogens)." },
+  { "id": "wt-2", "topic": "water-treatment", "front": "What's the difference between hardness and alkalinity?", "back": "Hardness = concentration of multivalent cations, mainly Ca²⁺ and Mg²⁺ (as CaCO3). Alkalinity = the water's capacity to neutralize acid, driven mainly by bicarbonate/carbonate/hydroxide. They're chemically related but not the same thing — you can have hard water with low alkalinity or vice versa." },
+  { "id": "wt-3", "topic": "water-treatment", "front": "What does MPN stand for and what does it estimate?", "back": "Most Probable Number — a statistical method for estimating the concentration of viable microorganisms (often coliform bacteria) in a water sample, based on patterns of positive/negative results across a set of diluted sample tubes." },
+  { "id": "wt-4", "topic": "water-treatment", "front": "In lime softening, what does adding lime (Ca(OH)2) primarily target?", "back": "It raises pH to precipitate carbonate hardness (calcium as CaCO3, magnesium as Mg(OH)2) out of solution. Soda ash is often added alongside lime to remove non-carbonate hardness." },
+  { "id": "wt-5", "topic": "water-treatment", "front": "What's the purpose of a rapid mix tank in coagulation?", "back": "To disperse the coagulant chemical throughout the water quickly and uniformly (high energy, short detention time — seconds) before slower flocculation mixing lets particles collide and grow into settleable flocs." },
+  { "id": "ww-1", "topic": "wastewater", "front": "What does BOD measure, and why is it important in wastewater treatment?", "back": "Biochemical Oxygen Demand — the amount of dissolved oxygen microorganisms consume while decomposing organic matter in a sample over a set time (commonly 5 days, BOD5). High BOD wastewater depletes oxygen in receiving waters if not treated, which is why it's a core design/permitting parameter." },
+  { "id": "ww-2", "topic": "wastewater", "front": "What is Sludge Volume Index (SVI) and what does a high SVI indicate?", "back": "SVI measures how well activated sludge settles (volume occupied by 1 g of sludge after settling). A high SVI generally indicates poor settling — often linked to filamentous bacteria bulking — which can lead to solids washing out of the clarifier." },
+  { "id": "ww-3", "topic": "wastewater", "front": "Activated sludge vs. trickling filter — what's the core difference in how they treat wastewater biologically?", "back": "Activated sludge suspends microorganisms in the wastewater itself (mixed liquor) in an aeration tank, then separates them in a clarifier and returns some as return activated sludge. A trickling filter instead flows wastewater over a fixed media bed coated in a biofilm — the organisms stay attached to the media rather than suspended." },
+  { "id": "ww-4", "topic": "wastewater", "front": "What's the general purpose of anaerobic digestion in a wastewater plant?", "back": "Stabilizes sludge (reduces volatile solids, pathogens, and odor potential) in the absence of oxygen, using anaerobic microorganisms, and produces biogas (mostly methane) as a byproduct that can be used for energy." },
+  { "id": "ww-5", "topic": "wastewater", "front": "What's the difference between infiltration and inflow in a sewer collection system?", "back": "Infiltration is groundwater entering the sewer through cracks, joints, or defects (slow, chronic). Inflow is stormwater entering more directly and quickly, e.g. through cross-connected storm drains, manhole covers, or roof leaders — both add extra flow the treatment plant has to handle." },
+  { "id": "site-1", "topic": "site", "front": "Darcy's Law — what does it relate, and what is the basic equation?", "back": "Relates groundwater flow rate to hydraulic conductivity and hydraulic gradient.\nQ = -K\u00b7A\u00b7(dh/dl)\nQ = flow rate, K = hydraulic conductivity, A = cross-sectional area, dh/dl = hydraulic gradient." },
+  { "id": "site-2", "topic": "site", "front": "What is retardation factor (R) used for, and what does R = 1 mean?", "back": "R describes how much a contaminant's transport is slowed relative to groundwater flow due to sorption. R = 1 means no retardation \u2014 the contaminant moves at the same velocity as groundwater (e.g., a conservative tracer like chloride)." },
+  { "id": "site-3", "topic": "site", "front": "What is transmissivity, and how does it relate to hydraulic conductivity?", "back": "Transmissivity (T) is how much water an aquifer can transmit across its full saturated thickness: T = K \u00d7 b, where K is hydraulic conductivity and b is the saturated thickness. K is a point/material property; T describes the whole aquifer." },
+  { "id": "site-4", "topic": "site", "front": "What does the National Contingency Plan (NCP) do, and what law authorizes it?", "back": "It's the federal government's blueprint for responding to oil spills and hazardous substance releases, found at 40 CFR Part 300. Originally under the Clean Water Act, later expanded by CERCLA (Superfund) to cover hazardous waste site cleanups." },
+  { "id": "site-5", "topic": "site", "front": "Name three common categories of remediation technology for contaminated groundwater.", "back": "Pump-and-treat (extract and treat above ground), in-situ treatment (e.g., air sparging, bioremediation, chemical oxidation applied directly in the subsurface), and containment (e.g., slurry walls, capping to limit migration) — selection depends on contaminant type, geology, and cleanup goals." },
+  { "id": "ehs-1", "topic": "ehs", "front": "What's the difference between PEL, REL, and TLV?", "back": "PEL (Permissible Exposure Limit) — set/enforced by OSHA, legally binding. REL (Recommended Exposure Limit) — recommended by NIOSH, not legally binding. TLV (Threshold Limit Value) — set by ACGIH, a professional organization, also not legally binding but widely referenced." },
+  { "id": "ehs-2", "topic": "ehs", "front": "What's the difference between a TWA and a STEL exposure limit?", "back": "TWA (Time-Weighted Average) is typically an 8-hour average exposure limit. STEL (Short-Term Exposure Limit) is a higher limit allowed for brief periods, commonly a 15-minute average, meant to protect against acute effects even when the 8-hour average stays under the TWA." },
+  { "id": "ehs-3", "topic": "ehs", "front": "What is a Safety Data Sheet (SDS) and what GHS system is it part of?", "back": "An SDS is a standardized document listing a chemical's hazards, handling/storage precautions, and emergency response info. It's part of the Globally Harmonized System (GHS) for classifying and labeling chemicals, which standardizes hazard pictograms, signal words, and SDS format internationally." },
+  { "id": "ehs-4", "topic": "ehs", "front": "What does the inverse square law describe in radiation protection?", "back": "Radiation intensity from a point source decreases with the square of the distance from the source: I2 = I1 (d1/d2)². Doubling your distance from a source cuts exposure to one-quarter." },
+  { "id": "ehs-5", "topic": "ehs", "front": "What is a Job Safety Analysis (JSA)?", "back": "A structured process of breaking a job into its individual steps, identifying hazards at each step, and defining controls to eliminate or reduce those hazards before work begins." },
+  { "id": "pm-1", "topic": "pm-econ", "front": "What is breakeven analysis used for?", "back": "Finding the production/sales volume at which total revenue equals total cost (fixed + variable) — below that volume the project loses money, above it, it profits. Breakeven units = Fixed Costs / (Price per unit − Variable cost per unit)." },
+  { "id": "pm-2", "topic": "pm-econ", "front": "What's the difference between nominal and effective interest rates?", "back": "Nominal rate is the stated annual rate without accounting for compounding frequency. Effective rate accounts for compounding within the year (e.g., monthly compounding), so it's always ≥ the nominal rate when compounding occurs more than once a year." },
+  { "id": "pm-3", "topic": "pm-econ", "front": "Present Worth vs. Future Worth — what question does each answer?", "back": "Present Worth: what is a future cash flow worth today, given a discount rate? Future Worth: what will today's cash flow be worth at a future date, given a growth/interest rate? They're two directions of the same time-value-of-money relationship." },
+  { "id": "pm-4", "topic": "pm-econ", "front": "In CPM/Activity-on-Arrow scheduling, what is the 'critical path'?", "back": "The sequence of dependent activities with the longest total duration through the project network — it determines the minimum possible project duration. Activities on the critical path have zero float (slack); delaying any of them delays the whole project." },
+  { "id": "pm-5", "topic": "pm-econ", "front": "What does a cost index let you do, and how is it applied?", "back": "It lets you scale a known cost from one year to an equivalent cost in another year, accounting for inflation/cost changes over time: Cost_new = Cost_old × (Index_new / Index_old)." }
 ]

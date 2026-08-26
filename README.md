@@ -23,6 +23,9 @@ Your app will be live at `https://<your-username>.github.io/pe-env-study-bench/`
 
 If you'd rather keep it private, GitHub Pages works on private repos too if you're on a paid plan; otherwise just use it locally, or make the repo private and skip Pages.
 
+## Content
+Flashcards and problem sets are organized around the 8 folders from your course structure: Environmental Basics, Air and Solid Waste, Water Resources, Water Treatment, Wastewater, Site Assessment & Remediation, Environmental Health & Safety, and Project Management/Economics/Data Management. The seed content (42 cards, 9 problems with walkthroughs) is written from scratch based on the concepts your materials cover — not copied from the PDFs — see the copyright note below.
+
 ## Adding your own content
 Everything lives in three JSON files under `data/` — no code changes needed:
 
