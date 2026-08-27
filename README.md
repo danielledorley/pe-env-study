@@ -24,10 +24,17 @@ Your app will be live at `https://<your-username>.github.io/pe-env-study-bench/`
 If you'd rather keep it private, GitHub Pages works on private repos too if you're on a paid plan; otherwise just use it locally, or make the repo private and skip Pages.
 
 ## Content
-Flashcards and problem sets are organized around the 8 folders from your course structure: Environmental Basics, Air and Solid Waste, Water Resources, Water Treatment, Wastewater, Site Assessment & Remediation, Environmental Health & Safety, and Project Management/Economics/Data Management. The seed content (122 flashcards, 47 problems with walkthroughs) is written from scratch based on the concepts your materials cover — not copied from the PDFs — see the copyright note below.
+Flashcards and problem sets are organized around the 8 folders from your course structure: Environmental Basics, Air and Solid Waste, Water Resources, Water Treatment, Wastewater, Site Assessment & Remediation, Environmental Health & Safety, and Project Management/Economics/Data Management.
+
+- **193 flashcards** — a mix of originally-written cards covering the concepts your course materials touch on, plus cards built directly from your own Quizlet study sets (deduped across the overlapping sets you exported).
+- **143 problems** across three difficulty levels (easy/medium/hard, roughly evenly split), each with a **Hint** button (a nudge toward the right concept, without naming the formula outright) and a full step-by-step walkthrough after you answer. Difficulty increases through unit conversions, unnamed formulas, multi-step chains, and extraneous data — not just uglier numbers. Every numeric answer was computed and cross-checked programmatically.
+- Use the **Difficulty** and **Topic** filters together on the Problem Sets tab to target practice (e.g. "Site Assessment, Hard only").
+
+## Progress dashboard
+The **Progress** tab tracks flashcard mastery %, quiz accuracy % (per topic, and by difficulty under the hood), a day streak, and total days studied — all from your local browser storage, nothing sent anywhere. It also surfaces simple recommendations: topics under 70% quiz accuracy (with at least 3 attempts) get flagged, as do topics you haven't tried any problems in yet.
 
 ## Study Guide
-A new **Study Guide** tab holds a prose write-up for each topic — why the section matters, how its sub-concepts build on each other, and where it connects to other topics (e.g. how Darcy's Law in Water Resources reappears in Site Assessment with a retardation factor added, or how first-order decay shows up in BOD, disinfection, and radioactive decay alike). It's meant to be read straight through once per topic, not drilled like the flashcards. To edit or add to it, open `data/guide.json` — each key is a topic id, and the value is a small Markdown-like string (supports `## headings`, `**bold**`, and `- bullet` lists).
+A **Study Guide** tab holds a prose write-up for each topic — why the section matters, how its sub-concepts build on each other, and where it connects to other topics (e.g. how Darcy's Law in Water Resources reappears in Site Assessment with a retardation factor added, or how first-order decay shows up in BOD, disinfection, and radioactive decay alike). It's meant to be read straight through once per topic, not drilled like the flashcards. To edit or add to it, open `data/guide.json` — each key is a topic id, and the value is a small Markdown-like string (supports `## headings`, `**bold**`, and `- bullet` lists).
 
 ## Adding your own content
 Everything lives in three JSON files under `data/` — no code changes needed:

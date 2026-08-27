@@ -1,903 +1,2480 @@
 [
   {
-    "id": "basics-p1",
+    "id": "b-gas-e1",
     "topic": "basics",
-    "question": "How many liters of volume are occupied by 4.0 grams of methane (CH4, MW = 16 g/mol) at STP (273 K, 1 atm), using R = 0.08206 L·atm/mol·K?",
+    "difficulty": "easy",
+    "hint": "PV = nRT.",
+    "question": "How many liters does 2.0 g of oxygen gas (O2, MW=32) occupy at 293 K and 1 atm? (R = 0.08206 L·atm/mol·K)",
     "choices": [
-      "2.24 L",
-      "3.65 L",
-      "5.61 L",
-      "8.21 L"
+      "0.8 L",
+      "1.5 L",
+      "3.0 L",
+      "6.0 L"
     ],
-    "answerIndex": 2,
-    "explanation": "n = 4.0/16 = 0.25 mol. V = nRT/P = 0.25 x 0.08206 x 273 / 1 = 5.60 L.",
+    "answerIndex": 1,
+    "explanation": "n = 2.0/32 = 0.0625 mol. V = nRT/P = 0.0625 x 0.08206 x 293 = 1.50 L.",
     "steps": [
       {
-        "title": "Identify the tool",
-        "detail": "Grams, molecular weight, and a request for volume at given T and P signal the Ideal Gas Law: PV = nRT."
+        "title": "Convert mass to moles",
+        "detail": "n = 2.0 g / 32 g/mol = 0.0625 mol."
+      },
+      {
+        "title": "Solve for V",
+        "detail": "V = nRT/P = 0.0625 x 0.08206 x 293 / 1."
+      },
+      {
+        "title": "Answer",
+        "detail": "1.50 L."
+      }
+    ]
+  },
+  {
+    "id": "b-gas-e2",
+    "topic": "basics",
+    "difficulty": "easy",
+    "hint": "PV = nRT.",
+    "question": "A cylinder holds 12.5 g of CO2 (MW=44) at 308 K and 1.5 atm. What volume does it occupy?",
+    "choices": [
+      "2.4 L",
+      "4.8 L",
+      "7.2 L",
+      "14.4 L"
+    ],
+    "answerIndex": 1,
+    "explanation": "n = 12.5/44 = 0.284 mol. V = nRT/P = 0.284 x 0.08206 x 308 / 1.5 = 4.79 L.",
+    "steps": [
+      {
+        "title": "Convert mass to moles",
+        "detail": "n = 12.5/44 = 0.284 mol."
+      },
+      {
+        "title": "Solve for V",
+        "detail": "V = nRT/P."
+      },
+      {
+        "title": "Answer",
+        "detail": "4.79 L."
+      }
+    ]
+  },
+  {
+    "id": "b-gas-m1",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "Think about what relates gas mass, pressure, volume, and temperature.",
+    "question": "A rigid 8.5 L tank contains 3.2 mol of a gas at 298 K. The tank is rated for a maximum pressure of 15 atm. Is the current pressure within the rated limit, and what is it?",
+    "choices": [
+      "4.6 atm - within limit",
+      "9.2 atm - within limit",
+      "9.2 atm - exceeds limit",
+      "13.8 atm - exceeds limit"
+    ],
+    "answerIndex": 1,
+    "explanation": "P = nRT/V = 3.2 x 0.08206 x 298 / 8.5 = 9.21 atm, which is below the 15 atm rating.",
+    "steps": [
+      {
+        "title": "Identify the relationship needed",
+        "detail": "You have n, T, V and need P - rearrange the gas law for pressure."
+      },
+      {
+        "title": "Solve",
+        "detail": "P = nRT/V = 3.2 x 0.08206 x 298 / 8.5."
+      },
+      {
+        "title": "Compare to the limit",
+        "detail": "9.21 atm is below 15 atm."
+      },
+      {
+        "title": "Answer",
+        "detail": "9.21 atm - within limit."
+      }
+    ]
+  },
+  {
+    "id": "b-gas-m2",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "Convert everything to consistent units before relating gas properties.",
+    "question": "A 500 mL flask contains nitrogen gas (N2, MW=28) at 1.2 atm and 22°C (295 K). How many milligrams of N2 are in the flask?",
+    "choices": [
+      "10,500 mg",
+      "683 mg",
+      "1,366 mg",
+      "171 mg"
+    ],
+    "answerIndex": 1,
+    "explanation": "n = PV/RT = (1.2)(0.5)/(0.08206)(295) = 0.0248 mol; mass = 0.0248 x 28 x 1000 = 694 mg.",
+    "steps": [
+      {
+        "title": "Convert volume to liters",
+        "detail": "500 mL = 0.5 L."
+      },
+      {
+        "title": "Solve for moles",
+        "detail": "n = PV/RT = (1.2 atm)(0.5 L) / (0.08206)(295 K)."
+      },
+      {
+        "title": "Convert moles to mass",
+        "detail": "mass (g) = n x MW; convert to mg by x1000."
+      },
+      {
+        "title": "Answer",
+        "detail": "about 695 mg."
+      }
+    ]
+  },
+  {
+    "id": "b-gas-h1",
+    "topic": "basics",
+    "difficulty": "hard",
+    "hint": "Watch the temperature units - the gas law needs absolute temperature.",
+    "question": "A balloon is filled with 5.0 g of hydrogen gas (H2, MW=2) at a room temperature of 80.3°F and standard atmospheric pressure (1 atm). The balloon material can safely hold up to 65 L. Will it fit? (Convert °F to Rankine: R = °F+460; use R_gas=0.7302 ft3·atm/lbmol·R if working in ft3, or convert to Kelvin: K = (°F-32)/1.8+273.15 and use 0.08206 L·atm/mol·K)",
+    "choices": [
+      "51.3 L - fits",
+      "102.6 L - fits",
+      "102.6 L - does not fit",
+      "164.1 L - does not fit"
+    ],
+    "answerIndex": 2,
+    "explanation": "T = (80.3-32)/1.8+273.15 = 299.99 = 300 K. n=5/2=2.5 mol. V=nRT/P=2.5x0.08206x300/1=102.6 L, which exceeds 65 L.",
+    "steps": [
+      {
+        "title": "Convert temperature to Kelvin first",
+        "detail": "T = (80.3-32)/1.8 + 273.15 = 300 K - this step is easy to skip and is the whole trap here."
       },
       {
         "title": "Convert mass to moles",
-        "detail": "n = mass / MW = 4.0 g / 16 g/mol = 0.25 mol."
+        "detail": "n = 5.0/2 = 2.5 mol."
       },
       {
-        "title": "Rearrange for volume",
-        "detail": "V = nRT / P."
+        "title": "Solve for volume",
+        "detail": "V = nRT/P = 2.5 x 0.08206 x 300 / 1."
       },
       {
-        "title": "Plug in",
-        "detail": "V = (0.25)(0.08206)(273) / (1)."
-      },
-      {
-        "title": "Do the arithmetic",
-        "detail": "0.25 x 0.08206 = 0.0205. 0.0205 x 273 = 5.60."
+        "title": "Compare to capacity",
+        "detail": "102.6 L is more than the balloon's 65 L capacity."
       },
       {
         "title": "Answer",
-        "detail": "V is about 5.60 L, closest to 5.61 L."
+        "detail": "About 103 L - does not fit."
       }
     ]
   },
   {
-    "id": "basics-p2",
+    "id": "b-gas-h2",
     "topic": "basics",
-    "question": "A solution has a hydrogen ion concentration [H+] = 2.0 x 10^-5 mol/L. What is the pH?",
+    "difficulty": "hard",
+    "hint": "Isolate the gas variables from the extra information given.",
+    "question": "A pressurized cartridge weighing 340 g total (including an 8.0 g CO2 charge, MW=44) is stored at 15°C. Internal gas pressure is 2.0 atm. Ignoring the cartridge's own weight, what volume does the CO2 gas occupy inside?",
     "choices": [
-      "3.7",
-      "4.7",
-      "5.7",
-      "9.3"
+      "1.1 L",
+      "2.1 L",
+      "4.3 L",
+      "9.5 L"
     ],
     "answerIndex": 1,
-    "explanation": "pH = -log[H+] = -log(2.0 x 10^-5) = 4.70.",
+    "explanation": "The 340 g total is a distractor - only the 8.0 g CO2 charge matters. n=8/44=0.182 mol, T=288 K. V=nRT/P=0.182x0.08206x288/2.0=2.15 L.",
     "steps": [
       {
-        "title": "Recall the definition",
+        "title": "Filter out irrelevant data",
+        "detail": "The cartridge's total weight (340 g) doesn't matter - only the 8.0 g of CO2 gas does."
+      },
+      {
+        "title": "Convert temperature and mass",
+        "detail": "T = 15+273 = 288 K. n = 8.0/44 = 0.182 mol."
+      },
+      {
+        "title": "Solve for volume",
+        "detail": "V = nRT/P = 0.182 x 0.08206 x 288 / 2.0."
+      },
+      {
+        "title": "Answer",
+        "detail": "2.15 L."
+      }
+    ]
+  },
+  {
+    "id": "b-ph-e1",
+    "topic": "basics",
+    "difficulty": "easy",
+    "hint": "pH = -log[H+].",
+    "question": "A solution has [H+] = 4.0 x 10^-4 mol/L. What is the pH?",
+    "choices": [
+      "2.4",
+      "3.4",
+      "4.4",
+      "5.4"
+    ],
+    "answerIndex": 1,
+    "explanation": "pH = -log(4.0e-4) = 3.40.",
+    "steps": [
+      {
+        "title": "Apply the definition",
         "detail": "pH = -log10[H+]."
       },
       {
-        "title": "Plug in the value",
-        "detail": "pH = -log(2.0 x 10^-5)."
-      },
-      {
-        "title": "Break the log apart",
-        "detail": "log(2.0 x 10^-5) = log(2.0) + log(10^-5) = 0.301 - 5 = -4.699."
-      },
-      {
-        "title": "Apply the negative sign",
-        "detail": "pH = -(-4.699) = 4.699."
+        "title": "Compute",
+        "detail": "-log(4.0 x 10^-4) is approximately 3.40."
       },
       {
         "title": "Answer",
-        "detail": "pH is about 4.7."
+        "detail": "pH ≈ 3.4."
       }
     ]
   },
   {
-    "id": "basics-p3",
+    "id": "b-ph-e2",
     "topic": "basics",
-    "question": "A first-order disinfection process has a rate constant k = 0.35 /min. What fraction of the initial microorganism concentration remains after 4 minutes?",
+    "difficulty": "easy",
+    "hint": "pH + pOH = 14 at 25°C.",
+    "question": "A solution has a pOH of 5.3. What is its pH?",
     "choices": [
-      "14%",
-      "25%",
-      "35%",
-      "50%"
+      "6.7",
+      "8.7",
+      "10.7",
+      "14.0"
     ],
     "answerIndex": 1,
-    "explanation": "C/C0 = e^(-kt) = e^(-0.35 x 4) = e^-1.4 = 0.247, about 25%.",
-    "steps": [
-      {
-        "title": "Recall first-order decay",
-        "detail": "For first-order kinetics, C = C0 * e^(-kt), so C/C0 = e^(-kt)."
-      },
-      {
-        "title": "Plug in",
-        "detail": "C/C0 = e^(-0.35 x 4) = e^(-1.4)."
-      },
-      {
-        "title": "Evaluate the exponential",
-        "detail": "e^-1.4 is approximately 0.247."
-      },
-      {
-        "title": "Convert to percent",
-        "detail": "0.247 x 100 = 24.7%, which rounds to about 25%."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 25% remains."
-      }
-    ]
-  },
-  {
-    "id": "basics-p4",
-    "topic": "basics",
-    "question": "How many grams of CaCO3 (MW = 100 g/mol) are produced when 0.5 mol of CO2 reacts completely with excess Ca(OH)2 via CO2 + Ca(OH)2 -> CaCO3 + H2O?",
-    "choices": [
-      "25 g",
-      "50 g",
-      "75 g",
-      "100 g"
-    ],
-    "answerIndex": 1,
-    "explanation": "The equation shows a 1:1 mole ratio of CO2 to CaCO3. 0.5 mol CO2 produces 0.5 mol CaCO3 = 0.5 x 100 g/mol = 50 g.",
-    "steps": [
-      {
-        "title": "Read the mole ratio off the balanced equation",
-        "detail": "1 mole of CO2 produces 1 mole of CaCO3 - a 1:1 ratio."
-      },
-      {
-        "title": "Apply the ratio",
-        "detail": "0.5 mol CO2 reacted means 0.5 mol CaCO3 is produced."
-      },
-      {
-        "title": "Convert moles to grams",
-        "detail": "mass = moles x MW = 0.5 mol x 100 g/mol."
-      },
-      {
-        "title": "Multiply",
-        "detail": "0.5 x 100 = 50."
-      },
-      {
-        "title": "Answer",
-        "detail": "50 g of CaCO3."
-      }
-    ]
-  },
-  {
-    "id": "basics-p5",
-    "topic": "basics",
-    "question": "A fish tissue sample contains a pesticide at 4.0 mg/kg while the surrounding water contains 0.002 mg/L. What is the bioconcentration factor (BCF)?",
-    "choices": [
-      "200",
-      "500",
-      "2,000",
-      "8,000"
-    ],
-    "answerIndex": 2,
-    "explanation": "BCF = concentration in tissue / concentration in water = 4.0 / 0.002 = 2,000.",
-    "steps": [
-      {
-        "title": "Recall the BCF definition",
-        "detail": "BCF = (concentration in organism) / (concentration in surrounding water), at equilibrium."
-      },
-      {
-        "title": "Plug in the values",
-        "detail": "BCF = 4.0 mg/kg / 0.002 mg/L."
-      },
-      {
-        "title": "Divide",
-        "detail": "4.0 / 0.002 = 2,000."
-      },
-      {
-        "title": "Sanity check",
-        "detail": "A BCF in the thousands indicates a compound that bioaccumulates significantly - consistent with a persistent pesticide."
-      },
-      {
-        "title": "Answer",
-        "detail": "BCF = 2,000."
-      }
-    ]
-  },
-  {
-    "id": "basics-p6",
-    "topic": "basics",
-    "question": "A radioactive tracer has a half-life of 8 days. Starting from an activity of 160 units, how much activity remains after 24 days?",
-    "choices": [
-      "10 units",
-      "20 units",
-      "40 units",
-      "80 units"
-    ],
-    "answerIndex": 1,
-    "explanation": "24 days is 3 half-lives (24/8=3). 160 -> 80 -> 40 -> 20 units.",
-    "steps": [
-      {
-        "title": "Find the number of half-lives elapsed",
-        "detail": "24 days / 8 days per half-life = 3 half-lives."
-      },
-      {
-        "title": "Apply the halving three times",
-        "detail": "160 -> 80 (1st) -> 40 (2nd) -> 20 (3rd)."
-      },
-      {
-        "title": "Or use the formula directly",
-        "detail": "N = N0 (1/2)^n = 160 x (1/2)^3 = 160/8 = 20."
-      },
-      {
-        "title": "Answer",
-        "detail": "20 units remain."
-      }
-    ]
-  },
-  {
-    "id": "aw-p1",
-    "topic": "air-waste",
-    "question": "A cyclone removes particulate at an efficiency of 60%; inlet loading is 3.0 gr/scf. What is the outlet loading?",
-    "choices": [
-      "0.6 gr/scf",
-      "1.2 gr/scf",
-      "1.8 gr/scf",
-      "2.4 gr/scf"
-    ],
-    "answerIndex": 1,
-    "explanation": "Efficiency = (Cin - Cout)/Cin. 0.60 = (3.0 - Cout)/3.0. Cout = 3.0(1-0.60) = 1.2 gr/scf.",
-    "steps": [
-      {
-        "title": "Recall the efficiency formula",
-        "detail": "Efficiency = (Cin - Cout) / Cin."
-      },
-      {
-        "title": "Rearrange for Cout",
-        "detail": "Cout = Cin x (1 - efficiency)."
-      },
-      {
-        "title": "Plug in",
-        "detail": "Cout = 3.0 gr/scf x (1 - 0.60) = 3.0 x 0.40."
-      },
-      {
-        "title": "Do the arithmetic",
-        "detail": "3.0 x 0.40 = 1.2."
-      },
-      {
-        "title": "Sanity check",
-        "detail": "60% efficiency removes 60%, leaving 40% - and 1.2 is exactly 40% of 3.0."
-      },
-      {
-        "title": "Answer",
-        "detail": "1.2 gr/scf."
-      }
-    ]
-  },
-  {
-    "id": "aw-p2",
-    "topic": "air-waste",
-    "question": "A landfill cell holds 8,000 tons of compacted MSW at a specific weight of 1,200 lb/yd3. What volume of airspace (yd3) does this occupy?",
-    "choices": [
-      "6,667 yd3",
-      "9,600 yd3",
-      "13,333 yd3",
-      "16,000 yd3"
-    ],
-    "answerIndex": 2,
-    "explanation": "8,000 tons x 2,000 lb/ton = 16,000,000 lb. Volume = 16,000,000 / 1,200 = 13,333 yd3.",
-    "steps": [
-      {
-        "title": "Match units",
-        "detail": "Weight is in tons, but specific weight is in lb/yd3 - convert tons to pounds first."
-      },
-      {
-        "title": "Convert",
-        "detail": "8,000 tons x 2,000 lb/ton = 16,000,000 lb."
-      },
-      {
-        "title": "Relate weight, density, and volume",
-        "detail": "Volume = weight / specific weight."
-      },
-      {
-        "title": "Divide",
-        "detail": "16,000,000 lb / 1,200 lb/yd3 = 13,333 yd3."
-      },
-      {
-        "title": "Answer",
-        "detail": "13,333 yd3."
-      }
-    ]
-  },
-  {
-    "id": "aw-p3",
-    "topic": "air-waste",
-    "question": "How many pounds of theoretical air are required to completely combust 10 lb of methane (CH4)? (CH4 + 2O2 -> CO2 + 2H2O; air is 23.2% O2 by weight; MW CH4 = 16, MW O2 = 32)",
-    "choices": [
-      "40 lb",
-      "80 lb",
-      "138 lb",
-      "172 lb"
-    ],
-    "answerIndex": 3,
-    "explanation": "Moles CH4 = 10/16 = 0.625 lbmol. Needs 2x O2 = 1.25 lbmol O2 = 1.25x32 = 40 lb O2. Air = O2 / 0.232 = 40/0.232 = 172.4 lb air.",
-    "steps": [
-      {
-        "title": "Balance the combustion equation",
-        "detail": "CH4 + 2O2 -> CO2 + 2H2O - 1 mole of methane needs 2 moles of oxygen."
-      },
-      {
-        "title": "Convert fuel mass to moles",
-        "detail": "10 lb / 16 lb/lbmol = 0.625 lbmol CH4."
-      },
-      {
-        "title": "Find required O2",
-        "detail": "0.625 lbmol CH4 x 2 = 1.25 lbmol O2 needed. Mass = 1.25 x 32 = 40 lb O2."
-      },
-      {
-        "title": "Convert O2 mass to air mass",
-        "detail": "Air is about 23.2% O2 by weight, so air mass = O2 mass / 0.232."
-      },
-      {
-        "title": "Divide",
-        "detail": "40 / 0.232 = 172.4 lb air."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 172 lb of air."
-      }
-    ]
-  },
-  {
-    "id": "aw-p4",
-    "topic": "air-waste",
-    "question": "A city's population grows arithmetically by 1,200 people per year. If the current population is 45,000, what will it be in 10 years?",
-    "choices": [
-      "46,200",
-      "51,000",
-      "54,000",
-      "57,000"
-    ],
-    "answerIndex": 2,
-    "explanation": "Arithmetic growth: Pfuture = P0 + k x n = 45,000 + 1,200 x 10 = 45,000 + 12,000 = 57,000.",
-    "steps": [
-      {
-        "title": "Recall arithmetic growth",
-        "detail": "Population increases by a fixed number of people each year: P = P0 + k x n, where k is the constant annual increase and n is the number of years."
-      },
-      {
-        "title": "Plug in",
-        "detail": "P = 45,000 + 1,200 x 10."
-      },
-      {
-        "title": "Do the arithmetic",
-        "detail": "1,200 x 10 = 12,000. 45,000 + 12,000 = 57,000."
-      },
-      {
-        "title": "Answer",
-        "detail": "57,000 people."
-      }
-    ]
-  },
-  {
-    "id": "aw-p5",
-    "topic": "air-waste",
-    "question": "An initial waste volume of 24 cubic yards is compacted to a final volume of 6 cubic yards. What is the compaction ratio and the percent volume reduction?",
-    "choices": [
-      "CR = 2, reduction = 50%",
-      "CR = 4, reduction = 75%",
-      "CR = 4, reduction = 25%",
-      "CR = 6, reduction = 83%"
-    ],
-    "answerIndex": 1,
-    "explanation": "CR = Vi/Vf = 24/6 = 4. Volume reduction = [(Vi-Vf)/Vi] x 100 = [(24-6)/24] x100 = 75%.",
-    "steps": [
-      {
-        "title": "Recall the definitions",
-        "detail": "Compaction ratio CR = Vi / Vf. Volume reduction % = [(Vi - Vf)/Vi] x 100."
-      },
-      {
-        "title": "Calculate CR",
-        "detail": "CR = 24/6 = 4."
-      },
-      {
-        "title": "Calculate volume reduction",
-        "detail": "[(24-6)/24] x 100 = [18/24] x100 = 75%."
-      },
-      {
-        "title": "Sanity check",
-        "detail": "A compaction ratio of 4 corresponds to reducing volume to 1/4 of the original, i.e., a 75% reduction - consistent."
-      },
-      {
-        "title": "Answer",
-        "detail": "CR = 4, volume reduction = 75%."
-      }
-    ]
-  },
-  {
-    "id": "aw-p6",
-    "topic": "air-waste",
-    "question": "A facility generates 150 kg/month of a listed hazardous waste. Under RCRA generator categories, which is it most likely classified as (thresholds are commonly cited in kg/month)?",
-    "choices": [
-      "Conditionally Exempt Small Quantity Generator (CESQG/VSQG)",
-      "Small Quantity Generator (SQG)",
-      "Large Quantity Generator (LQG)",
-      "Not regulated under RCRA"
-    ],
-    "answerIndex": 0,
-    "explanation": "RCRA generator status is based on monthly hazardous waste generation rate: the lowest tier (very small/conditionally exempt) generally applies below 100 kg/month, small quantity generator between 100-1,000 kg/month, and large quantity generator above 1,000 kg/month. At 150 kg/month this facility would fall in the small quantity generator range - note the exact category boundaries should always be checked against current EPA regulations.",
-    "steps": [
-      {
-        "title": "Recall the generator tiers",
-        "detail": "RCRA sorts hazardous waste generators into tiers by how much hazardous waste they generate per month, with different recordkeeping and management requirements at each tier."
-      },
-      {
-        "title": "Compare to the thresholds",
-        "detail": "Very small/conditionally exempt is generally under about 100 kg/month; small quantity generator is roughly 100 up to 1,000 kg/month; large quantity generator is above roughly 1,000 kg/month."
-      },
-      {
-        "title": "Locate 150 kg/month",
-        "detail": "150 kg/month falls above the smallest tier's threshold and well below the large-generator threshold."
-      },
-      {
-        "title": "Answer",
-        "detail": "Small Quantity Generator (SQG) - and always double check current numeric thresholds, since EPA has adjusted them over time."
-      }
-    ]
-  },
-  {
-    "id": "wr-p1",
-    "topic": "water-resources",
-    "question": "Water flows at 8 cfs through a 12-inch diameter pipe. What is the velocity?",
-    "choices": [
-      "4.1 ft/s",
-      "6.4 ft/s",
-      "10.2 ft/s",
-      "12.7 ft/s"
-    ],
-    "answerIndex": 2,
-    "explanation": "A = pi(D^2)/4 = pi(1.0)^2/4 = 0.785 ft^2. v = Q/A = 8/0.785 = 10.2 ft/s.",
-    "steps": [
-      {
-        "title": "Convert diameter to feet",
-        "detail": "12 inches = 1.0 ft."
-      },
-      {
-        "title": "Find the cross-sectional area",
-        "detail": "A = pi D^2/4 = pi(1.0)^2/4 = 0.785 ft^2."
-      },
-      {
-        "title": "Apply continuity",
-        "detail": "Q = A v, so v = Q/A."
-      },
-      {
-        "title": "Plug in and divide",
-        "detail": "v = 8 ft3/s / 0.785 ft2 = 10.2 ft/s."
-      },
-      {
-        "title": "Answer",
-        "detail": "10.2 ft/s."
-      }
-    ]
-  },
-  {
-    "id": "wr-p2",
-    "topic": "water-resources",
-    "question": "A trapezoidal channel has a hydraulic radius of 2.0 ft, a slope of 0.001 ft/ft, and Manning's n = 0.025. What is the flow velocity using Manning's equation (US units, v = (1.49/n) R^(2/3) S^(1/2))?",
-    "choices": [
-      "1.6 ft/s",
-      "2.0 ft/s",
-      "3.0 ft/s",
-      "4.7 ft/s"
-    ],
-    "answerIndex": 1,
-    "explanation": "v = (1.49/0.025)(2.0)^(2/3)(0.001)^(1/2) = 59.6 x 1.587 x 0.0316 = 2.99 -- check calc: actually recompute carefully.",
-    "steps": [
-      {
-        "title": "Write Manning's equation",
-        "detail": "v = (1.49/n) R^(2/3) S^(1/2), US units, v in ft/s."
-      },
-      {
-        "title": "Compute the constant term",
-        "detail": "1.49 / 0.025 = 59.6."
-      },
-      {
-        "title": "Compute R^(2/3)",
-        "detail": "2.0^(2/3) is approximately 1.587."
-      },
-      {
-        "title": "Compute S^(1/2)",
-        "detail": "0.001^(1/2) = 0.0316."
-      },
-      {
-        "title": "Multiply everything together",
-        "detail": "59.6 x 1.587 x 0.0316 is approximately 2.99, which rounds to about 3.0 ft/s."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 3.0 ft/s."
-      }
-    ]
-  },
-  {
-    "id": "wr-p3",
-    "topic": "water-resources",
-    "question": "A 5-acre parking lot has a runoff coefficient C = 0.9. The design rainfall intensity is 3.0 in/hr. Using the Rational Method (Q = CiA, with Q in cfs when A is in acres and i is in in/hr), what is the peak runoff rate?",
-    "choices": [
-      "9.5 cfs",
-      "13.5 cfs",
-      "16.7 cfs",
-      "20.0 cfs"
-    ],
-    "answerIndex": 1,
-    "explanation": "Q = CiA = 0.9 x 3.0 x 5 = 13.5 cfs.",
-    "steps": [
-      {
-        "title": "Recall the Rational Method",
-        "detail": "Q = C i A, where C is dimensionless, i is in in/hr, A is in acres, and this conveniently gives Q directly in cfs."
-      },
-      {
-        "title": "Plug in the values",
-        "detail": "Q = 0.9 x 3.0 x 5."
-      },
-      {
-        "title": "Multiply step by step",
-        "detail": "0.9 x 3.0 = 2.7. 2.7 x 5 = 13.5."
-      },
-      {
-        "title": "Sanity check",
-        "detail": "A high runoff coefficient (0.9, typical of pavement) combined with a decent-sized area and moderate rainfall intensity giving a double-digit cfs peak flow is reasonable."
-      },
-      {
-        "title": "Answer",
-        "detail": "13.5 cfs."
-      }
-    ]
-  },
-  {
-    "id": "wr-p4",
-    "topic": "water-resources",
-    "question": "A centrifugal pump operating at 1,750 rpm delivers 500 gpm at 80 ft of head, drawing 15 hp. If the pump speed is increased to 2,100 rpm, what is the new power draw (using the affinity laws)?",
-    "choices": [
-      "18 hp",
-      "22 hp",
-      "26 hp",
-      "31 hp"
-    ],
-    "answerIndex": 2,
-    "explanation": "Power scales with speed cubed. Speed ratio = 2100/1750 = 1.2. Power ratio = 1.2^3 = 1.728. New power = 15 x 1.728 = 25.9 hp, about 26 hp.",
-    "steps": [
-      {
-        "title": "Recall the affinity law for power",
-        "detail": "Power is proportional to speed cubed: P2/P1 = (N2/N1)^3."
-      },
-      {
-        "title": "Find the speed ratio",
-        "detail": "N2/N1 = 2,100/1,750 = 1.2."
-      },
-      {
-        "title": "Cube the ratio",
-        "detail": "1.2^3 = 1.728."
-      },
-      {
-        "title": "Apply to the known power",
-        "detail": "P2 = 15 hp x 1.728."
-      },
-      {
-        "title": "Multiply",
-        "detail": "15 x 1.728 = 25.9."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 26 hp."
-      }
-    ]
-  },
-  {
-    "id": "wr-p5",
-    "topic": "water-resources",
-    "question": "Water flows over a sharp-crested rectangular weir with a crest length of 4 ft and a head of 0.8 ft. Using Q = 3.33 L H^(3/2) (US customary form), what is the discharge?",
-    "choices": [
-      "7.6 cfs",
-      "9.5 cfs",
-      "11.9 cfs",
-      "14.2 cfs"
-    ],
-    "answerIndex": 1,
-    "explanation": "Q = 3.33 x 4 x (0.8)^1.5 = 13.32 x 0.7155 = 9.53 cfs.",
-    "steps": [
-      {
-        "title": "Write the weir equation",
-        "detail": "Q = 3.33 L H^(3/2), a common US-customary form for a sharp-crested rectangular weir."
-      },
-      {
-        "title": "Compute H^(3/2)",
-        "detail": "0.8^1.5 is approximately 0.7155."
-      },
-      {
-        "title": "Multiply the constant and length",
-        "detail": "3.33 x 4 = 13.32."
-      },
-      {
-        "title": "Multiply by H^(3/2)",
-        "detail": "13.32 x 0.7155 is approximately 9.53."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 9.5 cfs."
-      }
-    ]
-  },
-  {
-    "id": "wr-p6",
-    "topic": "water-resources",
-    "question": "A pump's suction side has atmospheric pressure head of 33.9 ft, a suction lift of 12 ft, friction losses of 2 ft, and the water's vapor pressure head is 0.8 ft. What is the NPSH available?",
-    "choices": [
-      "18.3 ft",
-      "19.1 ft",
-      "21.1 ft",
-      "33.9 ft"
-    ],
-    "answerIndex": 1,
-    "explanation": "NPSHa = Patm - static lift - friction losses - vapor pressure head = 33.9 - 12 - 2 - 0.8 = 19.1 ft.",
-    "steps": [
-      {
-        "title": "Recall the NPSH available formula (suction lift case)",
-        "detail": "NPSHa = atmospheric pressure head - suction lift - friction losses - vapor pressure head."
-      },
-      {
-        "title": "Plug in the values",
-        "detail": "NPSHa = 33.9 - 12 - 2 - 0.8."
-      },
-      {
-        "title": "Subtract step by step",
-        "detail": "33.9 - 12 = 21.9. 21.9 - 2 = 19.9. 19.9 - 0.8 = 19.1."
-      },
-      {
-        "title": "Answer",
-        "detail": "NPSHa = 19.1 ft."
-      }
-    ]
-  },
-  {
-    "id": "wt-p1",
-    "topic": "water-treatment",
-    "question": "A rapid mix tank must provide 30 seconds of detention time for a flow of 2 MGD. What tank volume (ft3) is needed? (1 MGD = 1.547 cfs)",
-    "choices": [
-      "46 ft3",
-      "93 ft3",
-      "186 ft3",
-      "279 ft3"
-    ],
-    "answerIndex": 1,
-    "explanation": "Q = 2 x 1.547 = 3.094 cfs. V = Q x t = 3.094 cfs x 30 s = 92.8 ft3.",
-    "steps": [
-      {
-        "title": "Convert flow to consistent units",
-        "detail": "Q = 2 MGD x 1.547 cfs/MGD = 3.094 cfs."
-      },
-      {
-        "title": "Recall the detention time relationship",
-        "detail": "t = V/Q, so V = Q x t."
-      },
-      {
-        "title": "Plug in",
-        "detail": "V = 3.094 ft3/s x 30 s."
-      },
-      {
-        "title": "Multiply",
-        "detail": "3.094 x 30 = 92.8."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 93 ft3."
-      }
-    ]
-  },
-  {
-    "id": "wt-p2",
-    "topic": "water-treatment",
-    "question": "A sedimentation basin is 40 ft wide by 100 ft long and treats a flow of 4 MGD. What is the surface loading rate in gpd/ft2?",
-    "choices": [
-      "500 gpd/ft2",
-      "1,000 gpd/ft2",
-      "1,500 gpd/ft2",
-      "2,000 gpd/ft2"
-    ],
-    "answerIndex": 1,
-    "explanation": "Surface area = 40 x 100 = 4,000 ft2. Loading rate = 4,000,000 gpd / 4,000 ft2 = 1,000 gpd/ft2.",
-    "steps": [
-      {
-        "title": "Compute the surface area",
-        "detail": "A = width x length = 40 ft x 100 ft = 4,000 ft2."
-      },
-      {
-        "title": "Recall surface loading rate",
-        "detail": "Surface loading rate = Q / A."
-      },
-      {
-        "title": "Convert flow to gpd",
-        "detail": "4 MGD = 4,000,000 gpd."
-      },
-      {
-        "title": "Divide",
-        "detail": "4,000,000 gpd / 4,000 ft2 = 1,000."
-      },
-      {
-        "title": "Answer",
-        "detail": "1,000 gpd/ft2."
-      }
-    ]
-  },
-  {
-    "id": "wt-p3",
-    "topic": "water-treatment",
-    "question": "A chlorine dose of 3.0 mg/L is applied. After the demand is satisfied, a residual of 0.8 mg/L remains. What was the chlorine demand?",
-    "choices": [
-      "0.8 mg/L",
-      "2.2 mg/L",
-      "3.0 mg/L",
-      "3.8 mg/L"
-    ],
-    "answerIndex": 1,
-    "explanation": "Demand = Dose - Residual = 3.0 - 0.8 = 2.2 mg/L.",
+    "explanation": "pH = 14 - pOH = 14 - 5.3 = 8.7.",
     "steps": [
       {
         "title": "Recall the relationship",
-        "detail": "Dose = Demand + Residual, so Demand = Dose - Residual."
+        "detail": "pH + pOH = 14."
+      },
+      {
+        "title": "Solve",
+        "detail": "pH = 14 - 5.3."
+      },
+      {
+        "title": "Answer",
+        "detail": "pH = 8.7."
+      }
+    ]
+  },
+  {
+    "id": "b-ph-m1",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "This is a neutralization stoichiometry problem - HCl and NaOH react 1:1.",
+    "question": "How many mol/L (M) of HCl are needed in 0.3 L to exactly neutralize 0.5 L of 0.2 M NaOH? (HCl + NaOH -> NaCl + H2O)",
+    "choices": [
+      "0.167 M",
+      "0.333 M",
+      "0.667 M",
+      "0.557 M"
+    ],
+    "answerIndex": 1,
+    "explanation": "Moles NaOH = 0.5x0.2=0.1 mol. Since 1:1, moles HCl needed = 0.1 mol. M(HCl) = 0.1/0.3 = 0.333 M.",
+    "steps": [
+      {
+        "title": "Find moles of NaOH",
+        "detail": "moles = M x V = 0.2 x 0.5 = 0.1 mol."
+      },
+      {
+        "title": "Apply the 1:1 mole ratio",
+        "detail": "HCl needed = 0.1 mol (same as NaOH, per the balanced equation)."
+      },
+      {
+        "title": "Solve for concentration",
+        "detail": "M(HCl) = moles/volume = 0.1/0.3."
+      },
+      {
+        "title": "Answer",
+        "detail": "0.333 M."
+      }
+    ]
+  },
+  {
+    "id": "b-ph-m2",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "pH and hydrogen ion concentration are related by a logarithm.",
+    "question": "A groundwater sample tests at pH 9.1. What is its hydrogen ion concentration?",
+    "choices": [
+      "7.94e-09 mol/L",
+      "7.94e-10 mol/L",
+      "7.94e-11 mol/L",
+      "9.1 mol/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "[H+] = 10^-pH = 10^-9.1 = 7.94e-10 mol/L.",
+    "steps": [
+      {
+        "title": "Reverse the pH definition",
+        "detail": "[H+] = 10^(-pH)."
       },
       {
         "title": "Plug in",
-        "detail": "Demand = 3.0 - 0.8."
-      },
-      {
-        "title": "Subtract",
-        "detail": "3.0 - 0.8 = 2.2."
+        "detail": "[H+] = 10^-9.1."
       },
       {
         "title": "Answer",
-        "detail": "2.2 mg/L."
+        "detail": "[H+] ≈ 7.9e-10 mol/L."
       }
     ]
   },
   {
-    "id": "wt-p4",
-    "topic": "water-treatment",
-    "question": "A rapid sand filter is 15 ft by 20 ft and treats 3.0 MGD. What is the filtration (loading) rate in gpm/ft2?",
+    "id": "b-ph-h1",
+    "topic": "basics",
+    "difficulty": "hard",
+    "hint": "Two solutions are combined - think mass (mole) balance before worrying about concentration.",
+    "question": "A lab combines 0.2 L of 0.5 M HCl with 0.4 L of 0.1 M HCl (same acid, different strength). A third, empty 0.1 L beaker is also rinsed into the mix, contributing no additional acid. What is the final HCl concentration in the combined solution?",
     "choices": [
-      "1.4 gpm/ft2",
-      "5.0 gpm/ft2",
-      "6.9 gpm/ft2",
-      "10.0 gpm/ft2"
-    ],
-    "answerIndex": 2,
-    "explanation": "Area = 15 x 20 = 300 ft2. Q = 3.0 MGD = 3,000,000/1,440 gpm = 2,083 gpm. Rate = 2,083/300 = 6.94 gpm/ft2.",
-    "steps": [
-      {
-        "title": "Compute filter area",
-        "detail": "A = 15 ft x 20 ft = 300 ft2."
-      },
-      {
-        "title": "Convert flow to gpm",
-        "detail": "3.0 MGD = 3,000,000 gallons per day / 1,440 minutes per day = 2,083 gpm."
-      },
-      {
-        "title": "Divide flow by area",
-        "detail": "Loading rate = Q / A = 2,083 gpm / 300 ft2."
-      },
-      {
-        "title": "Do the division",
-        "detail": "2,083 / 300 is approximately 6.94."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 6.9 gpm/ft2 - a typical rapid filtration rate."
-      }
-    ]
-  },
-  {
-    "id": "wt-p5",
-    "topic": "water-treatment",
-    "question": "Water contains 120 mg/L Ca2+ (as Ca) and 30 mg/L Mg2+ (as Mg). Given that 1 mg/L Ca = 2.5 mg/L as CaCO3 and 1 mg/L Mg = 4.1 mg/L as CaCO3, what is the total hardness as CaCO3?",
-    "choices": [
-      "150 mg/L",
-      "225 mg/L",
-      "300 mg/L",
-      "423 mg/L"
-    ],
-    "answerIndex": 3,
-    "explanation": "Ca as CaCO3 = 120 x 2.5 = 300 mg/L. Mg as CaCO3 = 30 x 4.1 = 123 mg/L. Total = 300+123 = 423 mg/L.",
-    "steps": [
-      {
-        "title": "Convert calcium to CaCO3 equivalent",
-        "detail": "120 mg/L Ca x 2.5 = 300 mg/L as CaCO3."
-      },
-      {
-        "title": "Convert magnesium to CaCO3 equivalent",
-        "detail": "30 mg/L Mg x 4.1 = 123 mg/L as CaCO3."
-      },
-      {
-        "title": "Add the two hardness contributions",
-        "detail": "Total hardness = 300 + 123."
-      },
-      {
-        "title": "Sum",
-        "detail": "300 + 123 = 423."
-      },
-      {
-        "title": "Answer",
-        "detail": "423 mg/L as CaCO3."
-      }
-    ]
-  },
-  {
-    "id": "wt-p6",
-    "topic": "water-treatment",
-    "question": "A jar test shows the optimal alum dose is 25 mg/L. For a treatment plant flow of 5 MGD, how many pounds of alum are needed per day? (use lb/day = dose(mg/L) x flow(MGD) x 8.34)",
-    "choices": [
-      "521 lb/day",
-      "834 lb/day",
-      "1,043 lb/day",
-      "1,250 lb/day"
-    ],
-    "answerIndex": 2,
-    "explanation": "lb/day = 25 x 5 x 8.34 = 1,042.5 lb/day.",
-    "steps": [
-      {
-        "title": "Recall the standard dosing formula",
-        "detail": "Chemical feed rate (lb/day) = dose (mg/L) x flow (MGD) x 8.34, where 8.34 converts mg/L-MGD into lb/day (it's the weight of a gallon of water in lb, in convenient units)."
-      },
-      {
-        "title": "Plug in the values",
-        "detail": "lb/day = 25 x 5 x 8.34."
-      },
-      {
-        "title": "Multiply step by step",
-        "detail": "25 x 5 = 125. 125 x 8.34 = 1,042.5."
-      },
-      {
-        "title": "Answer",
-        "detail": "About 1,043 lb/day of alum."
-      }
-    ]
-  },
-  {
-    "id": "ww-p1",
-    "topic": "wastewater",
-    "question": "A wastewater sample has an initial DO of 8.0 mg/L. After 5 days of incubation, the DO is 3.5 mg/L. What is the BOD5 (assuming no dilution)?",
-    "choices": [
-      "3.5 mg/L",
-      "4.5 mg/L",
-      "5.5 mg/L",
-      "8.0 mg/L"
+      "0.140 M",
+      "0.233 M",
+      "0.327 M",
+      "0.300 M"
     ],
     "answerIndex": 1,
-    "explanation": "BOD5 = initial DO - final DO = 8.0 - 3.5 = 4.5 mg/L.",
+    "explanation": "Total moles = 0.2(0.5)+0.4(0.1)=0.14 mol. Total volume = 0.2+0.4=0.6 L (empty beaker adds no volume of solution). M=0.233 M.",
     "steps": [
       {
-        "title": "Recall what BOD5 measures",
-        "detail": "It's the drop in dissolved oxygen over 5 days due to microbial respiration."
+        "title": "Ignore the irrelevant beaker",
+        "detail": "An empty beaker being rinsed in adds no acid and no meaningful volume - it's a distractor."
       },
       {
-        "title": "Write the relationship",
-        "detail": "BOD5 = DO_initial - DO_final (undiluted sample)."
+        "title": "Find total moles of acid",
+        "detail": "(0.2)(0.5) + (0.4)(0.1) = 0.10+0.04 = 0.14 mol."
       },
       {
-        "title": "Plug in",
-        "detail": "BOD5 = 8.0 - 3.5."
-      },
-      {
-        "title": "Subtract",
-        "detail": "8.0 - 3.5 = 4.5."
-      },
-      {
-        "title": "Answer",
-        "detail": "4.5 mg/L."
-      }
-    ]
-  },
-  {
-    "id": "ww-p2",
-    "topic": "wastewater",
-    "question": "An aeration tank has 4,000 lb of MLVSS. The BOD load entering the tank is 800 lb/day. What is the F/M ratio?",
-    "choices": [
-      "0.10 /day",
-      "0.20 /day",
-      "0.50 /day",
-      "5.0 /day"
-    ],
-    "answerIndex": 1,
-    "explanation": "F/M = BOD load / MLVSS = 800/4,000 = 0.20 /day.",
-    "steps": [
-      {
-        "title": "Recall the F/M definition",
-        "detail": "F/M = mass of BOD applied per day / mass of MLVSS in the aeration tank."
-      },
-      {
-        "title": "Plug in the values",
-        "detail": "F/M = 800 lb/day / 4,000 lb."
+        "title": "Find total volume",
+        "detail": "0.2 + 0.4 = 0.6 L."
       },
       {
         "title": "Divide",
-        "detail": "800/4,000 = 0.20."
+        "detail": "0.14/0.6."
       },
       {
-        "title": "Sanity check",
-        "detail": "Typical conventional activated sludge F/M ratios run roughly 0.2 to 0.5 /day, so this value is right in a reasonable range."
+        "title": "Answer",
+        "detail": "0.233 M - notice this is NOT simply the average of the two starting concentrations."
+      }
+    ]
+  },
+  {
+    "id": "b-ph-h2",
+    "topic": "basics",
+    "difficulty": "hard",
+    "hint": "You're given pH but asked about the other ion - two conversions are chained here.",
+    "question": "A sample has a pH of 4.5. What is its hydroxide ion concentration, [OH-]?",
+    "choices": [
+      "3.16e-09 mol/L",
+      "3.16e-10 mol/L",
+      "3.16e-11 mol/L",
+      "3.16e-05 mol/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "[H+]=10^-4.5=3.16e-05. [OH-]=Kw/[H+]=1e-14/3.16e-05=3.16e-10 mol/L.",
+    "steps": [
+      {
+        "title": "Find [H+] from pH first",
+        "detail": "[H+] = 10^-4.5."
+      },
+      {
+        "title": "Use water's ion product to find [OH-]",
+        "detail": "Kw = [H+][OH-] = 1.0x10^-14, so [OH-] = Kw/[H+]."
+      },
+      {
+        "title": "Compute",
+        "detail": "[OH-] = 1x10^-14 / 3.16e-05."
+      },
+      {
+        "title": "Answer",
+        "detail": "[OH-] ≈ 3.2e-10 mol/L."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-e1",
+    "topic": "basics",
+    "difficulty": "easy",
+    "hint": "First-order decay: C = C0 e^(-kt).",
+    "question": "A pollutant decays following first-order kinetics with k = 0.25/day. Starting from C0 = 100 mg/L, what is the concentration after 6 days?",
+    "choices": [
+      "11.2 mg/L",
+      "22.3 mg/L",
+      "44.6 mg/L",
+      "33.5 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "C = 100 e^(-0.25x6) = 100 e^-1.5 = 22.3 mg/L.",
+    "steps": [
+      {
+        "title": "Apply first-order decay",
+        "detail": "C = C0 e^(-kt)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "C = 100 x e^(-0.25 x 6) = 100 x e^-1.5."
+      },
+      {
+        "title": "Answer",
+        "detail": "22.3 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-e2",
+    "topic": "basics",
+    "difficulty": "easy",
+    "hint": "Half-life relates directly to the decay constant k.",
+    "question": "A compound has a half-life of 5 days under first-order decay. What is its decay rate constant k?",
+    "choices": [
+      "0.069 /day",
+      "0.139 /day",
+      "0.277 /day",
+      "0.500 /day"
+    ],
+    "answerIndex": 1,
+    "explanation": "k = ln(2)/half-life = 0.693/5 = 0.139 /day.",
+    "steps": [
+      {
+        "title": "Recall the half-life relationship",
+        "detail": "half-life = ln(2)/k, so k = ln(2)/half-life."
+      },
+      {
+        "title": "Plug in",
+        "detail": "k = 0.693/5."
+      },
+      {
+        "title": "Answer",
+        "detail": "0.139 /day."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-m1",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "You know the decay constant and the fraction remaining - solve for time.",
+    "question": "A contaminant decays with k = 0.15/day. How many days does it take to reduce the concentration to 25% of its initial value?",
+    "choices": [
+      "4.6 days",
+      "9.2 days",
+      "13.9 days",
+      "18.5 days"
+    ],
+    "answerIndex": 1,
+    "explanation": "C/C0=0.25=e^(-kt). t=-ln(0.25)/k=ln(4)/0.15=9.2 days.",
+    "steps": [
+      {
+        "title": "Set up the ratio",
+        "detail": "C/C0 = 0.25 = e^(-kt)."
+      },
+      {
+        "title": "Take the natural log of both sides",
+        "detail": "ln(0.25) = -kt, so t = -ln(0.25)/k = ln(4)/k."
+      },
+      {
+        "title": "Plug in",
+        "detail": "t = ln(4)/0.15 = 1.386/0.15."
+      },
+      {
+        "title": "Answer",
+        "detail": "9.2 days."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-m2",
+    "topic": "basics",
+    "difficulty": "medium",
+    "hint": "Find the remaining concentration first, then figure out what fraction was removed.",
+    "question": "A disinfectant follows first-order decay with k = 0.4/hr. If the initial concentration is 80 mg/L, what percent has been removed after 6 hours?",
+    "choices": [
+      "45%",
+      "91%",
+      "55%",
+      "100%"
+    ],
+    "answerIndex": 1,
+    "explanation": "C=80e^(-0.4x6)=7.26. Removed % = (1-7.26/80)x100=91%.",
+    "steps": [
+      {
+        "title": "Find remaining concentration",
+        "detail": "C = C0 e^(-kt) = 80 x e^(-0.4x6)."
+      },
+      {
+        "title": "Compute",
+        "detail": "C ≈ 7.26 mg/L."
+      },
+      {
+        "title": "Find percent removed",
+        "detail": "% removed = (1 - C/C0) x 100."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 91%."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-h1",
+    "topic": "basics",
+    "difficulty": "hard",
+    "hint": "First find k from the given data pair, then apply it to the new time.",
+    "question": "A tracer study shows a compound's concentration drops from 50 mg/L to 18.4 mg/L over 2 hours under first-order decay. Assuming the same decay constant continues to apply, what concentration is expected at 5 hours (measured from the same starting point)?",
+    "choices": [
+      "2.1 mg/L",
+      "4.1 mg/L",
+      "8.2 mg/L",
+      "46.0 mg/L (wrong: linear scaling)"
+    ],
+    "answerIndex": 1,
+    "explanation": "k=-ln(18.4/50)/2=0.500/hr. C(5)=50e^(-0.500x5)=4.1 mg/L.",
+    "steps": [
+      {
+        "title": "Find k from the given pair",
+        "detail": "k = -ln(C/C0)/t = -ln(18.4/50)/2."
+      },
+      {
+        "title": "Compute k",
+        "detail": "k ≈ 0.500 /hr."
+      },
+      {
+        "title": "Apply k to the new time",
+        "detail": "C(5) = 50 x e^(-k x 5)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 4.1 mg/L - note that decay is NOT linear, so scaling the drop proportionally to time would be wrong."
+      }
+    ]
+  },
+  {
+    "id": "b-kin-h2",
+    "topic": "basics",
+    "difficulty": "hard",
+    "hint": "The question asks for what was lost, not what remains - don't stop one step too early.",
+    "question": "A batch of 25 kg of a compound degrades with k = 0.6/day under first-order decay. How many kilograms have degraded after 3 days?",
+    "choices": [
+      "10.4 kg",
+      "4.1 kg",
+      "20.9 kg",
+      "25.0 kg"
+    ],
+    "answerIndex": 2,
+    "explanation": "Remaining = 25e^(-0.6x3)=4.13 kg. Degraded = 25-4.13=20.87 kg.",
+    "steps": [
+      {
+        "title": "Find remaining mass first",
+        "detail": "mass_remaining = 25 x e^(-0.6x3)."
+      },
+      {
+        "title": "Compute",
+        "detail": "mass_remaining ≈ 4.13 kg."
+      },
+      {
+        "title": "Subtract to find what degraded (this is what's actually asked)",
+        "detail": "degraded = 25 - remaining."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 20.9 kg."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-e1",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Efficiency = (Cin-Cout)/Cin.",
+    "question": "A control device removes particulate at 72% efficiency from an inlet loading of 4.0 gr/scf. What is the outlet loading?",
+    "choices": [
+      "0.56 gr/scf",
+      "1.12 gr/scf",
+      "2.24 gr/scf",
+      "4.00 gr/scf"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cout = Cin(1-eff) = 4.0(1-0.72) = 1.12 gr/scf.",
+    "steps": [
+      {
+        "title": "Recall the efficiency relationship",
+        "detail": "Efficiency = (Cin-Cout)/Cin, so Cout = Cin(1-efficiency)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "Cout = 4.0 x (1-0.72)."
+      },
+      {
+        "title": "Answer",
+        "detail": "1.12 gr/scf."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-e2",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Efficiency compares what came in to what got out.",
+    "question": "A baghouse reduces particulate loading from 1.8 gr/scf to 0.3 gr/scf. What is its collection efficiency?",
+    "choices": [
+      "42%",
+      "83%",
+      "17%",
+      "100%"
+    ],
+    "answerIndex": 1,
+    "explanation": "Efficiency = (1.8-0.3)/1.8 x100 = 83%.",
+    "steps": [
+      {
+        "title": "Apply the definition",
+        "detail": "Efficiency = (Cin-Cout)/Cin x 100."
+      },
+      {
+        "title": "Plug in",
+        "detail": "(1.8-0.3)/1.8 x 100."
+      },
+      {
+        "title": "Answer",
+        "detail": "83%."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-m1",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "When two devices are in series, think about what fraction survives each stage in sequence.",
+    "question": "Gas passes through a cyclone (60% efficient) followed by a scrubber (50% efficient on what remains). What is the overall system removal efficiency?",
+    "choices": [
+      "110% (wrong: simple addition)",
+      "80%",
+      "60%",
+      "100%"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fraction surviving = (1-0.6)(1-0.5)=0.20, so overall efficiency = 1-0.20 = 80%. (Efficiencies don't simply add.)",
+    "steps": [
+      {
+        "title": "Think in terms of what survives, not what's removed",
+        "detail": "After the cyclone, 1-0.6=40% remains. After the scrubber, 50% of THAT remains: 0.4x0.5=0.20, or 20%."
+      },
+      {
+        "title": "Convert back to overall efficiency",
+        "detail": "Overall efficiency = 1 - fraction remaining = 1-0.20."
+      },
+      {
+        "title": "Answer",
+        "detail": "80% - notice simply adding 60%+50% would overshoot 100%, which is a giveaway that's the wrong approach."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-m2",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "Work out what outlet concentration the stated efficiency actually produces, then compare to the permit limit.",
+    "question": "A source with inlet loading 5.0 gr/scf uses a device rated at 94% efficiency. The facility's air permit caps outlet loading at 0.3 gr/scf. Does this device meet the permit limit?",
+    "choices": [
+      "Outlet = 0.60 gr/scf - fails",
+      "Outlet = 0.30 gr/scf - fails",
+      "Outlet = 0.30 gr/scf - meets limit",
+      "Outlet = 0.3 gr/scf - meets limit exactly"
+    ],
+    "answerIndex": 2,
+    "explanation": "Cout = 5.0(1-0.94) = 0.30 gr/scf, which is below the 0.3 gr/scf limit.",
+    "steps": [
+      {
+        "title": "Find the actual outlet concentration",
+        "detail": "Cout = Cin(1-efficiency) = 5.0(1-0.94)."
+      },
+      {
+        "title": "Compute",
+        "detail": "Cout = 0.30 gr/scf."
+      },
+      {
+        "title": "Compare to the permit limit",
+        "detail": "0.30 < 0.3, so it meets the limit."
+      },
+      {
+        "title": "Answer",
+        "detail": "Outlet = 0.30 gr/scf - meets the limit."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-h1",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "Break this into two stages: find the concentration after stage one, then figure out what the second stage still needs to do.",
+    "question": "A facility needs 97% overall particulate removal from an inlet loading of 6.0 gr/scf. The first control device (a cyclone) only achieves 70% efficiency. What efficiency must a second device (in series) achieve to meet the overall target?",
+    "choices": [
+      "27% (wrong: simple subtraction)",
+      "90%",
+      "97%",
+      "50%"
+    ],
+    "answerIndex": 1,
+    "explanation": "After cyclone: Cout1=6.0(1-0.7)=1.80. Target final outlet=6.0(1-0.97)=0.180. 2nd device efficiency=1-(0.180/1.80)=90.0%.",
+    "steps": [
+      {
+        "title": "Find the concentration leaving the first device",
+        "detail": "Cout1 = Cin(1-e1) = 6.0(1-0.70) = 1.80 gr/scf."
+      },
+      {
+        "title": "Find the target final outlet concentration",
+        "detail": "Cout_final = Cin(1-overall target) = 6.0(1-0.97) = 0.18 gr/scf."
+      },
+      {
+        "title": "Find what the second device must remove from its inlet (1.80 gr/scf)",
+        "detail": "e2 = 1 - (Cout_final/Cout1) = 1 - (0.18/1.80)."
+      },
+      {
+        "title": "Answer",
+        "detail": "90% - notice subtracting the two percentages (97%-70%=27%) gives the wrong answer entirely."
+      }
+    ]
+  },
+  {
+    "id": "aw-eff-h2",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "Figure out which density actually applies to the volume being asked about.",
+    "question": "A landfill receives 15000 tons of MSW per year at an in-place (compacted) specific weight of 1400 lb/yd3. The same waste arrives at the working face at only 350 lb/yd3 before compaction. What annual AIRSPACE volume does the landfill actually consume (i.e., after compaction)?",
+    "choices": [
+      "85,714 yd3",
+      "21,429 yd3",
+      "53,571 yd3",
+      "64,286 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Airspace consumed is based on COMPACTED density: V=15,000x2000/1400=21,429 yd3. The uncompacted density (350 lb/yd3) is a distractor describing the waste before it's compacted in place.",
+    "steps": [
+      {
+        "title": "Identify which density matters",
+        "detail": "Airspace 'consumed' in the landfill is measured after compaction, so use the compacted (in-place) specific weight, not the pre-compaction value."
+      },
+      {
+        "title": "Convert tons to pounds",
+        "detail": "15,000 tons x 2,000 lb/ton = 30,000,000 lb."
+      },
+      {
+        "title": "Divide by compacted density",
+        "detail": "30,000,000 / 1,400 lb/yd3."
+      },
+      {
+        "title": "Answer",
+        "detail": "21,429 yd3 per year."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-e1",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Balance the combustion equation, then scale to air.",
+    "question": "How many pounds of theoretical air are needed to burn 20 lb of methane (CH4 + 2O2 -> CO2 + 2H2O; MW CH4=16, MW O2=32; air is 23.2% O2 by weight)?",
+    "choices": [
+      "172 lb",
+      "345 lb",
+      "690 lb",
+      "80 lb"
+    ],
+    "answerIndex": 1,
+    "explanation": "mol CH4=20/16=1.25. O2 needed=1.25x2x32=80 lb. Air=80/0.232=345 lb.",
+    "steps": [
+      {
+        "title": "Convert fuel to moles",
+        "detail": "20/16 = 1.25 lbmol CH4."
+      },
+      {
+        "title": "Find O2 needed from the balanced equation",
+        "detail": "1.25 x 2 = 2.5 lbmol O2 = 2.5x32 = 80 lb O2."
+      },
+      {
+        "title": "Convert O2 to air",
+        "detail": "air = O2/0.232 = 80/0.232."
+      },
+      {
+        "title": "Answer",
+        "detail": "345 lb."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-e2",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Same combustion-to-air approach, different fuel.",
+    "question": "How many pounds of theoretical air are needed to burn 10 lb of propane (C3H8 + 5O2 -> 3CO2 + 4H2O; MW C3H8=44, MW O2=32)?",
+    "choices": [
+      "78 lb",
+      "157 lb",
+      "235 lb",
+      "36 lb"
+    ],
+    "answerIndex": 1,
+    "explanation": "mol=10/44=0.227. O2=0.227x5x32=36.4 lb. Air=36.4/0.232=157 lb.",
+    "steps": [
+      {
+        "title": "Convert fuel to moles",
+        "detail": "10/44 = 0.227 lbmol."
+      },
+      {
+        "title": "Find O2 needed",
+        "detail": "0.227 x 5 x 32 = 36.4 lb O2."
+      },
+      {
+        "title": "Convert to air",
+        "detail": "36.4 / 0.232."
+      },
+      {
+        "title": "Answer",
+        "detail": "157 lb."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-m1",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "Excess air is added on top of the theoretical requirement.",
+    "question": "A furnace requires 172 lb of theoretical air to fully combust its fuel charge, but is operated at 20% excess air for reliability. How much air is actually supplied?",
+    "choices": [
+      "138 lb",
+      "206 lb",
+      "34 lb",
+      "172 lb"
+    ],
+    "answerIndex": 1,
+    "explanation": "Actual air = theoretical x (1+excess) = 172 x 1.20 = 206 lb.",
+    "steps": [
+      {
+        "title": "Recall what excess air means",
+        "detail": "Actual air supplied = theoretical air x (1 + %excess as a decimal)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "172 x 1.20."
+      },
+      {
+        "title": "Answer",
+        "detail": "206 lb."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-m2",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "Two conversions are chained: fuel to theoretical air, then theoretical to actual air supplied.",
+    "question": "A boiler burns 50 lb of methane (CH4, MW=16) with 15% excess air. Using CH4+2O2->CO2+2H2O, how much air is actually supplied?",
+    "choices": [
+      "862 lb",
+      "991 lb",
+      "1289 lb",
+      "200 lb"
+    ],
+    "answerIndex": 1,
+    "explanation": "mol=50/16=3.125. O2=3.125x2x32=200 lb. Theo air=200/0.232=862 lb. Actual=862x1.15=991 lb.",
+    "steps": [
+      {
+        "title": "Find theoretical air requirement first",
+        "detail": "Convert fuel to moles, find O2 needed, convert to air (same as the easy-tier problems)."
+      },
+      {
+        "title": "Compute theoretical air",
+        "detail": "≈ 862 lb."
+      },
+      {
+        "title": "Apply the excess air factor",
+        "detail": "Actual air = theoretical x 1.15."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 991 lb."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-h1",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "You're given the actual and theoretical air - work backward to find the percentage.",
+    "question": "A combustion process requires 500 lb of theoretical air but is actually supplied 650 lb of air. What percent excess air is this?",
+    "choices": [
+      "23% (wrong denominator)",
+      "30%",
+      "130%",
+      "15%"
+    ],
+    "answerIndex": 1,
+    "explanation": "%excess = (actual/theoretical - 1) x100 = (650/500-1)x100 = 30%.",
+    "steps": [
+      {
+        "title": "Recall the excess air relationship",
+        "detail": "Actual = Theoretical x (1 + %excess/100), so %excess = (Actual/Theoretical - 1) x 100."
+      },
+      {
+        "title": "Plug in",
+        "detail": "(650/500 - 1) x 100."
+      },
+      {
+        "title": "Answer",
+        "detail": "30% - note dividing by actual air instead of theoretical is a common setup mistake."
+      }
+    ]
+  },
+  {
+    "id": "aw-comb-h2",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "The question asks about nitrogen passing through, not about the combustion products themselves.",
+    "question": "A boiler burns 30 lb of propane (C3H8+5O2->3CO2+4H2O, MW=44) with 10% excess air (air = 23.2% O2, 76.8% N2 by weight). How much nitrogen (lb) passes through unreacted with the flue gas?",
+    "choices": [
+      "517 lb",
+      "397 lb",
+      "109 lb",
+      "120 lb"
+    ],
+    "answerIndex": 1,
+    "explanation": "Air actual=517 lb. N2 fraction=76.8%. N2=517x0.768=397 lb (nitrogen is inert and passes through combustion unreacted).",
+    "steps": [
+      {
+        "title": "Find the actual air supplied",
+        "detail": "Same combustion + excess-air chain as before: convert fuel to O2 needed, then to theoretical air, then apply the excess factor."
+      },
+      {
+        "title": "Compute actual air",
+        "detail": "≈ 517 lb."
+      },
+      {
+        "title": "Recognize that N2 doesn't react in combustion",
+        "detail": "Nitrogen just passes through - it's 76.8% of the air supplied by weight."
+      },
+      {
+        "title": "Apply the N2 fraction",
+        "detail": "517 x 0.768."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 397 lb of N2."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-e1",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Weight divided by specific weight gives volume.",
+    "question": "A landfill cell holds 12000 tons of compacted waste at a specific weight of 1100 lb/yd3. What airspace volume (yd3) does it occupy?",
+    "choices": [
+      "10,909 yd3",
+      "21,818 yd3",
+      "43,636 yd3",
+      "12,000 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "V = 12,000x2000/1,100 = 21,818 yd3.",
+    "steps": [
+      {
+        "title": "Convert tons to pounds",
+        "detail": "12,000 x 2,000 = 24,000,000 lb."
+      },
+      {
+        "title": "Divide by specific weight",
+        "detail": "24,000,000 / 1,100."
+      },
+      {
+        "title": "Answer",
+        "detail": "21,818 yd3."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-e2",
+    "topic": "air-waste",
+    "difficulty": "easy",
+    "hint": "Compaction ratio compares initial to final volume.",
+    "question": "Waste is compacted from 30 yd3 down to 6 yd3. What is the compaction ratio?",
+    "choices": [
+      "2.5",
+      "5.0",
+      "10.0",
+      "80"
+    ],
+    "answerIndex": 1,
+    "explanation": "CR = Vi/Vf = 30/6 = 5.0.",
+    "steps": [
+      {
+        "title": "Recall the definition",
+        "detail": "CR = Vi/Vf."
+      },
+      {
+        "title": "Plug in",
+        "detail": "30/6."
+      },
+      {
+        "title": "Answer",
+        "detail": "5.0."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-m1",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "Rearrange the compaction ratio relationship to solve for final volume.",
+    "question": "A compactor achieves a compaction ratio of 4 on 48 yd3 of loose waste. What is the resulting compacted volume?",
+    "choices": [
+      "6 yd3",
+      "12 yd3",
+      "192 yd3",
+      "44 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Vf = Vi/CR = 48/4 = 12 yd3.",
+    "steps": [
+      {
+        "title": "Rearrange CR = Vi/Vf for Vf",
+        "detail": "Vf = Vi/CR."
+      },
+      {
+        "title": "Plug in",
+        "detail": "48/4."
+      },
+      {
+        "title": "Answer",
+        "detail": "12 yd3 (a 75% volume reduction)."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-m2",
+    "topic": "air-waste",
+    "difficulty": "medium",
+    "hint": "This chains a per-capita generation rate into an annual airspace requirement.",
+    "question": "A community of 45,000 people generates waste at 4.5 lb/person/day, landfilled at a compacted density of 850 lb/yd3. What airspace volume (yd3) is consumed per year?",
+    "choices": [
+      "43,478 yd3",
+      "86,956 yd3",
+      "173,912 yd3",
+      "36,956 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Annual waste = 45,000x4.5x365 = 73,912,500 lb = 36,956 tons. Volume = 73,912,500/850 = 86,956 yd3.",
+    "steps": [
+      {
+        "title": "Find total annual waste generation (lb)",
+        "detail": "45,000 people x 4.5 lb/person/day x 365 days/year."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈ 73,912,500 lb/year."
+      },
+      {
+        "title": "Convert to airspace volume using the compacted density",
+        "detail": "Volume = weight(lb) / density (lb/yd3)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 86,956 yd3/year."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-h1",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "Population changes every year, so waste generation must be summed year by year rather than using one flat rate.",
+    "question": "A landfill serves a community starting at 30,000 people, growing arithmetically by 800 people/year. Each resident generates 4.0 lb/day of waste, compacted at 1000 lb/yd3. What total airspace volume is needed over a 15-year design life?",
+    "choices": [
+      "389,820 yd3",
+      "779,640 yd3",
+      "657,000 yd3 (wrong: uses only starting population)",
+      "1,169,460 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Summing each year's population x rate x 365 gives total waste of 389,820 tons over 15 years; volume = 779,640,000 lb / 1000 = 779,640 yd3.",
+    "steps": [
+      {
+        "title": "Recognize population isn't constant",
+        "detail": "With arithmetic growth, each year's population (and therefore waste) is different - using only the starting population underestimates total capacity needed."
+      },
+      {
+        "title": "Sum waste generation year by year (or use the average population over the period as a shortcut)",
+        "detail": "Average population over 15 years ≈ start + growth x(years-1)/2."
+      },
+      {
+        "title": "Convert total waste to airspace",
+        "detail": "Divide total waste (lb) by the compacted density."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 779,640 yd3 over the design life."
+      }
+    ]
+  },
+  {
+    "id": "aw-lf-h2",
+    "topic": "air-waste",
+    "difficulty": "hard",
+    "hint": "Not all generated waste ends up in the landfill - some is diverted.",
+    "question": "A city of 60,000 generates 3.8 lb/person/day of waste, but a recycling program diverts 35% of it before landfilling. Remaining waste is compacted at 1250 lb/yd3. What annual landfill airspace volume (yd3) is required?",
+    "choices": [
+      "66,576 yd3 (wrong: ignores recycling)",
+      "43,274 yd3",
+      "86,549 yd3",
+      "54,093,000 yd3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gross waste = 60,000x3.8x365=83,220,000 lb. Net after recycling (65% remains) = 54,093,000 lb. Volume = 54,093,000/1250 = 43,274 yd3.",
+    "steps": [
+      {
+        "title": "Find gross waste generation",
+        "detail": "60,000 x 3.8 x 365."
+      },
+      {
+        "title": "Subtract the diverted (recycled) fraction",
+        "detail": "Net waste = gross x (1 - 0.35) = gross x 0.65."
+      },
+      {
+        "title": "Convert net waste to airspace",
+        "detail": "Volume = net weight / compacted density."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈ 43,274 yd3/year - forgetting the recycling diversion would overstate the volume needed."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-e1",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "Flow rate = area x velocity.",
+    "question": "Water flows at 10 cfs through a pipe with a 1.5 ft diameter. What is the velocity?",
+    "choices": [
+      "2.8 ft/s",
+      "5.7 ft/s",
+      "11.3 ft/s",
+      "6.7 ft/s"
+    ],
+    "answerIndex": 1,
+    "explanation": "A=pi(1.5)^2/4=1.77 ft2. v=Q/A=10/1.77=5.7 ft/s.",
+    "steps": [
+      {
+        "title": "Find the pipe's cross-sectional area",
+        "detail": "A = pi D^2/4 = pi(1.5)^2/4."
+      },
+      {
+        "title": "Apply Q = Av",
+        "detail": "v = Q/A = 10/1.77."
+      },
+      {
+        "title": "Answer",
+        "detail": "5.7 ft/s."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-e2",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "Flow rate = area x velocity, rearranged.",
+    "question": "Water flows at 6 ft/s through an 8-inch diameter pipe. What is the flow rate in cfs?",
+    "choices": [
+      "1.05 cfs",
+      "2.09 cfs",
+      "4.19 cfs",
+      "6.00 cfs"
+    ],
+    "answerIndex": 1,
+    "explanation": "D=8/12=0.667 ft. A=pi(0.667)^2/4=0.349 ft2. Q=Av=6x0.349=2.09 cfs.",
+    "steps": [
+      {
+        "title": "Convert diameter to feet",
+        "detail": "8 in = 0.667 ft."
+      },
+      {
+        "title": "Find area then flow",
+        "detail": "A = pi D^2/4; Q = Av."
+      },
+      {
+        "title": "Answer",
+        "detail": "2.09 cfs."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-m1",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "The flow rate through a pipe stays constant even if the pipe size changes - that's the key relationship here.",
+    "question": "A pipeline reduces from a 12-inch diameter section to a 6-inch diameter section, carrying 5 cfs throughout. What is the velocity in the smaller section?",
+    "choices": [
+      "10.2 ft/s",
+      "6.4 ft/s",
+      "25.5 ft/s",
+      "50.9 ft/s"
+    ],
+    "answerIndex": 2,
+    "explanation": "Q stays 5 cfs. A_b=pi(0.5)^2/4=0.196 ft2. v_b=5/0.196=25.5 ft/s.",
+    "steps": [
+      {
+        "title": "Recognize Q is constant through the pipeline",
+        "detail": "Continuity: A1v1=A2v2=Q, regardless of how many diameter changes occur."
+      },
+      {
+        "title": "Find the area of the smaller pipe",
+        "detail": "D=6 in=0.5 ft. A=pi(0.5)^2/4=0.196 ft2."
+      },
+      {
+        "title": "Solve for velocity there",
+        "detail": "v = Q/A = 5/0.196."
+      },
+      {
+        "title": "Answer",
+        "detail": "25.5 ft/s (about 4x the velocity in the 12-inch section, since area scales with diameter squared)."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-m2",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "Convert the flow rate to consistent units before finding velocity.",
+    "question": "A 10-inch diameter pipe carries 900 gpm. What is the velocity in ft/s? (1 cfs = 448.8 gpm)",
+    "choices": [
+      "1.8 ft/s",
+      "3.7 ft/s",
+      "7.4 ft/s",
+      "1650.1 ft/s (wrong: no unit conversion)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=900/448.8=2.01 cfs. A=pi(0.833)^2/4=0.545 ft2. v=2.01/0.545=3.7 ft/s.",
+    "steps": [
+      {
+        "title": "Convert flow to cfs",
+        "detail": "900 gpm / 448.8 gpm per cfs = 2.01 cfs."
+      },
+      {
+        "title": "Find the pipe area",
+        "detail": "D=10 in=0.833 ft. A=pi(0.833)^2/4=0.545 ft2."
+      },
+      {
+        "title": "Solve for velocity",
+        "detail": "v=Q/A=2.01/0.545."
+      },
+      {
+        "title": "Answer",
+        "detail": "3.7 ft/s."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-h1",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "In a parallel system, total flow is the sum of the flow in each branch - but you need another condition (like equal velocity here) to split it between branches.",
+    "question": "Flow splits between two parallel pipes, a 10-inch and an 8-inch diameter, both carrying water at the same velocity of 8 ft/s. What is the TOTAL combined flow rate through both pipes?",
+    "choices": [
+      "4.4 cfs (10-in pipe only)",
+      "7.2 cfs",
+      "2.8 cfs (8-in pipe only)",
+      "14.3 cfs"
+    ],
+    "answerIndex": 1,
+    "explanation": "A10=0.545 ft2, Q10=0.545x8=4.36 cfs. A8=0.349 ft2, Q8=0.349x8=2.79 cfs. Total=7.16 cfs.",
+    "steps": [
+      {
+        "title": "Find the area of each pipe",
+        "detail": "A=piD^2/4 for D=10/12 ft and D=8/12 ft."
+      },
+      {
+        "title": "Find the flow in each pipe at the given velocity",
+        "detail": "Q=Av for each."
+      },
+      {
+        "title": "Add the two flows for parallel pipes",
+        "detail": "Total Q = Q10 + Q8."
+      },
+      {
+        "title": "Answer",
+        "detail": "7.2 cfs total."
+      }
+    ]
+  },
+  {
+    "id": "wr-cont-h2",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "A utility is proposing to upsize a pipe - continuity tells you how much velocity (and therefore erosion/wear potential) actually changes.",
+    "question": "A utility is considering upsizing a pipe from 12 inches to 15 inches to carry the same 15 cfs design flow. By what percentage does velocity decrease?",
+    "choices": [
+      "25% (wrong: uses diameter ratio directly)",
+      "36%",
+      "72%",
+      "15%"
+    ],
+    "answerIndex": 1,
+    "explanation": "v12=15/0.79=19.10 ft/s. v15=15/1.23=12.22 ft/s. %decrease=(19.10-12.22)/19.10x100=36%.",
+    "steps": [
+      {
+        "title": "Find velocity in both pipe sizes",
+        "detail": "v=Q/A for D=12 in and D=15 in, using the same Q for both."
+      },
+      {
+        "title": "Compute both velocities",
+        "detail": "v12≈19.10 ft/s, v15≈12.22 ft/s."
+      },
+      {
+        "title": "Find percent decrease",
+        "detail": "(v12-v15)/v12 x 100."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈36% - note the percentage doesn't equal the simple diameter ratio, because area (and therefore velocity) scales with diameter SQUARED."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-e1",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "This is an open-channel flow velocity formula involving roughness, hydraulic radius, and slope.",
+    "question": "A concrete channel (roughness coefficient n=0.013) has a hydraulic radius of 1.5 ft and a slope of 0.002 ft/ft. What is the flow velocity? (US units: v=(1.49/n)R^(2/3)S^(1/2))",
+    "choices": [
+      "3.4 ft/s",
+      "6.7 ft/s",
+      "13.4 ft/s",
+      "8.7 ft/s"
+    ],
+    "answerIndex": 1,
+    "explanation": "v=(1.49/0.013)(1.5)^0.667(0.002)^0.5=6.72 ft/s.",
+    "steps": [
+      {
+        "title": "Identify the given quantities",
+        "detail": "n=0.013 (roughness), R=1.5 ft (hydraulic radius), S=0.002 (slope)."
+      },
+      {
+        "title": "Apply the open-channel velocity formula",
+        "detail": "v=(1.49/n)R^(2/3)S^(1/2)."
+      },
+      {
+        "title": "Compute",
+        "detail": "(1.49/0.013)=114.6; (1.5)^0.667≈1.31; (0.002)^0.5≈0.0447."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈6.7 ft/s."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-e2",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "Same open-channel velocity relationship, a rougher earthen channel.",
+    "question": "An earthen channel (n=0.025) has hydraulic radius 0.8 ft and slope 0.0015. What is the velocity?",
+    "choices": [
+      "0.99 ft/s",
+      "1.99 ft/s",
+      "3.98 ft/s",
+      "1.0 ft/s"
+    ],
+    "answerIndex": 1,
+    "explanation": "v=(1.49/0.025)(0.8)^0.667(0.0015)^0.5=1.99 ft/s.",
+    "steps": [
+      {
+        "title": "Apply the formula",
+        "detail": "v=(1.49/n)R^(2/3)S^(1/2)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "(1.49/0.025)(0.8)^0.667(0.0015)^0.5."
+      },
+      {
+        "title": "Answer",
+        "detail": "1.99 ft/s."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-m1",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "Find velocity first using the roughness/slope relationship, then convert to flow rate using the channel's cross-sectional area.",
+    "question": "A lined channel has n=0.017, hydraulic radius 2.0 ft, slope 0.001, and a cross-sectional flow area of 25 ft2. What is the discharge (cfs)?",
+    "choices": [
+      "55 cfs",
+      "110 cfs",
+      "220 cfs",
+      "4 cfs (forgot to multiply by area)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v=(1.49/0.017)(2.0)^0.667(0.001)^0.5=4.40 ft/s. Q=vA=4.40x25=110 cfs.",
+    "steps": [
+      {
+        "title": "Find velocity from roughness, hydraulic radius, and slope",
+        "detail": "v=(1.49/n)R^(2/3)S^(1/2)."
+      },
+      {
+        "title": "Compute",
+        "detail": "v≈4.40 ft/s."
+      },
+      {
+        "title": "Convert to discharge using continuity",
+        "detail": "Q = vA."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈110 cfs."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-m2",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "The slope is given as a percent grade - convert it to a decimal (ft/ft) before using it.",
+    "question": "A channel has n=0.02, hydraulic radius 1.2 ft, and a slope of 0.15% (percent grade). What is the velocity?",
+    "choices": [
+      "1.63 ft/s",
+      "3.26 ft/s",
+      "using S=0.15 directly gives 32.58 ft/s",
+      "9.77 ft/s"
+    ],
+    "answerIndex": 1,
+    "explanation": "S=0.15%=0.0015. v=(1.49/0.02)(1.2)^0.667(0.0015)^0.5=3.26 ft/s.",
+    "steps": [
+      {
+        "title": "Convert percent slope to a decimal",
+        "detail": "0.15% = 0.0015 ft/ft - this is the step that's easy to skip."
+      },
+      {
+        "title": "Apply the velocity formula",
+        "detail": "v=(1.49/n)R^(2/3)S^(1/2) with S=0.0015."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈3.26 ft/s - using 0.15 directly instead of 0.0015 would badly overstate velocity."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-h1",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "Rearrange the open-channel velocity formula to solve for slope instead of velocity.",
+    "question": "A channel with n=0.015 and hydraulic radius 1.8 ft must maintain a minimum velocity of 6.0 ft/s to stay self-cleansing. What is the minimum slope required?",
+    "choices": [
+      "0.00083",
+      "0.00167",
+      "0.00333",
+      "3.33333 (wrong approach)"
+    ],
+    "answerIndex": 1,
+    "explanation": "S=[vn/(1.49R^(2/3))]^2=[6x0.015/(1.49x1.8^0.667)]^2=0.00167.",
+    "steps": [
+      {
+        "title": "Rearrange the formula to isolate S",
+        "detail": "From v=(1.49/n)R^(2/3)S^(1/2): S^(1/2)=vn/(1.49R^(2/3)), so S=[vn/(1.49R^(2/3))]^2."
+      },
+      {
+        "title": "Plug in the values",
+        "detail": "S=[6.0x0.015/(1.49x1.8^0.667)]^2."
+      },
+      {
+        "title": "Answer",
+        "detail": "S≈0.00167 ft/ft (or about 0.17%)."
+      }
+    ]
+  },
+  {
+    "id": "wr-man-h2",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "Find the channel's actual capacity and compare it against the design flow it needs to carry.",
+    "question": "A channel (n=0.022, hydraulic radius 1.6 ft, slope 0.0008, cross-sectional area 30 ft2) must convey a design flow of 45 cfs. Does it have adequate capacity?",
+    "choices": [
+      "Capacity ≈ 39 cfs - inadequate",
+      "Capacity ≈ 79 cfs - adequate",
+      "Capacity ≈ 79 cfs - inadequate (wrong conclusion)",
+      "Capacity ≈ 3 cfs (forgot to multiply by area)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v=(1.49/0.022)(1.6)^0.667(0.0008)^0.5=2.62 ft/s. Q=vA=2.62x30=78.6 cfs, which is above the 45 cfs design flow.",
+    "steps": [
+      {
+        "title": "Find the channel's velocity",
+        "detail": "v=(1.49/n)R^(2/3)S^(1/2)."
+      },
+      {
+        "title": "Convert to capacity (discharge)",
+        "detail": "Q=vA."
+      },
+      {
+        "title": "Compute",
+        "detail": "Q≈78.6 cfs."
+      },
+      {
+        "title": "Compare to the design flow",
+        "detail": "78.6 vs 45 cfs required."
+      },
+      {
+        "title": "Answer",
+        "detail": "Capacity ≈79 cfs - adequate for the 45 cfs design flow."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-e1",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "Peak runoff = runoff coefficient x rainfall intensity x area.",
+    "question": "A parking lot (C=0.85) covers 8 acres and receives a design rainfall intensity of 2.5 in/hr. What is the peak runoff rate?",
+    "choices": [
+      "8.5 cfs",
+      "17.0 cfs",
+      "34.0 cfs",
+      "8.0 cfs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=CiA=0.85x2.5x8=17.0 cfs.",
+    "steps": [
+      {
+        "title": "Apply the peak runoff formula",
+        "detail": "Q = C i A (C dimensionless, i in in/hr, A in acres, Q in cfs)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "0.85 x 2.5 x 8."
+      },
+      {
+        "title": "Answer",
+        "detail": "17.0 cfs."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-e2",
+    "topic": "water-resources",
+    "difficulty": "easy",
+    "hint": "Same peak-runoff relationship, a more pervious surface.",
+    "question": "A residential area (C=0.35) covers 15 acres with a design rainfall intensity of 3.2 in/hr. What is the peak runoff rate?",
+    "choices": [
+      "8.4 cfs",
+      "16.8 cfs",
+      "33.6 cfs",
+      "15.0 cfs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=0.35x3.2x15=16.8 cfs.",
+    "steps": [
+      {
+        "title": "Apply the formula",
+        "detail": "Q = C i A."
+      },
+      {
+        "title": "Plug in",
+        "detail": "0.35 x 3.2 x 15."
+      },
+      {
+        "title": "Answer",
+        "detail": "16.8 cfs."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-m1",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "When a drainage area has mixed land uses, you need an area-weighted average runoff coefficient before applying the peak-flow formula.",
+    "question": "A 15-acre drainage area is 5 acres of pavement (C=0.9) and 10 acres of lawn (C=0.25). At a design intensity of 2.8 in/hr, what is the peak runoff?",
+    "choices": [
+      "9.8 cfs",
+      "19.6 cfs",
+      "24.1 cfs (wrong: simple average of C, not area-weighted)",
+      "39.2 cfs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ccomp=(5x0.9+10x0.25)/15=0.467. Q=0.383x2.8x15=19.6 cfs.",
+    "steps": [
+      {
+        "title": "Find the area-weighted composite runoff coefficient",
+        "detail": "Ccomp = (A1C1+A2C2)/(A1+A2) = (5x0.9+10x0.25)/15."
+      },
+      {
+        "title": "Compute Ccomp",
+        "detail": "≈0.467."
+      },
+      {
+        "title": "Apply the Rational Method with the composite C",
+        "detail": "Q = Ccomp x i x total area."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈19.6 cfs - simply averaging the two C values (ignoring that they cover different areas) would give a different, wrong answer."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-m2",
+    "topic": "water-resources",
+    "difficulty": "medium",
+    "hint": "The rainfall intensity is given in the wrong units for this US-customary formula - convert first.",
+    "question": "A 12-acre site (C=0.6) has a design storm intensity of 45 mm/hr. What is the peak runoff in cfs? (1 in = 25.4 mm)",
+    "choices": [
+      "162.0 cfs (wrong: mm/hr used directly)",
+      "12.8 cfs",
+      "25.5 cfs",
+      "324.0 cfs (wrong: mm/hr used directly)"
+    ],
+    "answerIndex": 1,
+    "explanation": "i=45/25.4=1.77 in/hr. Q=0.6x1.77x12=12.8 cfs.",
+    "steps": [
+      {
+        "title": "Convert intensity to in/hr",
+        "detail": "45 mm/hr / 25.4 mm/in = 1.77 in/hr - the Rational Method's Q=CiA form assumes i is in in/hr."
+      },
+      {
+        "title": "Apply the Rational Method",
+        "detail": "Q = C i A = 0.6 x 1.77 x 12."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈12.8 cfs - using 45 directly instead of converting would overstate flow by more than 14x."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-h1",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "This is really two Rational Method calculations - before and after - then a comparison.",
+    "question": "A 20-acre site currently has C=0.3 (undeveloped). After development it will have C=0.75. At a design intensity of 3.0 in/hr, how much additional peak runoff (cfs) will the development generate, and would a detention basin need to handle this difference to maintain pre-development discharge rates?",
+    "choices": [
+      "45.0 cfs (wrong: post-development flow only)",
+      "27.0 cfs additional",
+      "18.0 cfs (wrong: pre-development flow only)",
+      "54.0 cfs additional"
+    ],
+    "answerIndex": 1,
+    "explanation": "Qpre=0.3x3.0x20=18.0 cfs. Qpost=0.75x3.0x20=45.0 cfs. Increase=45.0-18.0=27.0 cfs - this is what detention would need to attenuate.",
+    "steps": [
+      {
+        "title": "Calculate pre-development peak flow",
+        "detail": "Qpre = Cpre x i x A = 0.3x3.0x20."
+      },
+      {
+        "title": "Calculate post-development peak flow",
+        "detail": "Qpost = Cpost x i x A = 0.75x3.0x20."
+      },
+      {
+        "title": "Find the difference detention must handle",
+        "detail": "Increase = Qpost - Qpre."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈27.0 cfs of additional peak flow that a detention basin would need to attenuate to hold discharge at the pre-development rate."
+      }
+    ]
+  },
+  {
+    "id": "wr-rat-h2",
+    "topic": "water-resources",
+    "difficulty": "hard",
+    "hint": "An IDF curve gives different intensities for different storm durations - make sure you're using the intensity for the duration that actually applies to this site's time of concentration, not just the first number you see.",
+    "question": "A site's time of concentration is 25 minutes. An IDF curve shows the 5-minute intensity as 6.2 in/hr and the 25-minute intensity as 3.4 in/hr for the design storm. For an 8.5-acre site with C=0.55, what is the peak runoff?",
+    "choices": [
+      "29.0 cfs (wrong: used 5-min intensity)",
+      "15.9 cfs",
+      "31.8 cfs",
+      "22.4 cfs (wrong: averaged both intensities)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time of concentration (25 min) means the 25-min intensity applies: Q=0.55x3.4x8.5=15.9 cfs.",
+    "steps": [
+      {
+        "title": "Match the storm duration to the time of concentration",
+        "detail": "The Rational Method uses the rainfall intensity for a duration equal to the time of concentration - here that's 25 minutes, not 5."
+      },
+      {
+        "title": "Select the correct intensity",
+        "detail": "i = 3.4 in/hr (the 25-minute value)."
+      },
+      {
+        "title": "Apply the Rational Method",
+        "detail": "Q = C i A = 0.55 x 3.4 x 8.5."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈15.9 cfs - using the shorter-duration (higher) intensity would overstate the peak flow."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-e1",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "Detention time relates tank volume and flow rate.",
+    "question": "A tank must provide 25 seconds of detention time for a flow of 1.5 MGD (1 MGD = 1.547 cfs). What tank volume (ft3) is needed?",
+    "choices": [
+      "29 ft3",
+      "58 ft3",
+      "116 ft3",
+      "2 ft3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=1.5x1.547=2.321 cfs. V=Qt=2.321x25=58 ft3.",
+    "steps": [
+      {
+        "title": "Convert flow to cfs",
+        "detail": "1.5 x 1.547 = 2.32 cfs."
+      },
+      {
+        "title": "Apply V=Qt",
+        "detail": "V = 2.32 x 25."
+      },
+      {
+        "title": "Answer",
+        "detail": "58 ft3."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-e2",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "V = Q x t - the same relationship works for any tank.",
+    "question": "A flocculation basin needs 15 minutes of detention time at a flow of 3 MGD. What volume (ft3) is required? (1 MGD=1.547 cfs)",
+    "choices": [
+      "2088 ft3",
+      "4177 ft3",
+      "8354 ft3",
+      "5 ft3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=3x1.547=4.64 cfs. t=15x60=900 s. V=4.64x900=4177 ft3.",
+    "steps": [
+      {
+        "title": "Convert flow to cfs and time to seconds",
+        "detail": "3x1.547=4.64 cfs; 15 min=900 s."
+      },
+      {
+        "title": "Apply V=Qt",
+        "detail": "4.64 x 900."
+      },
+      {
+        "title": "Answer",
+        "detail": "4177 ft3."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-m1",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "Find the actual detention time from the given dimensions and flow, then compare to what's needed.",
+    "question": "A rectangular basin (30 ft x 15 ft x 12 ft deep) treats a flow of 2.5 MGD. The process requires at least 30 minutes of detention time. Does this basin meet that requirement?",
+    "choices": [
+      "t≈698 s - does not meet",
+      "t≈1396 s - does not meet",
+      "t≈1396 s - meets (wrong conclusion)",
+      "t≈1800 s exactly"
+    ],
+    "answerIndex": 1,
+    "explanation": "V=30x15x12=5400 ft3. Q=2.5x1.547=3.87 cfs. t=V/Q=5400/3.87=1396 s ≈ 23.3 min, which is below the 30-min requirement.",
+    "steps": [
+      {
+        "title": "Find the tank volume",
+        "detail": "V = L x W x H = 30x15x12."
+      },
+      {
+        "title": "Convert flow to cfs",
+        "detail": "2.5 MGD x 1.547 = 3.87 cfs."
+      },
+      {
+        "title": "Find actual detention time",
+        "detail": "t = V/Q."
+      },
+      {
+        "title": "Compare to the 30-minute (1,800 s) target",
+        "detail": "1396 s is below 1,800 s."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈23.3 minutes - does not meet the requirement."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-m2",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "The flow is given in gpm here, not MGD - convert before applying the detention time relationship.",
+    "question": "A clearwell must provide 45 minutes of detention time at a flow of 2500 gpm. What tank volume (ft3) is needed? (1 cfs = 448.8 gpm)",
+    "choices": [
+      "7520 ft3",
+      "15040 ft3",
+      "30080 ft3",
+      "112500 ft3 (wrong: no unit conversion)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=2500/448.8=5.57 cfs. V=Qt=5.57x(45x60)=15040 ft3.",
+    "steps": [
+      {
+        "title": "Convert flow to cfs",
+        "detail": "2,500/448.8 = 5.57 cfs."
+      },
+      {
+        "title": "Convert time to seconds",
+        "detail": "45 min x 60 = 2,700 s."
+      },
+      {
+        "title": "Apply V=Qt",
+        "detail": "5.57 x 2,700."
+      },
+      {
+        "title": "Answer",
+        "detail": "15040 ft3."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-h1",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "This is two separate tank-sizing calculations that need to be added together at the end.",
+    "question": "A plant at 4.0 MGD needs a rapid mix tank (30 seconds detention) followed by a flocculation basin (20 minutes detention). What is the COMBINED volume of both tanks?",
+    "choices": [
+      "186 ft3 (rapid mix only)",
+      "7426 ft3 (flocculation only)",
+      "7611 ft3",
+      "15222 ft3"
+    ],
+    "answerIndex": 2,
+    "explanation": "Q=4.0x1.547=6.19 cfs. V_rm=6.19x30=186 ft3. V_fl=6.19x1200=7426 ft3. Total=7611 ft3.",
+    "steps": [
+      {
+        "title": "Convert flow to cfs once (used for both tanks)",
+        "detail": "4.0 x 1.547 = 6.19 cfs."
+      },
+      {
+        "title": "Size the rapid mix tank",
+        "detail": "V_rm = 6.19 x 30 s."
+      },
+      {
+        "title": "Size the flocculation basin",
+        "detail": "V_fl = 6.19 x (20x60) s."
+      },
+      {
+        "title": "Add both volumes for the combined total",
+        "detail": "V_total = V_rm + V_fl."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈7611 ft3 combined - a partial answer using only one tank would be a common error here."
+      }
+    ]
+  },
+  {
+    "id": "wt-det-h2",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "The plant flow is split evenly across multiple parallel trains - size just one train, not the whole plant flow.",
+    "question": "A 6.0 MGD plant splits its flow evenly across 3 parallel flocculation trains, each needing 25 minutes of detention time. What volume must EACH train provide?",
+    "choices": [
+      "13923 ft3 (wrong: sized for full plant flow)",
+      "4641 ft3",
+      "9282 ft3",
+      "9 ft3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Total Q=6.0x1.547=9.28 cfs. Per train=9.28/3=3.09 cfs. V=Q_per_train x 1500 s=4641 ft3.",
+    "steps": [
+      {
+        "title": "Find total plant flow in cfs",
+        "detail": "6.0 x 1.547 = 9.28 cfs."
+      },
+      {
+        "title": "Divide by the number of parallel trains",
+        "detail": "9.28 / 3 = 3.09 cfs per train."
+      },
+      {
+        "title": "Size one train using its share of the flow",
+        "detail": "V = 3.09 x (25x60)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈4641 ft3 per train - sizing each train for the FULL plant flow would triple-oversize the basins."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-e1",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "lb/day = dose(mg/L) x flow(MGD) x 8.34.",
+    "question": "A plant applies a coagulant dose of 15 mg/L at a flow of 3.0 MGD. How many pounds per day are fed?",
+    "choices": [
+      "188 lb/day",
+      "375 lb/day",
+      "751 lb/day",
+      "45 lb/day (missing the 8.34 factor)"
+    ],
+    "answerIndex": 1,
+    "explanation": "lb/day=15x3.0x8.34=375.",
+    "steps": [
+      {
+        "title": "Apply the standard dosing formula",
+        "detail": "lb/day = dose(mg/L) x flow(MGD) x 8.34."
+      },
+      {
+        "title": "Plug in",
+        "detail": "15 x 3.0 x 8.34."
+      },
+      {
+        "title": "Answer",
+        "detail": "375 lb/day."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-e2",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "Same dosing relationship, a lower dose and higher flow.",
+    "question": "A plant treating 8.0 MGD applies a chlorine dose of 2.5 mg/L. What is the daily chlorine feed rate in lb/day?",
+    "choices": [
+      "83 lb/day",
+      "167 lb/day",
+      "334 lb/day",
+      "20 lb/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "lb/day=2.5x8.0x8.34=167.",
+    "steps": [
+      {
+        "title": "Apply the formula",
+        "detail": "lb/day = dose x flow x 8.34."
+      },
+      {
+        "title": "Plug in",
+        "detail": "2.5 x 8.0 x 8.34."
+      },
+      {
+        "title": "Answer",
+        "detail": "167 lb/day."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-m1",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "Rearrange the standard dosing formula to solve for concentration instead of feed rate.",
+    "question": "A chemical feed system delivers 250 lb/day to a plant treating 5.0 MGD. What dose (mg/L) does this represent?",
+    "choices": [
+      "3.0 mg/L",
+      "6.0 mg/L",
+      "12.0 mg/L",
+      "50.0 mg/L (missing 8.34)"
+    ],
+    "answerIndex": 1,
+    "explanation": "dose=lb/day/(flow x8.34)=250/(5.0x8.34)=6.0 mg/L.",
+    "steps": [
+      {
+        "title": "Rearrange for dose",
+        "detail": "dose(mg/L) = lb/day / (flow(MGD) x 8.34)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "250 / (5.0 x 8.34)."
+      },
+      {
+        "title": "Answer",
+        "detail": "6.0 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-m2",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "The chemical isn't 100% pure - you need more of the actual product to deliver the same effective dose.",
+    "question": "A plant needs a dose equivalent to 20 mg/L of active chemical at a flow of 4.0 MGD, but the commercial product is only 65% pure. How many lb/day of the commercial PRODUCT must be fed?",
+    "choices": [
+      "667 lb/day (wrong: ignores purity)",
+      "1026 lb/day",
+      "2053 lb/day",
+      "434 lb/day (wrong direction)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Pure chemical needed=667 lb/day. Product needed = pure/purity=667/0.65=1026 lb/day.",
+    "steps": [
+      {
+        "title": "Find the pure (active) chemical needed first",
+        "detail": "lb/day (pure) = dose x flow x 8.34 = 20x4.0x8.34."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈667 lb/day of pure chemical."
+      },
+      {
+        "title": "Account for product purity - you need MORE product since it's not 100% pure",
+        "detail": "Product needed = pure amount / purity fraction."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈1026 lb/day of product - dividing by 0.65 (not multiplying) is the correct direction since the product is diluted."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-h1",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "This chains a dosing calculation into an annual cost - find the daily chemical usage first, then scale up.",
+    "question": "A plant doses 18 mg/L of alum at 6.5 MGD. Alum costs $0.85/lb. What is the estimated ANNUAL chemical cost?",
+    "choices": [
+      "$829 (this is the daily cost, not annual)",
+      "$302,736",
+      "$605,471",
+      "$976"
+    ],
+    "answerIndex": 1,
+    "explanation": "lb/day=976. Daily cost=lb/dayx0.85. Annual=daily costx365=$302,736.",
+    "steps": [
+      {
+        "title": "Find the daily chemical feed rate",
+        "detail": "lb/day = 18 x 6.5 x 8.34."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈976 lb/day."
+      },
+      {
+        "title": "Find annual usage and cost",
+        "detail": "Annual cost = lb/day x 365 days/year x $/lb."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈$302,736/year."
+      }
+    ]
+  },
+  {
+    "id": "wt-dose-h2",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "Jar testing gave a dose RANGE, not a single number - the annual cost should be presented as a range too.",
+    "question": "Jar testing shows an acceptable coagulant dose range of 12-22 mg/L at a flow of 5.5 MGD, with chemical costing $0.9/lb. What is the resulting annual cost RANGE?",
+    "choices": [
+      "$180,820 only (using only the low dose)",
+      "$180,820 to $331,502",
+      "$331,502 only (using only the high dose)",
+      "$512,322 (wrong: summed instead of ranged)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Low: lb/day=550, annual=$180,820. High: lb/day=1009, annual=$331,502.",
+    "steps": [
+      {
+        "title": "Recognize this needs two calculations, not one",
+        "detail": "A dose range means the cost should be presented as a range, from the low-dose cost to the high-dose cost."
+      },
+      {
+        "title": "Calculate annual cost at the low end of the dose range",
+        "detail": "lb/day = 12x5.5x8.34, then x365x$0.90."
+      },
+      {
+        "title": "Calculate annual cost at the high end",
+        "detail": "lb/day = 22x5.5x8.34, then x365x$0.90."
+      },
+      {
+        "title": "Answer",
+        "detail": "$180,820 to $331,502 per year."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-e1",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "Multiply the ion concentration by its CaCO3-equivalent conversion factor.",
+    "question": "Water contains 80 mg/L of Ca2+. Using 1 mg/L Ca = 2.5 mg/L as CaCO3, what is the calcium hardness as CaCO3?",
+    "choices": [
+      "100 mg/L",
+      "200 mg/L",
+      "400 mg/L",
+      "80 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hardness=80x2.5=200 mg/L as CaCO3.",
+    "steps": [
+      {
+        "title": "Apply the conversion factor",
+        "detail": "Hardness as CaCO3 = Ca concentration x 2.5."
+      },
+      {
+        "title": "Plug in",
+        "detail": "80 x 2.5."
+      },
+      {
+        "title": "Answer",
+        "detail": "200 mg/L as CaCO3."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-e2",
+    "topic": "water-treatment",
+    "difficulty": "easy",
+    "hint": "Same idea, magnesium's conversion factor is different from calcium's.",
+    "question": "Water contains 15 mg/L Mg2+. Using 1 mg/L Mg = 4.1 mg/L as CaCO3, what is the magnesium hardness as CaCO3?",
+    "choices": [
+      "31 mg/L",
+      "61 mg/L",
+      "123 mg/L",
+      "15 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hardness=15x4.1=61.5 mg/L.",
+    "steps": [
+      {
+        "title": "Apply the conversion",
+        "detail": "Hardness as CaCO3 = Mg concentration x 4.1."
+      },
+      {
+        "title": "Plug in",
+        "detail": "15 x 4.1."
+      },
+      {
+        "title": "Answer",
+        "detail": "61.5 mg/L as CaCO3."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-m1",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "Total hardness combines the CaCO3-equivalent contributions from both calcium and magnesium.",
+    "question": "Water contains 95 mg/L Ca2+ and 22 mg/L Mg2+. What is the TOTAL hardness as CaCO3?",
+    "choices": [
+      "164 mg/L",
+      "328 mg/L",
+      "238 mg/L (Ca only)",
+      "90 mg/L (Mg only)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ca contribution=95x2.5=237.5. Mg contribution=22x4.1=90.2. Total=327.7 mg/L.",
+    "steps": [
+      {
+        "title": "Convert calcium to CaCO3 equivalent",
+        "detail": "95 x 2.5 = 237.5 mg/L."
+      },
+      {
+        "title": "Convert magnesium to CaCO3 equivalent",
+        "detail": "22 x 4.1 = 90.2 mg/L."
+      },
+      {
+        "title": "Add both contributions",
+        "detail": "Total hardness = 237.5 + 90.2."
+      },
+      {
+        "title": "Answer",
+        "detail": "327.7 mg/L as CaCO3."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-m2",
+    "topic": "water-treatment",
+    "difficulty": "medium",
+    "hint": "Carbonate hardness is limited by whichever is smaller - total hardness or alkalinity.",
+    "question": "A water sample has total hardness of 310 mg/L as CaCO3 and alkalinity of 180 mg/L as CaCO3. What is the non-carbonate hardness?",
+    "choices": [
+      "65 mg/L",
+      "130 mg/L",
+      "310 mg/L (wrong: used total hardness)",
+      "180 mg/L (wrong: used alkalinity)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Carbonate hardness=min(310,180)=180. Non-carbonate hardness=total-carbonate=310-180=130 mg/L.",
+    "steps": [
+      {
+        "title": "Recall the relationship",
+        "detail": "Carbonate hardness = the smaller of (total hardness, alkalinity). Non-carbonate hardness = total hardness - carbonate hardness."
+      },
+      {
+        "title": "Find carbonate hardness",
+        "detail": "min(310, 180) = 180 mg/L."
+      },
+      {
+        "title": "Find non-carbonate hardness",
+        "detail": "310 - 180."
+      },
+      {
+        "title": "Answer",
+        "detail": "130 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-h1",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "This chains a hardness-to-lime stoichiometric conversion with a purity correction, similar to the chemical dosing problems.",
+    "question": "Removing 280 mg/L of carbonate hardness (as CaCO3) requires an equivalent amount of lime, Ca(OH)2 (MW=74), on a roughly 1:1 molar-equivalent basis by CaCO3 weight-equivalence (74 lb lime per 100 lb CaCO3 hardness). If the available hydrated lime is only 90% pure, what dose (mg/L, as product) is needed?",
+    "choices": [
+      "207 mg/L (wrong: ignores purity)",
+      "230 mg/L",
+      "460 mg/L",
+      "280 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Pure lime needed=280x(74/100)=207 mg/L. Actual product needed=pure/purity=207/0.90=230 mg/L.",
+    "steps": [
+      {
+        "title": "Find the pure lime dose needed using the stoichiometric ratio",
+        "detail": "280 x (74/100) = pure lime dose."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈207 mg/L of pure Ca(OH)2."
+      },
+      {
+        "title": "Correct for the product's purity",
+        "detail": "Actual product dose = pure dose / purity fraction = 207/0.90."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈230 mg/L of the actual (90% pure) product."
+      }
+    ]
+  },
+  {
+    "id": "wt-hard-h2",
+    "topic": "water-treatment",
+    "difficulty": "hard",
+    "hint": "This is a weighted-average mixing problem across three water sources with different hardness levels.",
+    "question": "A utility blends three groundwater sources in the ratio 40:35:25 (by volume) with hardness levels of 250, 310, and 180 mg/L as CaCO3 respectively. What is the hardness of the blended water?",
+    "choices": [
+      "247 mg/L (wrong: simple average, ignores blend ratio)",
+      "254 mg/L",
+      "304 mg/L",
+      "310 mg/L (highest source only)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Weighted average = 250(0.40)+310(0.35)+180(0.25)=253.5 mg/L.",
+    "steps": [
+      {
+        "title": "Recognize this needs a volume-weighted average, not a simple average",
+        "detail": "Each source contributes to the blend in proportion to its volume fraction."
+      },
+      {
+        "title": "Apply the weights",
+        "detail": "250(0.40)+310(0.35)+180(0.25)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈254 mg/L - a simple (unweighted) average of the three sources would give a different, wrong number."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-e1",
+    "topic": "wastewater",
+    "difficulty": "easy",
+    "hint": "BOD5 = initial DO minus final DO (undiluted sample).",
+    "question": "A BOD bottle starts at 8.2 mg/L DO and reads 4.0 mg/L after 5 days. What is the BOD5?",
+    "choices": [
+      "2.1 mg/L",
+      "4.2 mg/L",
+      "8.4 mg/L",
+      "8.2 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "BOD5=8.2-4.0=4.2 mg/L.",
+    "steps": [
+      {
+        "title": "Apply the definition",
+        "detail": "BOD5 = DO_initial - DO_final."
+      },
+      {
+        "title": "Plug in",
+        "detail": "8.2-4.0."
+      },
+      {
+        "title": "Answer",
+        "detail": "4.2 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-e2",
+    "topic": "wastewater",
+    "difficulty": "easy",
+    "hint": "Same relationship, different numbers.",
+    "question": "Initial DO is 9.0 mg/L; after 5 days it reads 2.3 mg/L. What is BOD5?",
+    "choices": [
+      "3.4 mg/L",
+      "6.7 mg/L",
+      "10.1 mg/L",
+      "9.0 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "BOD5=9.0-2.3=6.7.",
+    "steps": [
+      {
+        "title": "Apply the definition",
+        "detail": "BOD5=DO_i - DO_f."
+      },
+      {
+        "title": "Plug in",
+        "detail": "9.0-2.3."
+      },
+      {
+        "title": "Answer",
+        "detail": "6.7 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-m1",
+    "topic": "wastewater",
+    "difficulty": "medium",
+    "hint": "When a sample is diluted before incubation, the raw DO drop has to be scaled up by the dilution factor.",
+    "question": "A wastewater sample is diluted 1:10 before the BOD test. The diluted bottle's DO drops from 8.0 to 5.5 mg/L over 5 days. What is the BOD5 of the ORIGINAL (undiluted) sample?",
+    "choices": [
+      "2.5 mg/L (wrong: forgot the dilution factor)",
+      "25.0 mg/L",
+      "50.0 mg/L",
+      "80.0 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Raw DO drop=8.0-5.5=2.5. Multiply by dilution factor: 2.5x10=25.0 mg/L.",
+    "steps": [
+      {
+        "title": "Find the DO drop in the diluted bottle",
+        "detail": "8.0 - 5.5 = 2.5 mg/L."
+      },
+      {
+        "title": "Scale up by the dilution factor",
+        "detail": "BOD5 (original) = DO drop x dilution factor = 2.5 x 10."
+      },
+      {
+        "title": "Answer",
+        "detail": "25.0 mg/L - the raw 2.5 mg/L reading is only the diluted bottle's BOD, not the original sample's."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-m2",
+    "topic": "wastewater",
+    "difficulty": "medium",
+    "hint": "The seed used to inoculate the bottle also consumes oxygen, and that has to be subtracted out.",
+    "question": "A seeded BOD bottle's DO drops from 8.5 to 3.0 mg/L over 5 days. The seed itself is known to account for 0.4 mg/L of that oxygen consumption. What is the sample's true BOD5?",
+    "choices": [
+      "5.5 mg/L (wrong: ignores seed correction)",
+      "5.1 mg/L",
+      "5.9 mg/L",
+      "0.4 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Raw drop=8.5-3.0=5.5. Subtract seed contribution: 5.5-0.4=5.1 mg/L.",
+    "steps": [
+      {
+        "title": "Find the total DO drop",
+        "detail": "8.5-3.0=5.5 mg/L."
+      },
+      {
+        "title": "Subtract the seed's own oxygen demand",
+        "detail": "True sample BOD5 = total drop - seed correction = 5.5-0.4."
+      },
+      {
+        "title": "Answer",
+        "detail": "5.1 mg/L."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-h1",
+    "topic": "wastewater",
+    "difficulty": "hard",
+    "hint": "BOD5 is only a fraction of the total oxygen demand the waste will eventually exert - you're asked for the ultimate value, not the 5-day value.",
+    "question": "A wastewater's BOD5 is measured at 180 mg/L. Given the decay characteristics of this waste, BOD5 represents 68% of the ultimate BOD (BODu). What is the BODu?",
+    "choices": [
+      "122 mg/L (wrong direction)",
+      "265 mg/L",
+      "529 mg/L",
+      "180 mg/L"
+    ],
+    "answerIndex": 1,
+    "explanation": "BODu=BOD5/ratio=180/0.68=265 mg/L.",
+    "steps": [
+      {
+        "title": "Recognize BOD5 is a fraction of the ultimate demand",
+        "detail": "BOD5 = BODu x (fraction exerted by day 5), so BODu = BOD5 / fraction."
+      },
+      {
+        "title": "Plug in",
+        "detail": "180 / 0.68."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈265 mg/L - multiplying instead of dividing would give a smaller (wrong-direction) number."
+      }
+    ]
+  },
+  {
+    "id": "ww-bod-h2",
+    "topic": "wastewater",
+    "difficulty": "hard",
+    "hint": "This needs both a mass-loading calculation AND a percent-removal calculation - make sure you answer the specific one asked.",
+    "question": "A plant treats 4.2 MGD, reducing BOD from 210 mg/L to 18 mg/L. What is the mass of BOD removed per day (lb/day)?",
+    "choices": [
+      "3363 lb/day",
+      "6725 lb/day",
+      "91 lb/day (wrong: this is a percentage, not a mass)",
+      "7356 lb/day (wrong: uses inlet BOD only)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Removed conc=210-18=192 mg/L. lb/day=192x4.2x8.34=6725.",
+    "steps": [
+      {
+        "title": "Find the concentration actually removed",
+        "detail": "192 mg/L = 210-18."
+      },
+      {
+        "title": "Apply the standard mass-loading formula to the REMOVED concentration",
+        "detail": "lb/day = (removed mg/L) x flow(MGD) x 8.34."
+      },
+      {
+        "title": "Plug in",
+        "detail": "192 x 4.2 x 8.34."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈6725 lb/day removed (this plant also achieves about 91% BOD removal, a different but related number)."
+      }
+    ]
+  },
+  {
+    "id": "ww-fm-e1",
+    "topic": "wastewater",
+    "difficulty": "easy",
+    "hint": "F/M = BOD load applied divided by the MLVSS in the tank.",
+    "question": "An aeration tank receives a BOD load of 1200 lb/day and contains 6000 lb of MLVSS. What is the F/M ratio?",
+    "choices": [
+      "0.10 /day",
+      "0.20 /day",
+      "0.40 /day",
+      "5.00 /day (inverted)"
+    ],
+    "answerIndex": 1,
+    "explanation": "F/M=1200/6000=0.20.",
+    "steps": [
+      {
+        "title": "Apply the F/M definition",
+        "detail": "F/M = BOD load (lb/day) / MLVSS (lb)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "1200/6000."
       },
       {
         "title": "Answer",
@@ -906,701 +2483,1966 @@
     ]
   },
   {
-    "id": "ww-p3",
+    "id": "ww-fm-e2",
     "topic": "wastewater",
-    "question": "A plant treats 6 MGD of flow containing 280 mg/L of solids. If the primary clarifier removes 90% of the solids, how many pounds of solids are removed per day? (use lb/day = mg/L x MGD x 8.34)",
+    "difficulty": "easy",
+    "hint": "Same ratio, different numbers.",
+    "question": "A tank has a BOD load of 800 lb/day and 3200 lb MLVSS. What is F/M?",
     "choices": [
-      "1,260 lb/day",
-      "8,400 lb/day",
-      "12,600 lb/day",
-      "14,000 lb/day"
+      "0.12 /day",
+      "0.25 /day",
+      "0.50 /day",
+      "1.0 /day"
     ],
-    "answerIndex": 2,
-    "explanation": "Total solids = 280 x 6 x 8.34 = 14,011 lb/day. Removed at 90% = 14,011 x 0.9 = 12,610 lb/day.",
+    "answerIndex": 1,
+    "explanation": "F/M=800/3200=0.25.",
     "steps": [
       {
-        "title": "Find total incoming solids per day",
-        "detail": "lb/day = concentration (mg/L) x flow (MGD) x 8.34 = 280 x 6 x 8.34."
+        "title": "Apply the formula",
+        "detail": "F/M = BOD load / MLVSS."
       },
       {
-        "title": "Do the multiplication",
-        "detail": "280 x 6 = 1,680. 1,680 x 8.34 is approximately 14,011 lb/day."
-      },
-      {
-        "title": "Apply the removal efficiency",
-        "detail": "Solids removed = 14,011 x 0.90."
-      },
-      {
-        "title": "Multiply",
-        "detail": "14,011 x 0.90 is approximately 12,610."
+        "title": "Plug in",
+        "detail": "800/3200."
       },
       {
         "title": "Answer",
-        "detail": "About 12,600 lb/day removed."
+        "detail": "0.25 /day."
       }
     ]
   },
   {
-    "id": "ww-p4",
+    "id": "ww-fm-m1",
     "topic": "wastewater",
-    "question": "A secondary clarifier is 50 ft in diameter and receives a flow of 2.5 MGD. What is the surface overflow rate in gpd/ft2?",
+    "difficulty": "medium",
+    "hint": "Both the BOD load and the MLVSS mass need to be calculated first, from concentration and volume, before you can find F/M.",
+    "question": "An aeration tank (0.3 MG volume, MLVSS concentration 2400 mg/L) receives 2.8 MGD at 190 mg/L BOD. What is the F/M ratio?",
     "choices": [
-      "637 gpd/ft2",
-      "1,273 gpd/ft2",
-      "1,910 gpd/ft2",
-      "2,500 gpd/ft2"
+      "0.37 /day",
+      "0.74 /day",
+      "1.48 /day",
+      "0.08 /day (wrong: used raw concentrations, not masses)"
     ],
     "answerIndex": 1,
-    "explanation": "Area = pi(50/2)^2 = pi x 625 = 1,963.5 ft2. Rate = 2,500,000/1,963.5 = 1,273 gpd/ft2.",
+    "explanation": "BOD load=190x2.8x8.34=4437 lb/day. MLVSS mass=2400x0.3x8.34=6005 lb. F/M=4437/6005=0.74.",
     "steps": [
       {
-        "title": "Compute the clarifier area",
-        "detail": "A = pi r^2 = pi x (25 ft)^2 = pi x 625 is approximately 1,963.5 ft2."
+        "title": "Convert BOD concentration and flow to a mass loading",
+        "detail": "BOD load = 190 x 2.8 x 8.34 lb/day."
+      },
+      {
+        "title": "Convert MLVSS concentration and tank volume to a mass",
+        "detail": "MLVSS mass = 2400 x 0.3 x 8.34 lb."
+      },
+      {
+        "title": "Divide load by mass",
+        "detail": "F/M = BOD load / MLVSS mass."
+      },
+      {
+        "title": "Answer",
+        "detail": "0.74 /day."
+      }
+    ]
+  },
+  {
+    "id": "ww-fm-m2",
+    "topic": "wastewater",
+    "difficulty": "medium",
+    "hint": "SRT compares the total solids in the system to the rate solids are being removed (wasted).",
+    "question": "A plant maintains 8500 lb of MLVSS in its aeration tank and wastes 1800 lb/day as WAS. What is the solids retention time (SRT)?",
+    "choices": [
+      "2.4 days",
+      "4.7 days",
+      "9.4 days",
+      "0.2 days (inverted)"
+    ],
+    "answerIndex": 1,
+    "explanation": "SRT=MLVSS in system/solids wasted per day=8500/1800=4.7 days.",
+    "steps": [
+      {
+        "title": "Recall the SRT definition",
+        "detail": "SRT = total solids in the system (lb) / solids wasted per day (lb/day)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "8500/1800."
+      },
+      {
+        "title": "Answer",
+        "detail": "4.7 days."
+      }
+    ]
+  },
+  {
+    "id": "ww-fm-h1",
+    "topic": "wastewater",
+    "difficulty": "hard",
+    "hint": "Rearrange the SRT relationship to solve for the wasting rate that achieves a target SRT.",
+    "question": "A plant currently has 9000 lb of MLVSS and wants to operate at an SRT of 8 days to support nitrification. What daily WAS wasting rate (lb/day) achieves this?",
+    "choices": [
+      "562 lb/day",
+      "1125 lb/day",
+      "2250 lb/day",
+      "72000 lb/day (wrong: multiplied instead of divided)"
+    ],
+    "answerIndex": 1,
+    "explanation": "WAS=MLVSS/SRT=9000/8=1125 lb/day.",
+    "steps": [
+      {
+        "title": "Rearrange SRT = MLVSS/WAS for WAS",
+        "detail": "WAS = MLVSS/SRT."
+      },
+      {
+        "title": "Plug in",
+        "detail": "9000/8."
+      },
+      {
+        "title": "Answer",
+        "detail": "1125 lb/day."
+      }
+    ]
+  },
+  {
+    "id": "ww-fm-h2",
+    "topic": "wastewater",
+    "difficulty": "hard",
+    "hint": "Work backward from the target F/M ratio to find the tank volume that would achieve it.",
+    "question": "A plant has a BOD load of 2200 lb/day and wants to maintain an MLVSS concentration of 2800 mg/L at a target F/M of 0.35/day. What aeration tank volume (MG) is required?",
+    "choices": [
+      "0.13 MG",
+      "0.27 MG",
+      "0.54 MG",
+      "0.79 MG (wrong: ignores F/M target and 8.34)"
+    ],
+    "answerIndex": 1,
+    "explanation": "MLVSS mass needed=BODload/target F/M=2200/0.35=6286 lb. Volume(MG)=mass/(conc x8.34)=6286/(2800x8.34)=0.27 MG.",
+    "steps": [
+      {
+        "title": "Find the MLVSS mass needed to hit the target F/M",
+        "detail": "MLVSS mass = BOD load / target F/M = 2200/0.35."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈6286 lb of MLVSS needed."
+      },
+      {
+        "title": "Convert that mass to a tank volume using the MLVSS concentration",
+        "detail": "Volume(MG) = mass(lb) / (concentration(mg/L) x 8.34)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈0.27 MG tank volume required."
+      }
+    ]
+  },
+  {
+    "id": "ww-solids-e1",
+    "topic": "wastewater",
+    "difficulty": "easy",
+    "hint": "lb/day = concentration(mg/L) x flow(MGD) x 8.34.",
+    "question": "Influent solids concentration is 260 mg/L at a flow of 5.0 MGD. What is the total solids mass loading (lb/day)?",
+    "choices": [
+      "5421 lb/day",
+      "10842 lb/day",
+      "21684 lb/day",
+      "1300 lb/day (missing 8.34)"
+    ],
+    "answerIndex": 1,
+    "explanation": "lb/day=260x5.0x8.34=10842.",
+    "steps": [
+      {
+        "title": "Apply the standard mass-loading formula",
+        "detail": "lb/day = mg/L x MGD x 8.34."
+      },
+      {
+        "title": "Plug in",
+        "detail": "260 x 5.0 x 8.34."
+      },
+      {
+        "title": "Answer",
+        "detail": "10842 lb/day."
+      }
+    ]
+  },
+  {
+    "id": "ww-solids-e2",
+    "topic": "wastewater",
+    "difficulty": "easy",
+    "hint": "Same mass-loading relationship.",
+    "question": "A clarifier receives solids at 180 mg/L and 3.2 MGD. What is the mass loading?",
+    "choices": [
+      "2402 lb/day",
+      "4804 lb/day",
+      "9608 lb/day",
+      "600 lb/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "lb/day=180x3.2x8.34=4804.",
+    "steps": [
+      {
+        "title": "Apply the formula",
+        "detail": "lb/day = mg/L x MGD x 8.34."
+      },
+      {
+        "title": "Plug in",
+        "detail": "180 x 3.2 x 8.34."
+      },
+      {
+        "title": "Answer",
+        "detail": "4804 lb/day."
+      }
+    ]
+  },
+  {
+    "id": "ww-solids-m1",
+    "topic": "wastewater",
+    "difficulty": "medium",
+    "hint": "Surface overflow rate needs the clarifier's plan-view AREA, not its diameter.",
+    "question": "A circular clarifier is 60 ft in diameter and receives 3.5 MGD. What is the surface overflow rate (gpd/ft2)?",
+    "choices": [
+      "619 gpd/ft2",
+      "1238 gpd/ft2",
+      "2476 gpd/ft2",
+      "58333 gpd/ft2 (wrong: divided by diameter, not area)"
+    ],
+    "answerIndex": 1,
+    "explanation": "A=pi(30)^2=2827 ft2. SOR=3,500,000/2827=1238 gpd/ft2.",
+    "steps": [
+      {
+        "title": "Find the clarifier's surface area from its diameter",
+        "detail": "A = pi r^2 = pi(30)^2."
       },
       {
         "title": "Convert flow to gpd",
-        "detail": "2.5 MGD = 2,500,000 gpd."
+        "detail": "3.5 MGD = 3,500,000 gpd."
       },
       {
         "title": "Divide flow by area",
-        "detail": "Overflow rate = 2,500,000 / 1,963.5."
-      },
-      {
-        "title": "Do the division",
-        "detail": "This gives approximately 1,273."
+        "detail": "SOR = Q/A."
       },
       {
         "title": "Answer",
-        "detail": "About 1,273 gpd/ft2."
+        "detail": "≈1238 gpd/ft2."
       }
     ]
   },
   {
-    "id": "ww-p5",
+    "id": "ww-solids-m2",
     "topic": "wastewater",
-    "question": "A UV disinfection system must provide a CT (concentration x time) value, but for UV the equivalent is dose (mJ/cm2) = intensity (mW/cm2) x exposure time (s). If the required dose is 40 mJ/cm2 and the UV intensity at the target depth is 8 mW/cm2, what exposure time is needed?",
+    "difficulty": "medium",
+    "hint": "Find the mass actually captured by the primary clarifier - not the mass that entered, and not the percentage.",
+    "question": "A primary clarifier receives 6.0 MGD at 220 mg/L TSS and discharges at 140 mg/L TSS. How many lb/day of solids are captured?",
     "choices": [
-      "2 s",
-      "5 s",
-      "8 s",
-      "40 s"
+      "11009 lb/day (wrong: uses influent only)",
+      "4003 lb/day",
+      "36 lb/day (wrong: this is a percent, not a mass)",
+      "8006 lb/day"
     ],
     "answerIndex": 1,
-    "explanation": "time = dose / intensity = 40 / 8 = 5 s.",
+    "explanation": "Removed conc=220-140=80 mg/L. lb/day=80x6.0x8.34=4003.",
     "steps": [
       {
-        "title": "Recall the relationship",
-        "detail": "UV dose = intensity x time, so time = dose / intensity."
+        "title": "Find the concentration actually removed",
+        "detail": "220-140=80 mg/L."
       },
       {
-        "title": "Plug in",
-        "detail": "time = 40 mJ/cm2 / 8 mW/cm2."
-      },
-      {
-        "title": "Note the units work out",
-        "detail": "mJ/cm2 divided by mW/cm2 gives units of seconds (since mJ = mW x s)."
-      },
-      {
-        "title": "Divide",
-        "detail": "40 / 8 = 5."
+        "title": "Apply the mass-loading formula to that removed concentration",
+        "detail": "lb/day = 80 x 6.0 x 8.34."
       },
       {
         "title": "Answer",
-        "detail": "5 seconds."
+        "detail": "≈4003 lb/day captured (this also corresponds to about 36% removal, a related but different number)."
       }
     ]
   },
   {
-    "id": "ww-p6",
+    "id": "ww-solids-h1",
     "topic": "wastewater",
-    "question": "A high-rate anaerobic digester must provide 20 days of detention time for a sludge flow of 8,000 ft3/day. What digester volume is required?",
+    "difficulty": "hard",
+    "hint": "This chains three steps: mass loading, capture efficiency, then converting the captured solids mass into a sludge VOLUME using its solids percentage and specific gravity.",
+    "question": "A primary clarifier treats 7.5 MGD at 240 mg/L TSS with 62% solids capture efficiency. The resulting sludge is 4.5% solids with a specific gravity of 1.02. What volume of sludge (gallons/day) is produced?",
     "choices": [
-      "4,000 ft3",
-      "40,000 ft3",
-      "160,000 ft3",
-      "400,000 ft3"
+      "12,157 gal/day",
+      "24,314 gal/day",
+      "48,627 gal/day",
+      "9,307 gal/day (wrong: this is a mass in lb, not a volume in gallons)"
     ],
-    "answerIndex": 2,
-    "explanation": "V = Q x t = 8,000 ft3/day x 20 days = 160,000 ft3.",
+    "answerIndex": 1,
+    "explanation": "Solids captured=240x7.5x8.34x0.62=9307 lb/day. Sludge volume(gal)=lb/(8.34xSGxsolids fraction)=9307/(8.34x1.02x0.045)=24,314 gal/day.",
     "steps": [
       {
-        "title": "Recall the detention time relationship",
-        "detail": "V = Q x t, same relationship as any tank sizing problem."
+        "title": "Find the mass of solids actually captured",
+        "detail": "lb/day = TSS x Q x 8.34 x capture efficiency = 240x7.5x8.34x0.62."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈9307 lb/day of solids captured."
+      },
+      {
+        "title": "Convert that solids mass into a sludge volume",
+        "detail": "Sludge volume(gal) = solids mass(lb) / (8.34 x specific gravity x solids fraction) - since the sludge is mostly water, dividing by the (small) solids fraction gives a much larger volume than the dry solids mass alone."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈24,314 gallons/day of sludge."
+      }
+    ]
+  },
+  {
+    "id": "ww-solids-h2",
+    "topic": "wastewater",
+    "difficulty": "hard",
+    "hint": "This is a multi-step aeration requirement problem: find BOD removed, then oxygen required, then convert to an air supply rate.",
+    "question": "An aeration basin removes 90% of an incoming 200 mg/L BOD load at 5.0 MGD. The process requires 1.2 lb of O2 per lb of BOD removed. Air is 23.2% O2 by weight and weighs about 0.075 lb/ft3. What air supply rate (scfm) is needed?",
+    "choices": [
+      "180 scfm",
+      "359 scfm",
+      "719 scfm",
+      "9007 scfm (wrong: this is lb O2/day, not an air flow rate)"
+    ],
+    "answerIndex": 1,
+    "explanation": "BOD removed=200x5.0x8.34x0.90=7506 lb/day. O2 required=7506x1.2=9007 lb/day. Air=9007/0.232=38824 lb/day = 38824/0.075=517655 ft3/day = /1440 min/day = 359 scfm.",
+    "steps": [
+      {
+        "title": "Find the BOD mass actually removed",
+        "detail": "200 x 5.0 x 8.34 x 0.90."
+      },
+      {
+        "title": "Find the oxygen required",
+        "detail": "O2 = BOD removed x 1.2 lb O2/lb BOD."
+      },
+      {
+        "title": "Convert O2 mass to air mass",
+        "detail": "air = O2/0.232."
+      },
+      {
+        "title": "Convert air mass to a volumetric flow rate (scfm)",
+        "detail": "Divide by air density (0.075 lb/ft3), then by 1,440 minutes/day."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈359 scfm of air supply needed."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-e1",
+    "topic": "site",
+    "difficulty": "easy",
+    "hint": "Q = KAi.",
+    "question": "Groundwater flows through an aquifer with K=35 ft/day, cross-sectional area 400 ft2, and gradient 0.0018. What is the flow rate?",
+    "choices": [
+      "12.6 ft3/day",
+      "25.2 ft3/day",
+      "50.4 ft3/day",
+      "35.0 ft3/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=KAi=35x400x0.0018=25.2 ft3/day.",
+    "steps": [
+      {
+        "title": "Apply Darcy's Law",
+        "detail": "Q=KAi."
       },
       {
         "title": "Plug in",
-        "detail": "V = 8,000 ft3/day x 20 days."
+        "detail": "35 x 400 x 0.0018."
+      },
+      {
+        "title": "Answer",
+        "detail": "25.2 ft3/day."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-e2",
+    "topic": "site",
+    "difficulty": "easy",
+    "hint": "Same relationship, different values.",
+    "question": "K=12 ft/day, A=150 ft2, gradient=0.004. Find Q.",
+    "choices": [
+      "3.6 ft3/day",
+      "7.2 ft3/day",
+      "14.4 ft3/day",
+      "12.0 ft3/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q=12x150x0.004=7.2 ft3/day.",
+    "steps": [
+      {
+        "title": "Apply Darcy's Law",
+        "detail": "Q=KAi."
+      },
+      {
+        "title": "Plug in",
+        "detail": "12x150x0.004."
+      },
+      {
+        "title": "Answer",
+        "detail": "7.2 ft3/day."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-m1",
+    "topic": "site",
+    "difficulty": "medium",
+    "hint": "Find the hydraulic gradient from the two well heads and the distance between them before applying Darcy's Law.",
+    "question": "Two monitoring wells 250 ft apart show water table elevations of 142.5 ft and 138.0 ft. The aquifer has K=18 ft/day and cross-sectional area 300 ft2. What is the flow rate?",
+    "choices": [
+      "48.6 ft3/day",
+      "97.2 ft3/day",
+      "194.4 ft3/day",
+      "24300.0 ft3/day (wrong: forgot to divide by distance)"
+    ],
+    "answerIndex": 1,
+    "explanation": "i=(142.5-138.0)/250=0.0180. Q=18x300x0.0180=97.20 ft3/day.",
+    "steps": [
+      {
+        "title": "Find the hydraulic gradient",
+        "detail": "i = (head difference)/(distance) = (142.5-138.0)/250."
+      },
+      {
+        "title": "Compute",
+        "detail": "i ≈0.0180."
+      },
+      {
+        "title": "Apply Darcy's Law",
+        "detail": "Q=KAi=18x300x0.0180."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈97.20 ft3/day."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-m2",
+    "topic": "site",
+    "difficulty": "medium",
+    "hint": "Hydraulic conductivity is given in cm/s here - convert to ft/day (1 cm/s = 2,834.6 ft/day) before applying Darcy's Law.",
+    "question": "An aquifer has K = 0.002 cm/s, cross-sectional area 800 ft2, and gradient 0.01. What is the flow rate in ft3/day?",
+    "choices": [
+      "23 ft3/day",
+      "45 ft3/day",
+      "91 ft3/day",
+      "0.0160 ft3/day (wrong: no unit conversion)"
+    ],
+    "answerIndex": 1,
+    "explanation": "K=0.002 cm/sx2834.6=5.67 ft/day. Q=5.67x800x0.01=45 ft3/day.",
+    "steps": [
+      {
+        "title": "Convert K to ft/day",
+        "detail": "0.002 cm/s x 2,834.6 (ft/day per cm/s) = 5.67 ft/day."
+      },
+      {
+        "title": "Apply Darcy's Law with the converted K",
+        "detail": "Q = KAi = 5.67 x 800 x 0.01."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈45 ft3/day - skipping the unit conversion would give an answer off by a factor of nearly 3,000."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-h1",
+    "topic": "site",
+    "difficulty": "hard",
+    "hint": "This chains Darcy's Law (for the Darcy velocity), a porosity correction (for true seepage velocity), and finally a travel-time calculation.",
+    "question": "An aquifer has K=20 ft/day, gradient 0.0025, and effective porosity 0.3. How many days would a conservative tracer (no retardation) take to travel 800 ft?",
+    "choices": [
+      "2400 days",
+      "4800 days",
+      "9600 days",
+      "16000 days (wrong: uses Darcy velocity instead of seepage velocity)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Darcy velocity=Kxi=20x0.0025=0.05 ft/day. Seepage velocity=0.05/0.30=0.1667 ft/day. Time=800/0.1667=4800 days.",
+    "steps": [
+      {
+        "title": "Find the Darcy velocity (specific discharge)",
+        "detail": "v_Darcy = K x i = 20 x 0.0025 = 0.05 ft/day."
+      },
+      {
+        "title": "Convert to seepage (linear) velocity using porosity",
+        "detail": "v_seepage = v_Darcy / porosity = 0.05/0.30."
+      },
+      {
+        "title": "Compute",
+        "detail": "v_seepage ≈0.1667 ft/day."
+      },
+      {
+        "title": "Find travel time",
+        "detail": "time = distance / v_seepage = 800/0.1667."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈4800 days - using the Darcy velocity directly (skipping the porosity correction) would give a much longer, incorrect time."
+      }
+    ]
+  },
+  {
+    "id": "site-darcy-h2",
+    "topic": "site",
+    "difficulty": "hard",
+    "hint": "This is a three-step chain: Darcy velocity, then seepage velocity (porosity), then contaminant velocity (retardation) - each division compounds on the last.",
+    "question": "A contaminant with retardation factor R=5 is released into an aquifer with K=15 ft/day, gradient 0.003, and porosity 0.25. How many years until it reaches a well 600 ft away?",
+    "choices": [
+      "11.4 years",
+      "45.7 years",
+      "182.6 years",
+      "36.5 years (wrong: skips both porosity and retardation)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v_Darcy=15x0.003=0.045. v_seep=0.045/0.25=0.18. v_contam=0.18/5=0.036 ft/day. time=600/0.036=16667 days=45.7 yr.",
+    "steps": [
+      {
+        "title": "Find the Darcy velocity",
+        "detail": "K x i = 15 x 0.003 = 0.045 ft/day."
+      },
+      {
+        "title": "Convert to seepage velocity using porosity",
+        "detail": "0.045/0.25 = 0.18 ft/day."
+      },
+      {
+        "title": "Convert to contaminant velocity using retardation",
+        "detail": "0.18/5 = 0.036 ft/day."
+      },
+      {
+        "title": "Find travel time and convert to years",
+        "detail": "600/0.036 days, then /365."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈45.7 years - skipping either the porosity or retardation step would substantially understate the true travel time."
+      }
+    ]
+  },
+  {
+    "id": "site-trans-e1",
+    "topic": "site",
+    "difficulty": "easy",
+    "hint": "T = K x b.",
+    "question": "An aquifer has K=45 ft/day and saturated thickness 30 ft. What is its transmissivity?",
+    "choices": [
+      "675 ft2/day",
+      "1350 ft2/day",
+      "2700 ft2/day",
+      "45 ft2/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "T=45x30=1350 ft2/day.",
+    "steps": [
+      {
+        "title": "Apply T=Kb",
+        "detail": "45 x 30."
+      },
+      {
+        "title": "Answer",
+        "detail": "1350 ft2/day."
+      }
+    ]
+  },
+  {
+    "id": "site-trans-e2",
+    "topic": "site",
+    "difficulty": "easy",
+    "hint": "Rearrange T = Kb to solve for K.",
+    "question": "An aquifer has a transmissivity of 900 ft2/day and a saturated thickness of 20 ft. What is its hydraulic conductivity?",
+    "choices": [
+      "22 ft/day",
+      "45 ft/day",
+      "90 ft/day",
+      "18000 ft/day (wrong: multiplied instead of divided)"
+    ],
+    "answerIndex": 1,
+    "explanation": "K=T/b=900/20=45 ft/day.",
+    "steps": [
+      {
+        "title": "Rearrange T=Kb for K",
+        "detail": "K=T/b."
+      },
+      {
+        "title": "Plug in",
+        "detail": "900/20."
+      },
+      {
+        "title": "Answer",
+        "detail": "45 ft/day."
+      }
+    ]
+  },
+  {
+    "id": "site-trans-m1",
+    "topic": "site",
+    "difficulty": "medium",
+    "hint": "For layers in parallel (horizontal flow), total transmissivity is the sum of each layer's transmissivity - then divide by total thickness to get an average K.",
+    "question": "An aquifer has two horizontal layers: 10 ft thick with K=40 ft/day, and 15 ft thick with K=8 ft/day. What is the aquifer's overall (average) hydraulic conductivity?",
+    "choices": [
+      "24.0 ft/day (wrong: simple average of K, ignores thickness weighting)",
+      "20.8 ft/day",
+      "41.6 ft/day",
+      "40.0 ft/day (top layer only)"
+    ],
+    "answerIndex": 1,
+    "explanation": "T_total=40x10+8x15=400+120=520 ft2/day. K_avg=520/25=20.8 ft/day.",
+    "steps": [
+      {
+        "title": "Find each layer's transmissivity",
+        "detail": "Layer 1: 40x10=400 ft2/day. Layer 2: 8x15=120 ft2/day."
+      },
+      {
+        "title": "Sum for total transmissivity",
+        "detail": "T_total = 400+120=520 ft2/day."
+      },
+      {
+        "title": "Divide by total thickness to get thickness-weighted average K",
+        "detail": "K_avg = T_total/(b1+b2) = 520/25."
+      },
+      {
+        "title": "Answer",
+        "detail": "20.8 ft/day - simply averaging the two K values (20 ft/day) ignores that the layers have different thicknesses."
+      }
+    ]
+  },
+  {
+    "id": "site-trans-m2",
+    "topic": "site",
+    "difficulty": "medium",
+    "hint": "Transmissivity already incorporates aquifer thickness, so flow per unit width uses T directly with the gradient - then multiply by the width of the flow section.",
+    "question": "An aquifer with transmissivity 650 ft2/day and gradient 0.002 has a flow section 500 ft wide. What is the total flow rate through this section?",
+    "choices": [
+      "325 ft3/day",
+      "650 ft3/day",
+      "1300 ft3/day",
+      "1 ft3/day (missing the width multiplication)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q per unit width=Txi=650x0.002=1.3 ft3/day/ft. Total Q=1.3x500=650 ft3/day.",
+    "steps": [
+      {
+        "title": "Find flow per unit width using transmissivity",
+        "detail": "q = T x i = 650 x 0.002."
+      },
+      {
+        "title": "Multiply by the width of the flow section",
+        "detail": "Q_total = q x width = 1.3 x 500."
+      },
+      {
+        "title": "Answer",
+        "detail": "650 ft3/day."
+      }
+    ]
+  },
+  {
+    "id": "site-trans-h1",
+    "topic": "site",
+    "difficulty": "hard",
+    "hint": "This uses the Thiem equation for steady radial flow to a well - the drawdown difference between two observation distances depends on the LOG of their ratio, not their linear difference.",
+    "question": "A well pumps 15000 ft3/day from a confined aquifer with T=1200 ft2/day. Using the Thiem equation, s1-s2 = Q/(2πT) x ln(r2/r1), what is the drawdown difference between observation wells at 50 ft and 300 ft from the pumping well?",
+    "choices": [
+      "1.78 ft",
+      "3.56 ft",
+      "7.13 ft",
+      "497.36 ft (wrong: used linear difference instead of ln ratio)"
+    ],
+    "answerIndex": 1,
+    "explanation": "s1-s2=15000/(2x3.1416x1200)xln(300/50)=1.989xln(6)=1.989x1.792=3.56 ft.",
+    "steps": [
+      {
+        "title": "Recall the Thiem equation form",
+        "detail": "s1-s2 = Q/(2πT) x ln(r2/r1) - note it's the natural log of the RATIO of distances, not their difference."
+      },
+      {
+        "title": "Compute the coefficient",
+        "detail": "Q/(2πT) = 15,000/(2x3.1416x1200) ≈ 1.989."
+      },
+      {
+        "title": "Compute the log term",
+        "detail": "ln(300/50) = ln(6) ≈ 1.792."
       },
       {
         "title": "Multiply",
-        "detail": "8,000 x 20 = 160,000."
+        "detail": "1.989 x 1.792."
       },
       {
         "title": "Answer",
-        "detail": "160,000 ft3."
+        "detail": "≈3.56 ft."
       }
     ]
   },
   {
-    "id": "site-p1",
+    "id": "site-trans-h2",
     "topic": "site",
-    "question": "A contaminant has a retardation factor R = 3 in an aquifer where groundwater velocity is 0.6 ft/day. How far does the contaminant travel in 3 years (365 days/yr)?",
+    "difficulty": "hard",
+    "hint": "This is a capture-zone-width style problem - a pumping well's total zone of influence width relates its pumping rate to the aquifer's natural (Darcy) flow characteristics.",
+    "question": "A remediation well pumps 8000 ft3/day from an aquifer with K=25 ft/day, saturated thickness 40 ft, and regional gradient 0.0015. Using capture width ≈ Q/(K x b x i), what is the well's approximate capture zone width?",
     "choices": [
-      "146 ft",
-      "219 ft",
-      "365 ft",
-      "657 ft"
+      "2667 ft",
+      "5333 ft",
+      "10667 ft",
+      "213333 ft (wrong: omits aquifer thickness)"
     ],
     "answerIndex": 1,
-    "explanation": "Contaminant velocity = 0.6/3 = 0.2 ft/day. Time = 3 x 365 = 1,095 days. Distance = 0.2 x 1,095 = 219 ft.",
+    "explanation": "Capture width=8000/(25x40x0.0015)=5333 ft.",
     "steps": [
       {
-        "title": "Understand R",
-        "detail": "Retardation factor R = 3 means the contaminant travels 3 times slower than the groundwater carrying it."
+        "title": "Identify all three aquifer parameters needed",
+        "detail": "K (conductivity), b (thickness), and i (gradient) all belong in the denominator - leaving one out is a common shortcut error."
       },
+      {
+        "title": "Apply the capture-width relationship",
+        "detail": "width = Q/(K x b x i) = 8000/(25x40x0.0015)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈5333 ft - a wider capture zone means the well can hydraulically control a wider swath of the plume."
+      }
+    ]
+  },
+  {
+    "id": "site-retard-e1",
+    "topic": "site",
+    "difficulty": "easy",
+    "hint": "Contaminant velocity = groundwater velocity / R.",
+    "question": "Groundwater velocity is 0.8 ft/day; a contaminant has R=2. How far does it travel in 100 days?",
+    "choices": [
+      "20 ft",
+      "40 ft",
+      "80 ft",
+      "80 ft (wrong: ignores retardation)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v_contam=0.8/2=0.4 ft/day. distance=0.4x100=40 ft.",
+    "steps": [
       {
         "title": "Find contaminant velocity",
-        "detail": "v_contaminant = v_groundwater / R = 0.6 / 3 = 0.2 ft/day."
+        "detail": "v_contam=v_groundwater/R=0.8/2."
       },
       {
-        "title": "Convert time to days",
-        "detail": "3 years x 365 days/year = 1,095 days."
-      },
-      {
-        "title": "Multiply for distance",
-        "detail": "Distance = 0.2 ft/day x 1,095 days = 219 ft."
+        "title": "Multiply by time",
+        "detail": "0.4x100."
       },
       {
         "title": "Answer",
-        "detail": "219 ft."
+        "detail": "40 ft."
       }
     ]
   },
   {
-    "id": "site-p2",
+    "id": "site-retard-e2",
     "topic": "site",
-    "question": "Groundwater flows through a confined aquifer with K = 40 ft/day, cross-sectional area A = 300 ft2, and hydraulic gradient 0.0015. What is the flow rate?",
+    "difficulty": "easy",
+    "hint": "Same relationship.",
+    "question": "Groundwater velocity is 1.2 ft/day; R=3. Distance traveled in 60 days?",
     "choices": [
-      "9 ft3/day",
-      "12 ft3/day",
-      "18 ft3/day",
-      "24 ft3/day"
-    ],
-    "answerIndex": 2,
-    "explanation": "Q = K A i = 40 x 300 x 0.0015 = 18 ft3/day.",
-    "steps": [
-      {
-        "title": "Recall Darcy's Law",
-        "detail": "Q = K A i."
-      },
-      {
-        "title": "Plug in",
-        "detail": "Q = 40 x 300 x 0.0015."
-      },
-      {
-        "title": "Multiply in stages",
-        "detail": "40 x 300 = 12,000. 12,000 x 0.0015 = 18."
-      },
-      {
-        "title": "Answer",
-        "detail": "18 ft3/day."
-      }
-    ]
-  },
-  {
-    "id": "site-p3",
-    "topic": "site",
-    "question": "An aquifer has a hydraulic conductivity of 30 ft/day and a saturated thickness of 25 ft. What is the transmissivity?",
-    "choices": [
-      "1.2 ft2/day",
-      "55 ft2/day",
-      "750 ft2/day",
-      "7.5 ft2/day"
-    ],
-    "answerIndex": 2,
-    "explanation": "T = K x b = 30 x 25 = 750 ft2/day.",
-    "steps": [
-      {
-        "title": "Recall the formula",
-        "detail": "T = K x b, where b is the saturated thickness."
-      },
-      {
-        "title": "Plug in",
-        "detail": "T = 30 ft/day x 25 ft."
-      },
-      {
-        "title": "Multiply",
-        "detail": "30 x 25 = 750."
-      },
-      {
-        "title": "Answer",
-        "detail": "750 ft2/day."
-      }
-    ]
-  },
-  {
-    "id": "site-p4",
-    "topic": "site",
-    "question": "Groundwater velocity is 0.4 ft/day and effective porosity is 0.25. If the seepage (linear) velocity is what actually carries a contaminant, and specific discharge (Darcy velocity) is 0.4 ft/day, what is the seepage velocity?",
-    "choices": [
-      "0.10 ft/day",
-      "0.40 ft/day",
-      "1.0 ft/day",
-      "1.6 ft/day"
-    ],
-    "answerIndex": 3,
-    "explanation": "Seepage velocity = Darcy velocity / effective porosity = 0.4 / 0.25 = 1.6 ft/day.",
-    "steps": [
-      {
-        "title": "Understand the distinction",
-        "detail": "Darcy velocity (specific discharge) is flow per unit of the FULL cross-sectional area, but water only actually flows through the pore space, so the true (seepage/linear) velocity is faster."
-      },
-      {
-        "title": "Recall the relationship",
-        "detail": "Seepage velocity = Darcy velocity / effective porosity."
-      },
-      {
-        "title": "Plug in",
-        "detail": "v_seepage = 0.4 / 0.25."
-      },
-      {
-        "title": "Divide",
-        "detail": "0.4 / 0.25 = 1.6."
-      },
-      {
-        "title": "Answer",
-        "detail": "1.6 ft/day."
-      }
-    ]
-  },
-  {
-    "id": "site-p5",
-    "topic": "site",
-    "question": "A contaminant plume has a seepage velocity of 0.5 ft/day. A drinking water well is 500 ft downgradient. Assuming no retardation, how many years until the plume could reach the well?",
-    "choices": [
-      "1.4 years",
-      "2.7 years",
-      "5.5 years",
-      "10 years"
+      "12 ft",
+      "24 ft",
+      "48 ft",
+      "72 ft (wrong: ignores R)"
     ],
     "answerIndex": 1,
-    "explanation": "Time = distance/velocity = 500/0.5 = 1,000 days = 1,000/365 = 2.74 years.",
+    "explanation": "v_contam=1.2/3=0.4. dist=0.4x60=24 ft.",
     "steps": [
       {
-        "title": "Set up the time relationship",
-        "detail": "Time = distance / velocity."
+        "title": "Find contaminant velocity",
+        "detail": "1.2/3."
       },
       {
-        "title": "Plug in",
-        "detail": "Time = 500 ft / 0.5 ft/day = 1,000 days."
-      },
-      {
-        "title": "Convert days to years",
-        "detail": "1,000 days / 365 days/year is approximately 2.74 years."
+        "title": "Multiply by time",
+        "detail": "0.4x60."
       },
       {
         "title": "Answer",
-        "detail": "About 2.7 years."
+        "detail": "24 ft."
       }
     ]
   },
   {
-    "id": "site-p6",
+    "id": "site-retard-m1",
     "topic": "site",
-    "question": "A Phase I ESA identifies a recognized environmental condition (a former dry cleaner) on a property. What is the appropriate next step before concluding whether contamination is actually present?",
+    "difficulty": "medium",
+    "hint": "Rearrange the distance-velocity-time relationship to solve for time.",
+    "question": "A receptor well is 450 ft from a source. Groundwater velocity is 0.6 ft/day and the contaminant's R=2.5. How many days until the plume reaches the well?",
     "choices": [
-      "Immediately begin full-scale remediation",
-      "Conduct a Phase II ESA with soil and groundwater sampling",
-      "File a CERCLA PRP notice",
-      "No further action is needed since Phase I is sufficient"
+      "938 days",
+      "1875 days",
+      "3750 days",
+      "750 days (wrong: ignores retardation)"
     ],
     "answerIndex": 1,
-    "explanation": "A Phase I ESA is a records/visual review only - it identifies potential concerns (RECs) but does not include sampling. Confirming whether contamination is actually present requires a Phase II ESA with actual soil/groundwater sampling and analysis.",
+    "explanation": "v_contam=0.6/2.5=0.24. time=450/0.24=1875 days.",
     "steps": [
       {
-        "title": "Recall what Phase I does and doesn't do",
-        "detail": "Phase I identifies recognized environmental conditions through records review and site walkover - it never includes sampling."
+        "title": "Find contaminant velocity",
+        "detail": "0.6/2.5=0.24 ft/day."
       },
       {
-        "title": "Recognize the gap",
-        "detail": "A REC flags a concern but doesn't confirm contamination is present - only testing can do that."
-      },
-      {
-        "title": "Identify the correct next step",
-        "detail": "A Phase II ESA is specifically the step that adds sampling and lab analysis to investigate a REC."
+        "title": "Find time",
+        "detail": "time=distance/velocity=450/0.24."
       },
       {
         "title": "Answer",
-        "detail": "Conduct a Phase II ESA with soil and groundwater sampling."
+        "detail": "1875 days."
       }
     ]
   },
   {
-    "id": "ehs-p1",
+    "id": "site-retard-m2",
+    "topic": "site",
+    "difficulty": "medium",
+    "hint": "R isn't always given directly - sometimes you must compute it first from soil/chemical properties.",
+    "question": "A contaminant has a distribution coefficient Kd=1.5 mL/g in soil with bulk density 1.7 g/mL and porosity 0.35. Using R=1+(bulk density/porosity)xKd, what is R, and what is the contaminant's velocity if groundwater moves at 0.5 ft/day?",
+    "choices": [
+      "R=4.1, v=0.121 ft/day",
+      "R=8.3, v=0.060 ft/day",
+      "R=8.3, v=0.500 ft/day (wrong: forgot to divide by R)",
+      "R=1.0, v=0.500 ft/day"
+    ],
+    "answerIndex": 1,
+    "explanation": "R=1+(1.7/0.35)x1.5=1+7.29=8.29. v_contam=0.5/8.29=0.060 ft/day.",
+    "steps": [
+      {
+        "title": "Calculate R from the soil/chemical properties",
+        "detail": "R = 1 + (bulk density/porosity) x Kd = 1+(1.7/0.35)x1.5."
+      },
+      {
+        "title": "Compute R",
+        "detail": "R≈8.29."
+      },
+      {
+        "title": "Apply R to find contaminant velocity",
+        "detail": "v_contam = v_groundwater/R = 0.5/8.29."
+      },
+      {
+        "title": "Answer",
+        "detail": "R≈8.3, contaminant velocity ≈0.060 ft/day."
+      }
+    ]
+  },
+  {
+    "id": "site-retard-h1",
+    "topic": "site",
+    "difficulty": "hard",
+    "hint": "Two contaminants moving through the same groundwater will still arrive at very different times if their retardation factors differ.",
+    "question": "Two contaminants are released together 560 ft from a well in groundwater moving at 0.7 ft/day. Contaminant A has R=2; Contaminant B has R=6. How many YEARS after Contaminant A arrives does Contaminant B arrive?",
+    "choices": [
+      "4.4 years",
+      "8.8 years",
+      "17.5 years",
+      "0 years (wrong: assumes both travel at the same rate)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v_A=0.7/2=0.35, t_A=560/0.35=1,600 days. v_B=0.7/6=0.1167, t_B=560/0.1167=4,800 days. Diff=(4800-1600)/365=8.8 yr.",
+    "steps": [
+      {
+        "title": "Find each contaminant's travel time separately",
+        "detail": "t = distance / (v_groundwater/R) for each contaminant."
+      },
+      {
+        "title": "Compute both",
+        "detail": "t_A≈1600 days, t_B≈4800 days."
+      },
+      {
+        "title": "Find the difference and convert to years",
+        "detail": "(t_B - t_A)/365."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈8.8 years later - a higher R means substantially delayed arrival, not just a slightly later one."
+      }
+    ]
+  },
+  {
+    "id": "site-retard-h2",
+    "topic": "site",
+    "difficulty": "hard",
+    "hint": "The contaminant is both slowed by retardation AND degrading over time - find how long transport takes, then apply first-order decay over that same duration.",
+    "question": "A contaminant with R=4 and a degradation half-life of 800 days is released 700 ft from a well, in groundwater moving at 0.9 ft/day. What fraction of the original contaminant mass remains by the time it reaches the well (accounting for degradation during transport)?",
+    "choices": [
+      "0.034",
+      "0.068",
+      "0.135",
+      "1.0 (wrong: ignores degradation entirely)"
+    ],
+    "answerIndex": 1,
+    "explanation": "v_contam=0.9/4=0.225 ft/day. t=700/0.225=3111 days. Fraction remaining=0.5^(3111/800)=0.068.",
+    "steps": [
+      {
+        "title": "Find contaminant travel time (retardation slows it down)",
+        "detail": "v_contam=0.9/4=0.225 ft/day; t=700/0.225."
+      },
+      {
+        "title": "Compute travel time",
+        "detail": "t≈3111 days."
+      },
+      {
+        "title": "Apply first-order decay over that travel time",
+        "detail": "fraction remaining = 0.5^(t/half-life) = 0.5^(3111/800)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈0.07 (about 7%) of the original mass remains - both retardation (via travel time) and decay matter here."
+      }
+    ]
+  },
+  {
+    "id": "ehs-isq-e1",
     "topic": "ehs",
-    "question": "A radiation source reads 40 mrem/hr at a distance of 2 ft. What is the dose rate at 4 ft, using the inverse square law?",
+    "difficulty": "easy",
+    "hint": "Intensity falls off with the square of the distance.",
+    "question": "A source reads 80 mrem/hr at 3 ft. What is the reading at 6 ft?",
     "choices": [
       "10 mrem/hr",
       "20 mrem/hr",
       "40 mrem/hr",
-      "80 mrem/hr"
+      "40 mrem/hr (wrong: linear halving)"
     ],
-    "answerIndex": 0,
-    "explanation": "I2 = I1(d1/d2)^2 = 40 x (2/4)^2 = 40 x 0.25 = 10 mrem/hr.",
+    "answerIndex": 1,
+    "explanation": "I2=80(3/6)^2=80x0.25=20 mrem/hr.",
     "steps": [
       {
-        "title": "Recall the inverse square law",
-        "detail": "I2 = I1 x (d1/d2)^2."
+        "title": "Apply the inverse square law",
+        "detail": "I2=I1(d1/d2)^2."
       },
       {
-        "title": "Plug in values",
-        "detail": "I2 = 40 mrem/hr x (2/4)^2."
-      },
-      {
-        "title": "Simplify the ratio first",
-        "detail": "2/4 = 0.5, and 0.5^2 = 0.25."
-      },
-      {
-        "title": "Multiply",
-        "detail": "I2 = 40 x 0.25 = 10 mrem/hr."
+        "title": "Plug in",
+        "detail": "80x(3/6)^2=80x0.25."
       },
       {
         "title": "Answer",
-        "detail": "10 mrem/hr."
+        "detail": "20 mrem/hr."
       }
     ]
   },
   {
-    "id": "ehs-p2",
+    "id": "ehs-isq-e2",
     "topic": "ehs",
-    "question": "A facility logged 6 OSHA recordable injuries over a year with 250 employees working 2,000 hours each. What is the incidence rate, using IR = (# incidents x 200,000) / total hours worked?",
+    "difficulty": "easy",
+    "hint": "Same relationship, a bigger distance change.",
+    "question": "A source reads 200 mrem/hr at 1 ft. What is it at 5 ft?",
     "choices": [
-      "1.2",
-      "2.4",
-      "6.0",
-      "12.0"
+      "4 mrem/hr",
+      "8 mrem/hr",
+      "16 mrem/hr",
+      "40 mrem/hr (wrong: linear scaling)"
     ],
     "answerIndex": 1,
-    "explanation": "Total hours = 250 x 2,000 = 500,000. IR = (6 x 200,000)/500,000 = 1,200,000/500,000 = 2.4.",
+    "explanation": "I2=200(1/5)^2=200x0.04=8 mrem/hr.",
     "steps": [
       {
-        "title": "Recall the incidence rate formula",
-        "detail": "IR = (number of recordable incidents x 200,000) / total hours worked by all employees. The 200,000 represents 100 full-time workers at 2,000 hrs/year - it normalizes the rate to a standard workforce size."
+        "title": "Apply the inverse square law",
+        "detail": "I2=I1(d1/d2)^2."
       },
+      {
+        "title": "Plug in",
+        "detail": "200x(1/5)^2."
+      },
+      {
+        "title": "Answer",
+        "detail": "8 mrem/hr."
+      }
+    ]
+  },
+  {
+    "id": "ehs-isq-m1",
+    "topic": "ehs",
+    "difficulty": "medium",
+    "hint": "Rearrange the inverse square law to solve for distance instead of intensity.",
+    "question": "A source reads 500 mrem/hr at 2 ft. At what distance would the dose rate fall to 20 mrem/hr?",
+    "choices": [
+      "5.0 ft",
+      "10.0 ft",
+      "20.0 ft",
+      "50.0 ft (wrong: linear scaling)"
+    ],
+    "answerIndex": 1,
+    "explanation": "d2=d1xsqrt(I1/I2)=2xsqrt(500/20)=2xsqrt(25)=2x5=10.0 ft.",
+    "steps": [
+      {
+        "title": "Rearrange the inverse square law for distance",
+        "detail": "From I2=I1(d1/d2)^2: d2 = d1 x sqrt(I1/I2)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "2 x sqrt(500/20) = 2 x sqrt(25)."
+      },
+      {
+        "title": "Answer",
+        "detail": "10.0 ft."
+      }
+    ]
+  },
+  {
+    "id": "ehs-isq-m2",
+    "topic": "ehs",
+    "difficulty": "medium",
+    "hint": "The second distance is given in yards - convert to feet to match the first distance's units.",
+    "question": "A source reads 350 mrem/hr at 4 ft. What is the dose rate at a distance of 8 yards?",
+    "choices": [
+      "4.9 mrem/hr",
+      "9.7 mrem/hr",
+      "87.5 mrem/hr (wrong: used 8 as feet, not yards)",
+      "19.4 mrem/hr"
+    ],
+    "answerIndex": 1,
+    "explanation": "8 yards=24 ft. I2=350(4/24)^2=350x0.0278=9.72 mrem/hr.",
+    "steps": [
+      {
+        "title": "Convert the distance to consistent units",
+        "detail": "8 yards x 3 ft/yard = 24 ft."
+      },
+      {
+        "title": "Apply the inverse square law",
+        "detail": "I2=I1(d1/d2)^2=350(4/24)^2."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈9.72 mrem/hr - using 8 directly (as if it were feet) would badly overstate the dose rate."
+      }
+    ]
+  },
+  {
+    "id": "ehs-isq-h1",
+    "topic": "ehs",
+    "difficulty": "hard",
+    "hint": "This combines two separate reductions: distance (inverse square) AND shielding - apply them in sequence, not added together.",
+    "question": "A source reads 1000 mrem/hr at 2 ft. A worker stands 10 ft away, behind a shield that provides 90% attenuation. What dose rate does the worker actually experience?",
+    "choices": [
+      "40.0 mrem/hr (wrong: forgot the shielding)",
+      "4.0 mrem/hr",
+      "8.0 mrem/hr",
+      "20.0 mrem/hr (wrong: linear distance scaling)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Distance alone: I=1000(2/10)^2=1000x0.04=40 mrem/hr. Shielding removes 90%: 40x(1-0.90)=4.0 mrem/hr.",
+    "steps": [
+      {
+        "title": "Apply the inverse square law for distance first",
+        "detail": "I(at 10 ft, no shield) = 1000(2/10)^2 = 40 mrem/hr."
+      },
+      {
+        "title": "Then apply the shield's attenuation to that result",
+        "detail": "I(final) = 40 x (1-0.90)."
+      },
+      {
+        "title": "Answer",
+        "detail": "4.0 mrem/hr - both reductions apply in sequence (multiplicatively), not as a simple sum."
+      }
+    ]
+  },
+  {
+    "id": "ehs-isq-h2",
+    "topic": "ehs",
+    "difficulty": "hard",
+    "hint": "Find the dose RATE at the given distance first, then multiply by exposure time to get total dose received.",
+    "question": "A source reads 650 mrem/hr at 1.5 ft. A worker at 9 ft spends 3 hours nearby. What total dose (mrem) does the worker receive?",
+    "choices": [
+      "27.1 mrem",
+      "54.2 mrem",
+      "18.1 mrem (wrong: this is the rate, not the total dose)",
+      "108.3 mrem"
+    ],
+    "answerIndex": 1,
+    "explanation": "I2=650(1.5/9)^2=650x0.0278=18.06 mrem/hr. Total dose=18.06x3=54.2 mrem.",
+    "steps": [
+      {
+        "title": "Find the dose RATE at the worker's distance",
+        "detail": "I2=I1(d1/d2)^2=650(1.5/9)^2."
+      },
+      {
+        "title": "Compute",
+        "detail": "I2≈18.06 mrem/hr."
+      },
+      {
+        "title": "Multiply by exposure time to find total dose",
+        "detail": "Total dose = rate x time = 18.06 x 3."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈54.2 mrem total - the rate alone isn't the answer to 'what dose did they receive'."
+      }
+    ]
+  },
+  {
+    "id": "ehs-twa-e1",
+    "topic": "ehs",
+    "difficulty": "easy",
+    "hint": "TWA = sum of (concentration x time) divided by total time.",
+    "question": "A worker is exposed to 80 ppm for 5 hours and 20 ppm for 3 hours. What is the 8-hour TWA?",
+    "choices": [
+      "29 ppm",
+      "58 ppm",
+      "50 ppm (wrong: simple average, ignores time weighting)",
+      "115 ppm"
+    ],
+    "answerIndex": 1,
+    "explanation": "TWA=(80x5+20x3)/8=(400+60)/8=57.5 ppm.",
+    "steps": [
+      {
+        "title": "Apply the TWA formula",
+        "detail": "TWA=sum(conc x time)/total time."
+      },
+      {
+        "title": "Plug in",
+        "detail": "(80x5+20x3)/8."
+      },
+      {
+        "title": "Answer",
+        "detail": "57.5 ppm - note this differs from simply averaging 80 and 20, since the exposures lasted different durations."
+      }
+    ]
+  },
+  {
+    "id": "ehs-ir-e1",
+    "topic": "ehs",
+    "difficulty": "easy",
+    "hint": "IR = (incidents x 200,000)/total hours worked.",
+    "question": "A facility with 180 employees (each working 2080 hours/year) logged 8 recordable incidents. What is the incidence rate?",
+    "choices": [
+      "2.14",
+      "4.27",
+      "8.55",
+      "8.00 (wrong: raw count, no normalization)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Total hours=180x2080=374,400. IR=8x200,000/374,400=4.27.",
+    "steps": [
       {
         "title": "Find total hours worked",
-        "detail": "250 employees x 2,000 hours = 500,000 hours."
+        "detail": "180 x 2,080."
       },
       {
-        "title": "Plug into the formula",
-        "detail": "IR = (6 x 200,000) / 500,000."
-      },
-      {
-        "title": "Do the arithmetic",
-        "detail": "6 x 200,000 = 1,200,000. 1,200,000 / 500,000 = 2.4."
+        "title": "Apply the incidence rate formula",
+        "detail": "IR=(incidents x 200,000)/total hours."
       },
       {
         "title": "Answer",
-        "detail": "Incidence rate = 2.4 (recordable incidents per 100 full-time workers)."
+        "detail": "4.27."
       }
     ]
   },
   {
-    "id": "ehs-p3",
+    "id": "ehs-twa-m1",
     "topic": "ehs",
-    "question": "A radioactive source with an initial activity of 800 mCi has a half-life of 6 days. What is its activity after 18 days?",
+    "difficulty": "medium",
+    "hint": "The shift is 8 hours total, but exposure data is only given for part of it - the remaining time counts as zero exposure, not as missing data to exclude.",
+    "question": "During an 8-hour shift, a worker is exposed to 120 ppm for 3 hours and 60 ppm for 2 hours, with no exposure the rest of the shift. What is the 8-hour TWA?",
     "choices": [
+      "96 ppm (wrong: divided by 5 hours instead of the full 8-hour shift)",
+      "60 ppm",
+      "96 ppm",
+      "90 ppm"
+    ],
+    "answerIndex": 1,
+    "explanation": "TWA=(120x3+60x2+0x3)/8=(360+120)/8=60 ppm.",
+    "steps": [
+      {
+        "title": "Include the full 8-hour shift in the denominator, even the unexposed time",
+        "detail": "TWA = sum(conc x time)/8 hours, not /5 hours (the exposed time only)."
+      },
+      {
+        "title": "Compute the numerator",
+        "detail": "120x3 + 60x2 + 0x3 = 480."
+      },
+      {
+        "title": "Divide by the full shift length",
+        "detail": "480/8."
+      },
+      {
+        "title": "Answer",
+        "detail": "60 ppm - dividing only by the exposed hours (5) rather than the full shift (8) is a common mistake that overstates the TWA."
+      }
+    ]
+  },
+  {
+    "id": "ehs-ir-m1",
+    "topic": "ehs",
+    "difficulty": "medium",
+    "hint": "Total hours worked is already given directly here - don't try to recompute it from employee count.",
+    "question": "A company logged 5 recordable incidents across 850,000 total hours worked (aggregated payroll data) in a year. What is the incidence rate?",
+    "choices": [
+      "0.59",
+      "1.18",
+      "2.35",
+      "10.00 (wrong: made up a different hours base)"
+    ],
+    "answerIndex": 1,
+    "explanation": "IR=5x200,000/850,000=1.18.",
+    "steps": [
+      {
+        "title": "Apply the incidence rate formula directly with the given total hours",
+        "detail": "IR = (incidents x 200,000) / total hours."
+      },
+      {
+        "title": "Plug in",
+        "detail": "5 x 200,000 / 850,000."
+      },
+      {
+        "title": "Answer",
+        "detail": "1.18."
+      }
+    ]
+  },
+  {
+    "id": "ehs-twa-h1",
+    "topic": "ehs",
+    "difficulty": "hard",
+    "hint": "This has two separate compliance questions bundled together: does the peak exceed the STEL, AND what's the overall TWA? Answer the one actually asked.",
+    "question": "A worker's exposure spikes to 250 ppm for 15 minutes (STEL limit is 200 ppm), then stays at 40 ppm for the remaining 7.75 hours of an 8-hour shift. What is the 8-hour TWA (regardless of the STEL question)?",
+    "choices": [
+      "23.3 ppm",
+      "46.6 ppm",
+      "250.0 ppm (wrong: this is the peak, not the TWA)",
+      "145.0 ppm"
+    ],
+    "answerIndex": 1,
+    "explanation": "TWA=(250x0.25+40x7.75)/8=(62.5+310)/8=46.6 ppm. (Separately, the 15-min STEL of 200 ppm IS exceeded by the 250 ppm peak - a distinct compliance issue from the TWA.)",
+    "steps": [
+      {
+        "title": "Recognize two separate questions are embedded here",
+        "detail": "Whether the STEL was exceeded (yes, 250>200) is separate from what the overall TWA is - the question asks specifically for the TWA."
+      },
+      {
+        "title": "Apply the TWA formula over the full 8-hour shift",
+        "detail": "TWA=(250x0.25+40x7.75)/8."
+      },
+      {
+        "title": "Compute",
+        "detail": "(62.5+310)/8."
+      },
+      {
+        "title": "Answer",
+        "detail": "46.6 ppm - and separately, note the STEL was violated by the peak, which a real compliance review would flag independently of this TWA number."
+      }
+    ]
+  },
+  {
+    "id": "ehs-decay-e1",
+    "topic": "ehs",
+    "difficulty": "easy",
+    "hint": "N = N0 x (1/2)^(t/half-life).",
+    "question": "A source starts at 400 mCi with a half-life of 10 days. What is its activity after 30 days?",
+    "choices": [
+      "25 mCi",
       "50 mCi",
       "100 mCi",
-      "200 mCi",
-      "400 mCi"
+      "100 mCi (wrong: linear decay)"
     ],
     "answerIndex": 1,
-    "explanation": "18 days / 6 days = 3 half-lives. 800 -> 400 -> 200 -> 100 mCi.",
+    "explanation": "n=30/10=3 half-lives. N=400x(0.5)^3=50 mCi.",
     "steps": [
       {
-        "title": "Find the number of half-lives",
-        "detail": "18 days / 6 days per half-life = 3 half-lives."
+        "title": "Find number of half-lives elapsed",
+        "detail": "30/10=3."
       },
       {
-        "title": "Apply the halving three times",
-        "detail": "800 -> 400 (1st) -> 200 (2nd) -> 100 (3rd)."
-      },
-      {
-        "title": "Or use the formula",
-        "detail": "N = N0(1/2)^n = 800 x (1/2)^3 = 800/8 = 100."
+        "title": "Apply the halving",
+        "detail": "400 -> 200 -> 100 -> 50."
       },
       {
         "title": "Answer",
-        "detail": "100 mCi."
+        "detail": "50 mCi."
       }
     ]
   },
   {
-    "id": "ehs-p4",
+    "id": "ehs-decay-e2",
     "topic": "ehs",
-    "question": "A worker is exposed to a solvent at 150 ppm for 4 hours and then 50 ppm for the remaining 4 hours of an 8-hour shift. What is the 8-hour TWA exposure?",
+    "difficulty": "easy",
+    "hint": "Same relationship.",
+    "question": "A 1000 mCi source has a 5-day half-life. Activity after 15 days?",
     "choices": [
-      "75 ppm",
-      "100 ppm",
-      "125 ppm",
-      "150 ppm"
+      "62 mCi",
+      "125 mCi",
+      "250 mCi",
+      "500 mCi"
     ],
     "answerIndex": 1,
-    "explanation": "TWA = (150x4 + 50x4)/8 = (600+200)/8 = 800/8 = 100 ppm.",
+    "explanation": "n=15/5=3. N=1000x0.5^3=125 mCi.",
     "steps": [
       {
-        "title": "Recall the TWA formula",
-        "detail": "TWA = sum of (concentration x time) for each period, divided by total time."
+        "title": "Find half-lives elapsed",
+        "detail": "15/5=3."
       },
       {
-        "title": "Compute each period's contribution",
-        "detail": "150 ppm x 4 hr = 600 ppm-hr. 50 ppm x 4 hr = 200 ppm-hr."
-      },
-      {
-        "title": "Sum the contributions",
-        "detail": "600 + 200 = 800 ppm-hr."
-      },
-      {
-        "title": "Divide by total time",
-        "detail": "800 / 8 hours = 100 ppm."
+        "title": "Apply halving three times",
+        "detail": "1000->500->250->125."
       },
       {
         "title": "Answer",
-        "detail": "100 ppm."
+        "detail": "125 mCi."
       }
     ]
   },
   {
-    "id": "ehs-p5",
+    "id": "ehs-decay-m1",
     "topic": "ehs",
-    "question": "A flammable gas has an LEL of 5% by volume in air. A monitor reads 1.5% gas concentration in a space. What percent of the LEL does this represent?",
+    "difficulty": "medium",
+    "hint": "Work out how many half-lives are needed to reach the target, then convert to actual days.",
+    "question": "A 600 mCi source has an 8-day half-life. How many days until it decays to 75 mCi?",
     "choices": [
-      "15% of LEL",
-      "20% of LEL",
-      "30% of LEL",
-      "50% of LEL"
+      "12 days",
+      "24 days",
+      "48 days",
+      "8 days (wrong: just the half-life itself)"
     ],
-    "answerIndex": 2,
-    "explanation": "%LEL = (measured concentration / LEL) x 100 = (1.5/5.0) x 100 = 30%.",
+    "answerIndex": 1,
+    "explanation": "600/75=8=2^3, so 3 half-lives. t=3x8=24 days.",
     "steps": [
       {
-        "title": "Recall the %LEL relationship",
-        "detail": "%LEL = (actual gas concentration / LEL concentration) x 100."
+        "title": "Find how many half-lives are needed",
+        "detail": "600/75=8, and 8=2^3, so 3 half-lives are needed."
+      },
+      {
+        "title": "Convert to actual time",
+        "detail": "3 half-lives x 8 days/half-life."
+      },
+      {
+        "title": "Answer",
+        "detail": "24 days."
+      }
+    ]
+  },
+  {
+    "id": "ehs-decay-m2",
+    "topic": "ehs",
+    "difficulty": "medium",
+    "hint": "You're given a before/after activity and elapsed time - work backward to find the half-life.",
+    "question": "A source decays from 250 mCi to 31.25 mCi over 40 days. What is its half-life?",
+    "choices": [
+      "7 days",
+      "13 days",
+      "27 days",
+      "20 days (wrong: arbitrary halving of elapsed time)"
+    ],
+    "answerIndex": 1,
+    "explanation": "250/31.25=8=2^3, so 3 half-lives occurred in 40 days. Half-life=40/3=13.3 days.",
+    "steps": [
+      {
+        "title": "Find how many half-lives occurred",
+        "detail": "250/31.25=8=2^3, so 3 half-lives."
+      },
+      {
+        "title": "Divide elapsed time by the number of half-lives",
+        "detail": "40 days / 3 half-lives."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈13.3 days per half-life."
+      }
+    ]
+  },
+  {
+    "id": "ehs-decay-h1",
+    "topic": "ehs",
+    "difficulty": "hard",
+    "hint": "First find the activity after decay, then determine what additional shielding (if any) is needed to get under the limit.",
+    "question": "A 2000 mCi source has a 6-day half-life. After 18 days, workers need the effective activity below 50 mCi using shielding. What minimum shielding attenuation (%) is required?",
+    "choices": [
+      "40%",
+      "80%",
+      "160%",
+      "0% (wrong: assumes decay alone is already sufficient)"
+    ],
+    "answerIndex": 1,
+    "explanation": "After 18 days (3 half-lives): N=2000x0.5^3=250 mCi. Still above 50 mCi limit, so shielding must reduce it further: reduction=1-(50/250)=80%.",
+    "steps": [
+      {
+        "title": "Find the activity remaining after decay alone",
+        "detail": "18/6=3 half-lives. N=2000x0.5^3=250 mCi."
+      },
+      {
+        "title": "Compare to the limit",
+        "detail": "250 mCi is still well above the 50 mCi limit - decay alone isn't enough."
+      },
+      {
+        "title": "Find the additional shielding attenuation needed",
+        "detail": "reduction = 1-(limit/current activity) = 1-(50/250)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈80% shielding attenuation needed on top of the natural decay."
+      }
+    ]
+  },
+  {
+    "id": "ehs-decay-h2",
+    "topic": "ehs",
+    "difficulty": "hard",
+    "hint": "This is really an LEL problem, not a decay problem - find %LEL, then compare to a typical 10%-of-LEL alarm setpoint.",
+    "question": "A confined space has a flammable gas with an LEL of 4.5% by volume. A monitor reads 1.2% gas concentration. If alarms are typically set at 10% of the LEL, should this reading trigger an alarm?",
+    "choices": [
+      "%LEL=27%, alarm threshold 0.45% gas - YES, alarm should trigger",
+      "%LEL=13%, no alarm",
+      "The reading exceeds the LEL itself, so the space is already on fire",
+      "%LEL cannot be determined without more data"
+    ],
+    "answerIndex": 0,
+    "explanation": "%LEL=(1.2/4.5)x100=27%. Alarm threshold (10% of LEL)=4.5x0.10=0.45% gas concentration. Since 1.2% > 0.45%, the alarm should trigger.",
+    "steps": [
+      {
+        "title": "Find %LEL",
+        "detail": "%LEL=(reading/LEL)x100=(1.2/4.5)x100."
+      },
+      {
+        "title": "Find the alarm threshold in the same units (% gas concentration)",
+        "detail": "threshold = LEL x 10% = 4.5 x 0.10."
+      },
+      {
+        "title": "Compare the actual reading to the threshold",
+        "detail": "1.2% gas vs 0.45% gas threshold - the reading is well above it."
+      },
+      {
+        "title": "Answer",
+        "detail": "%LEL≈27% - yes, this should trigger an alarm, well before reaching the LEL itself (100% LEL) where actual ignition risk begins."
+      }
+    ]
+  },
+  {
+    "id": "pm-pw-e1",
+    "topic": "pm-econ",
+    "difficulty": "easy",
+    "hint": "P = F/(1+i)^n.",
+    "question": "What is the present worth of $30,000 received 8 years from now at 7% interest?",
+    "choices": [
+      "$8,730",
+      "$17,460",
+      "$34,921",
+      "$30,000"
+    ],
+    "answerIndex": 1,
+    "explanation": "P=30000/(1.07)^8=17,460.",
+    "steps": [
+      {
+        "title": "Apply the present worth formula",
+        "detail": "P=F/(1+i)^n."
       },
       {
         "title": "Plug in",
-        "detail": "%LEL = (1.5% / 5.0%) x 100."
-      },
-      {
-        "title": "Divide first",
-        "detail": "1.5/5.0 = 0.30."
-      },
-      {
-        "title": "Convert to percent",
-        "detail": "0.30 x 100 = 30."
+        "detail": "30,000/(1.07)^8."
       },
       {
         "title": "Answer",
-        "detail": "30% of the LEL - typically alarms are set well below 100% of LEL (e.g., 10-20%) as a safety margin, so this reading would likely already warrant caution."
+        "detail": "$17,460."
       }
     ]
   },
   {
-    "id": "pm-p1",
+    "id": "pm-pw-e2",
     "topic": "pm-econ",
-    "question": "A treatment system has a fixed annual cost of $60,000 and a variable cost of $8 per ton treated. If the facility charges $20 per ton, how many tons must be treated per year to break even?",
+    "difficulty": "easy",
+    "hint": "F = P(1+i)^n.",
+    "question": "$10,000 is invested today at 5% for 6 years. What is its future worth?",
     "choices": [
-      "2,000 tons",
-      "3,000 tons",
-      "5,000 tons",
-      "7,500 tons"
-    ],
-    "answerIndex": 2,
-    "explanation": "Breakeven units = Fixed Cost / (Price - Variable Cost) = 60,000 / (20 - 8) = 5,000 tons.",
-    "steps": [
-      {
-        "title": "Recall the breakeven formula",
-        "detail": "Breakeven quantity = Fixed Costs / (Price per unit - Variable cost per unit)."
-      },
-      {
-        "title": "Find the contribution margin",
-        "detail": "$20/ton - $8/ton = $12/ton."
-      },
-      {
-        "title": "Divide fixed costs by contribution margin",
-        "detail": "$60,000 / $12/ton = 5,000 tons."
-      },
-      {
-        "title": "Sanity check",
-        "detail": "At 5,000 tons: revenue = $100,000, total cost = $60,000 + 5,000x$8 = $100,000 - equal, confirming breakeven."
-      },
-      {
-        "title": "Answer",
-        "detail": "5,000 tons."
-      }
-    ]
-  },
-  {
-    "id": "pm-p2",
-    "topic": "pm-econ",
-    "question": "What is the present worth of $50,000 received 10 years from now, at an interest rate of 6%? (P/F, 6%, 10) = 0.5584",
-    "choices": [
-      "$18,600",
-      "$27,920",
-      "$31,400",
-      "$50,000"
+      "$6,700",
+      "$13,401",
+      "$26,802",
+      "$10,000"
     ],
     "answerIndex": 1,
-    "explanation": "P = F x (P/F,6%,10) = 50,000 x 0.5584 = 27,920.",
+    "explanation": "F=10000x(1.05)^6=13,401.",
     "steps": [
       {
-        "title": "Recall the present worth relationship",
-        "detail": "P = F x (P/F, i, n), where (P/F, i, n) is the single-payment present worth factor."
+        "title": "Apply the future worth formula",
+        "detail": "F=P(1+i)^n."
       },
       {
-        "title": "Plug in the given factor",
-        "detail": "P = 50,000 x 0.5584."
-      },
-      {
-        "title": "Multiply",
-        "detail": "50,000 x 0.5584 = 27,920."
+        "title": "Plug in",
+        "detail": "10,000x(1.05)^6."
       },
       {
         "title": "Answer",
-        "detail": "$27,920."
+        "detail": "$13,401."
       }
     ]
   },
   {
-    "id": "pm-p3",
+    "id": "pm-pw-m1",
     "topic": "pm-econ",
-    "question": "An engineer deposits $5,000 today at 5% annual interest, compounded annually. What is it worth in 8 years? ((1+i)^n = (1.05)^8 = 1.4775)",
+    "difficulty": "medium",
+    "hint": "Rearrange the compound-interest relationship to solve for the number of years instead of future worth.",
+    "question": "How many years does it take $8,000 to grow to $14,000 at 8% annual interest?",
     "choices": [
-      "$5,750",
-      "$6,250",
-      "$7,388",
-      "$8,860"
+      "3.6 years",
+      "7.3 years",
+      "14.5 years",
+      "9.4 years (wrong: simple interest approach)"
     ],
-    "answerIndex": 2,
-    "explanation": "F = P(1+i)^n = 5,000 x 1.4775 = 7,387.50.",
+    "answerIndex": 1,
+    "explanation": "n=ln(14000/8000)/ln(1.08)=7.3 years.",
     "steps": [
       {
-        "title": "Recall the future worth relationship",
-        "detail": "F = P (1+i)^n."
+        "title": "Set up the compound interest equation",
+        "detail": "F=P(1+i)^n, so n=ln(F/P)/ln(1+i)."
       },
       {
-        "title": "Plug in the given growth factor",
-        "detail": "F = 5,000 x 1.4775."
-      },
-      {
-        "title": "Multiply",
-        "detail": "5,000 x 1.4775 = 7,387.50."
+        "title": "Plug in",
+        "detail": "ln(14000/8000)/ln(1.08)."
       },
       {
         "title": "Answer",
-        "detail": "About $7,388."
+        "detail": "≈7.3 years."
       }
     ]
   },
   {
-    "id": "pm-p4",
+    "id": "pm-pw-m2",
     "topic": "pm-econ",
-    "question": "A piece of equipment costs $80,000, has a salvage value of $10,000 after 10 years, and is depreciated using the straight-line method. What is the annual depreciation?",
+    "difficulty": "medium",
+    "hint": "When compounding happens more than once a year, convert to a per-period rate and a matching number of periods before applying the formula.",
+    "question": "What is the present worth of $25,000 received in 10 years, at a nominal 6% annual rate compounded quarterly?",
     "choices": [
+      "$6,891",
+      "$13,782",
+      "$13,960 (wrong: ignores quarterly compounding)",
+      "$27,563"
+    ],
+    "answerIndex": 1,
+    "explanation": "i_period=0.06/4=0.015. n_periods=10x4=40. P=25000/(1.015)^40=13,782.",
+    "steps": [
+      {
+        "title": "Convert to a per-period rate and count of periods",
+        "detail": "i_period=6%/4=1.5%; n_periods=10x4=40 quarters."
+      },
+      {
+        "title": "Apply the present worth formula with the period values",
+        "detail": "P=F/(1+i_period)^n_periods."
+      },
+      {
+        "title": "Answer",
+        "detail": "$13,782 - using the nominal annual rate directly (without splitting into quarters) gives a different, wrong answer."
+      }
+    ]
+  },
+  {
+    "id": "pm-pw-h1",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "This combines a single future lump sum AND a series of annual payments - find the present worth of each separately, then add them.",
+    "question": "A project returns a single lump sum of $20,000 at the end of year 5, PLUS $3,000/year at the end of each of those 5 years. At 7% interest, what is the total present worth of all these cash flows?",
+    "choices": [
+      "$14,260 (lump sum only)",
+      "$26,560",
+      "$12,301 (series only)",
+      "$34,528"
+    ],
+    "answerIndex": 1,
+    "explanation": "PW(lump)=20000/(1.07)^5=14,260. PW(series)=sum of 3000/(1.07)^t for t=1..5=12,301. Total=26,560.",
+    "steps": [
+      {
+        "title": "Find the present worth of the lump sum alone",
+        "detail": "PW = 20,000/(1.07)^5."
+      },
+      {
+        "title": "Find the present worth of the annual payment series",
+        "detail": "Sum 3,000/(1.07)^t for t=1 through 5."
+      },
+      {
+        "title": "Add both present worths together",
+        "detail": "Total PW = PW(lump) + PW(series)."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈$26,560 - either piece alone understates the project's true present worth."
+      }
+    ]
+  },
+  {
+    "id": "pm-pw-h2",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "When both a real return target and inflation are given, you need to combine them into a single nominal rate before discounting.",
+    "question": "An engineer wants a real (inflation-adjusted) return of 4% per year, with inflation running at 3%/year. What is the present worth of $50,000 received in 12 years, using the equivalent nominal discount rate?",
+    "choices": [
+      "$31,230 (wrong: ignores inflation entirely)",
+      "$21,904",
+      "$32,856",
+      "$22,201 (wrong: simply added the two rates)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Nominal rate=(1.04)(1.03)-1=0.0712. PV=50000/(1+0.0712)^12=21,904.",
+    "steps": [
+      {
+        "title": "Combine real return and inflation into a nominal rate",
+        "detail": "nominal = (1+real)(1+inflation)-1 = (1.04)(1.03)-1 - this is NOT simply adding the two rates."
+      },
+      {
+        "title": "Compute the nominal rate",
+        "detail": "≈7.12%."
+      },
+      {
+        "title": "Discount the future value using the nominal rate",
+        "detail": "PV=50,000/(1+nominal)^12."
+      },
+      {
+        "title": "Answer",
+        "detail": "$21,904 - simply adding 4%+3%=7% instead of compounding them would give a noticeably different (wrong) rate."
+      }
+    ]
+  },
+  {
+    "id": "pm-be-e1",
+    "topic": "pm-econ",
+    "difficulty": "easy",
+    "hint": "Breakeven units = Fixed Costs/(Price-Variable cost).",
+    "question": "Fixed costs are $40,000/year, variable cost is $12/unit, and the selling price is $28/unit. What is the breakeven quantity?",
+    "choices": [
+      "1250 units",
+      "2500 units",
+      "5000 units",
+      "1429 units (wrong: ignores variable cost)"
+    ],
+    "answerIndex": 1,
+    "explanation": "BE=40000/(28-12)=2500 units.",
+    "steps": [
+      {
+        "title": "Apply the breakeven formula",
+        "detail": "BE=FC/(Price-VC)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "40,000/(28-12)."
+      },
+      {
+        "title": "Answer",
+        "detail": "2500 units."
+      }
+    ]
+  },
+  {
+    "id": "pm-be-e2",
+    "topic": "pm-econ",
+    "difficulty": "easy",
+    "hint": "Straight-line depreciation = (Cost-Salvage)/Life.",
+    "question": "Equipment costs $60,000, has a salvage value of $5,000 after 11 years, using straight-line depreciation. What is the annual depreciation?",
+    "choices": [
+      "$2,500",
       "$5,000",
-      "$7,000",
-      "$8,000",
-      "$9,000"
+      "$10,000",
+      "$5,455 (wrong: ignores salvage value)"
     ],
     "answerIndex": 1,
-    "explanation": "Annual depreciation = (80,000-10,000)/10 = 70,000/10 = 7,000.",
+    "explanation": "dep=(60000-5000)/11=5,000.",
     "steps": [
       {
-        "title": "Recall straight-line depreciation",
-        "detail": "Annual depreciation = (Initial Cost - Salvage Value) / Useful Life."
+        "title": "Apply straight-line depreciation",
+        "detail": "dep=(Cost-Salvage)/Life."
       },
       {
         "title": "Plug in",
-        "detail": "(80,000 - 10,000) / 10."
-      },
-      {
-        "title": "Subtract then divide",
-        "detail": "70,000 / 10 = 7,000."
+        "detail": "(60,000-5,000)/11."
       },
       {
         "title": "Answer",
-        "detail": "$7,000 per year."
+        "detail": "$5,000/year."
       }
     ]
   },
   {
-    "id": "pm-p5",
+    "id": "pm-be-m1",
     "topic": "pm-econ",
-    "question": "A piece of equipment cost $200,000 in 2015 when the cost index was 550. What would an equivalent piece of equipment cost in 2025 if the cost index is now 715?",
+    "difficulty": "medium",
+    "hint": "Reaching a target PROFIT (not just breaking even) means treating the target profit like an additional fixed cost to cover.",
+    "question": "Fixed costs are $75,000, variable cost is $18/unit, price is $45/unit. How many units must be sold to earn a profit of $30,000 (not just break even)?",
     "choices": [
-      "$153,800",
-      "$200,000",
-      "$260,000",
-      "$318,200"
+      "2778 units (wrong: this is just the breakeven point, ignoring the profit target)",
+      "3889 units",
+      "7778 units",
+      "1111 units (wrong: ignores fixed costs entirely)"
     ],
-    "answerIndex": 2,
-    "explanation": "Cost_new = Cost_old x (Index_new/Index_old) = 200,000 x (715/550) = 200,000 x 1.30 = 260,000.",
+    "answerIndex": 1,
+    "explanation": "Units=(FC+target profit)/(Price-VC)=(75000+30000)/(45-18)=3889.",
     "steps": [
       {
-        "title": "Recall the cost index scaling relationship",
-        "detail": "Cost_new = Cost_old x (Index_new / Index_old)."
+        "title": "Treat the target profit as an additional amount to cover, like fixed costs",
+        "detail": "Units = (Fixed Costs + Target Profit)/(Price - Variable Cost)."
       },
       {
-        "title": "Compute the index ratio",
-        "detail": "715 / 550 = 1.30."
-      },
-      {
-        "title": "Apply to the old cost",
-        "detail": "200,000 x 1.30."
-      },
-      {
-        "title": "Multiply",
-        "detail": "200,000 x 1.30 = 260,000."
+        "title": "Plug in",
+        "detail": "(75,000+30,000)/(45-18)."
       },
       {
         "title": "Answer",
-        "detail": "$260,000."
+        "detail": "3889 units - the plain breakeven formula alone would only tell you where profit is zero, not $30,000."
       }
     ]
   },
   {
-    "id": "pm-p6",
+    "id": "pm-be-m2",
     "topic": "pm-econ",
-    "question": "A loan has a nominal annual interest rate of 12%, compounded monthly. What is the effective annual interest rate? ((1+0.12/12)^12 = 1.1268)",
+    "difficulty": "medium",
+    "hint": "Book value is what's left after subtracting accumulated depreciation - not the annual depreciation amount itself.",
+    "question": "Equipment costs $120,000, salvage $15,000, 8-year life, straight-line depreciation. What is the book value after 3 years?",
     "choices": [
-      "12.00%",
-      "12.36%",
-      "12.68%",
-      "13.00%"
+      "$39,375 (wrong: this is accumulated depreciation, not book value)",
+      "$80,625",
+      "$56,438",
+      "$120,000 (wrong: no depreciation applied)"
     ],
-    "answerIndex": 2,
-    "explanation": "Effective rate = (1 + 0.12/12)^12 - 1 = 1.1268 - 1 = 0.1268 = 12.68%.",
+    "answerIndex": 1,
+    "explanation": "dep/yr=(120000-15000)/8=13,125. Accumulated after 3 yr=39,375. Book value=120000-39,375=80,625.",
     "steps": [
       {
-        "title": "Recall the effective rate formula",
-        "detail": "Effective annual rate = (1 + r/m)^m - 1, where r is the nominal rate and m is the number of compounding periods per year."
+        "title": "Find annual depreciation",
+        "detail": "(120,000-15,000)/8."
       },
       {
-        "title": "Plug in the given factor",
-        "detail": "(1+0.12/12)^12 = 1.1268 (given)."
+        "title": "Find accumulated depreciation over 3 years",
+        "detail": "dep/yr x 3."
       },
       {
-        "title": "Subtract 1 to isolate the rate",
-        "detail": "1.1268 - 1 = 0.1268."
-      },
-      {
-        "title": "Convert to percent",
-        "detail": "0.1268 = 12.68%."
+        "title": "Subtract from original cost to find book value",
+        "detail": "Book value = Cost - accumulated depreciation."
       },
       {
         "title": "Answer",
-        "detail": "12.68% - notably higher than the 12.00% nominal rate, because of monthly compounding."
+        "detail": "$80,625."
+      }
+    ]
+  },
+  {
+    "id": "pm-be-h1",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "This is a crossover analysis between two alternatives - find the volume where their TOTAL costs are equal, not where either one breaks even against revenue.",
+    "question": "Alternative A has fixed costs of $20,000 and variable cost $25/unit. Alternative B has fixed costs of $50,000 and variable cost $15/unit. At what production volume do the two alternatives cost the same?",
+    "choices": [
+      "1500 units",
+      "3000 units",
+      "6000 units",
+      "-3000 units (wrong sign in denominator)"
+    ],
+    "answerIndex": 1,
+    "explanation": "FC_A+VC_A x Q=FC_B+VC_B x Q. 20000+25Q=50000+15Q. 10Q=30000. Q=3000.",
+    "steps": [
+      {
+        "title": "Set total cost of A equal to total cost of B",
+        "detail": "FC_A + VC_A(Q) = FC_B + VC_B(Q)."
+      },
+      {
+        "title": "Solve for Q",
+        "detail": "20,000+25Q = 50,000+15Q, so 10Q=30,000."
+      },
+      {
+        "title": "Answer",
+        "detail": "Q=3000 units - below this volume, A is cheaper (lower fixed cost); above it, B is cheaper (lower variable cost)."
+      }
+    ]
+  },
+  {
+    "id": "pm-be-h2",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "Selling an asset above its book value triggers a taxable gain - find book value first, then the gain, then the tax owed on that gain.",
+    "question": "Equipment ($200,000 cost, $20,000 salvage, 10-year life, straight-line) is sold after 4 years for $140,000. At a 30% tax rate, what tax is owed on the sale (if any)?",
+    "choices": [
+      "$60,000 (wrong: taxed the full original cost)",
+      "$3,600",
+      "$42,000 (wrong: taxed the full sale price)",
+      "$0 (wrong: assumes no gain occurred)"
+    ],
+    "answerIndex": 1,
+    "explanation": "dep/yr=(200000-20000)/10=18000. Book value after 4 yr=200000-18000x4=128,000. Gain=140000-128,000=12,000. Tax=gain x0.30=3,600.",
+    "steps": [
+      {
+        "title": "Find annual depreciation and book value at time of sale",
+        "detail": "dep/yr=(200,000-20,000)/10=18,000/yr. Book value after 4 years = 200,000-18,000x4."
+      },
+      {
+        "title": "Compute book value",
+        "detail": "≈$128,000."
+      },
+      {
+        "title": "Find the taxable gain (sale price minus book value)",
+        "detail": "Gain = 140,000 - book value."
+      },
+      {
+        "title": "Apply the tax rate to the gain only",
+        "detail": "Tax = gain x 0.30."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈$3,600 - tax applies only to the gain above book value, not to the full sale price or original cost."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-e1",
+    "topic": "pm-econ",
+    "difficulty": "easy",
+    "hint": "Cost_new = Cost_old x (Index_new/Index_old).",
+    "question": "Equipment cost $150,000 when the cost index was 480. What would it cost now, with the index at 600?",
+    "choices": [
+      "$93,750",
+      "$187,500",
+      "$375,000",
+      "$150,000"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cost_new=150000x(600/480)=187,500.",
+    "steps": [
+      {
+        "title": "Apply the cost index formula",
+        "detail": "Cost_new=Cost_old x(Index_new/Index_old)."
+      },
+      {
+        "title": "Plug in",
+        "detail": "150,000 x (600/480)."
+      },
+      {
+        "title": "Answer",
+        "detail": "$187,500."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-e2",
+    "topic": "pm-econ",
+    "difficulty": "easy",
+    "hint": "Effective rate = (1+r/m)^m - 1.",
+    "question": "A loan has a nominal annual rate of 9%, compounded monthly. What is the effective annual rate?",
+    "choices": [
+      "4.69%",
+      "9.38%",
+      "9.00%",
+      "14.07%"
+    ],
+    "answerIndex": 1,
+    "explanation": "eff=(1+0.09/12)^12-1=9.38%.",
+    "steps": [
+      {
+        "title": "Apply the effective rate formula",
+        "detail": "eff=(1+r/m)^m - 1."
+      },
+      {
+        "title": "Plug in",
+        "detail": "(1+0.09/12)^12 - 1."
+      },
+      {
+        "title": "Answer",
+        "detail": "9.38%."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-m1",
+    "topic": "pm-econ",
+    "difficulty": "medium",
+    "hint": "Use the ratio of the two index values directly - don't try to convert the index into a growth rate first.",
+    "question": "A piece of equipment cost $85,000 in 2018 when the relevant cost index was 420. The index is now 540. What is the equivalent cost today?",
+    "choices": [
+      "$54,643",
+      "$109,286",
+      "$101,494 (wrong: assumed a flat 3% annual escalation instead of using the actual index)",
+      "$218,571"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cost=85000x(540/420)=109,286.",
+    "steps": [
+      {
+        "title": "Apply the cost index ratio directly",
+        "detail": "Cost_new=Cost_old x (Index_new/Index_old) = 85,000x(540/420)."
+      },
+      {
+        "title": "Answer",
+        "detail": "$109,286 - don't substitute an assumed annual escalation rate when the actual index values are given."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-m2",
+    "topic": "pm-econ",
+    "difficulty": "medium",
+    "hint": "Find the effective annual rate first, then use it (not the nominal rate) in the compound growth formula.",
+    "question": "$15,000 is invested at a nominal 8% annual rate, compounded quarterly, for 5 years. What is the future worth?",
+    "choices": [
+      "$22,040 (wrong: used nominal rate directly, ignoring quarterly compounding)",
+      "$22,289",
+      "$28,976",
+      "$15,000"
+    ],
+    "answerIndex": 1,
+    "explanation": "eff=(1+0.08/4)^4-1=8.24%. F=15000x(1+0.0824)^5=22,289.",
+    "steps": [
+      {
+        "title": "Convert the nominal rate to an effective annual rate first",
+        "detail": "eff=(1+0.08/4)^4-1."
+      },
+      {
+        "title": "Compute",
+        "detail": "eff≈8.24%."
+      },
+      {
+        "title": "Use the effective rate in the future worth formula",
+        "detail": "F=P(1+eff)^n=15,000(1+0.0824)^5."
+      },
+      {
+        "title": "Answer",
+        "detail": "$22,289 - using the nominal 8% directly would understate the true future value."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-h1",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "This chains a cost-index escalation with a subsequent depreciation calculation - escalate the cost first, then depreciate the escalated value.",
+    "question": "A piece of equipment cost $95,000 when the cost index was 350. Today's index is 490. If a NEW unit is purchased today at the escalated cost, with a 8,000 salvage value and 15-year life, what is the annual straight-line depreciation?",
+    "choices": [
+      "$5,800 (wrong: used the old, non-escalated cost)",
+      "$8,333",
+      "$16,667",
+      "$8,867 (wrong: ignored salvage value)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Escalated cost=95000x(490/350)=133,000. Annual dep=(133,000-8000)/15=8,333.",
+    "steps": [
+      {
+        "title": "Escalate the original cost to today's dollars using the cost index",
+        "detail": "Cost_today=95,000x(490/350)."
+      },
+      {
+        "title": "Compute",
+        "detail": "≈$133,000."
+      },
+      {
+        "title": "Apply straight-line depreciation to the ESCALATED cost",
+        "detail": "dep=(Cost_today - Salvage)/Life."
+      },
+      {
+        "title": "Answer",
+        "detail": "≈$8,333/year - using the old, un-escalated purchase price would understate today's depreciation."
+      }
+    ]
+  },
+  {
+    "id": "pm-idx-h2",
+    "topic": "pm-econ",
+    "difficulty": "hard",
+    "hint": "Continuous compounding uses e^(rn) rather than the standard (1+r/m)^m form - recognize which compounding scenario you're in.",
+    "question": "$40,000 grows at a nominal 10% annual rate, compounded CONTINUOUSLY, for 6 years. What is the future worth? (F=Pe^(rn))",
+    "choices": [
+      "$70,862 (wrong: used annual compounding instead of continuous)",
+      "$72,885",
+      "$87,462",
+      "$40,000"
+    ],
+    "answerIndex": 1,
+    "explanation": "F=40000xe^(0.10x6)=40000xe^0.6=72,885.",
+    "steps": [
+      {
+        "title": "Recognize continuous compounding needs the exponential form",
+        "detail": "F=Pe^(rn), not the standard (1+i)^n form used for discrete compounding."
+      },
+      {
+        "title": "Plug in",
+        "detail": "F=40,000 x e^(0.10x6) = 40,000 x e^0.6."
+      },
+      {
+        "title": "Answer",
+        "detail": "$72,885 - continuous compounding gives a slightly higher future value than annual compounding at the same nominal rate."
       }
     ]
   }

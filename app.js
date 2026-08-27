@@ -25,14 +25,31 @@ function saveCustomCards(cards) {
 
 function loadProgress() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { cards: {}, problems: {} };
+    const p = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    return { cards: p.cards || {}, problems: p.problems || {}, activityDates: p.activityDates || [] };
   } catch (e) {
-    return { cards: {}, problems: {} };
+    return { cards: {}, problems: {}, activityDates: [] };
   }
 }
 
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+}
+
+function recordActivity() {
+  const today = new Date().toISOString().slice(0, 10);
+  if (!state.progress.activityDates.includes(today)) {
+    state.progress.activityDates.push(today);
+  }
+}
+
+function recordProblemResult(topicId, difficulty, correct) {
+  if (!state.progress.problems[topicId]) state.progress.problems[topicId] = {};
+  if (!state.progress.problems[topicId][difficulty]) state.progress.problems[topicId][difficulty] = { attempted: 0, correct: 0 };
+  state.progress.problems[topicId][difficulty].attempted += 1;
+  if (correct) state.progress.problems[topicId][difficulty].correct += 1;
+  recordActivity();
+  saveProgress();
 }
 
 function topicById(id) {
@@ -70,6 +87,7 @@ function render() {
   if (state.view === 'guide') return renderGuideHub(app);
   if (state.view === 'flashcards') return renderFlashcardsHub(app);
   if (state.view === 'problems') return renderProblemsHub(app);
+  if (state.view === 'progress') return renderProgressHub(app);
 }
 
 /* ---------- HOME ---------- */
@@ -275,6 +293,7 @@ function gradeCard(card, gotIt) {
   const box = gotIt ? Math.min((p.box || 0) + 1, 4) : 0;
   const intervalDays = [0, 1, 3, 7, 21][box];
   state.progress.cards[card.id] = { box, due: Date.now() + intervalDays * 86400000 };
+  recordActivity();
   saveProgress();
   state.session.index += 1;
   state.session.flipped = false;
@@ -290,30 +309,60 @@ function renderSessionEmpty(msg) {
 function renderProblemsHub(app) {
   app.innerHTML = `
     <h1 class="hero">Problem Sets</h1>
-    <p class="hero-sub">Multiple-choice practice with worked explanations.</p>
-    <div class="filter-chips">
-      <button class="chip" data-topic="">All topics</button>
-      ${state.topics.map(t => `<button class="chip" data-topic="${t.id}">${t.name}</button>`).join('')}
+    <p class="hero-sub">Multiple-choice practice with worked explanations. Formulas aren't named in the questions — tap Hint if you get stuck.</p>
+    <div class="filter-row">
+      <div>
+        <span class="filter-group-label">Topic</span>
+        <div class="filter-chips" id="topic-chips" style="margin-bottom:0;">
+          <button class="chip active" data-topic="">All topics</button>
+          ${state.topics.map(t => `<button class="chip" data-topic="${t.id}">${t.name}</button>`).join('')}
+        </div>
+      </div>
+      <div>
+        <span class="filter-group-label">Difficulty</span>
+        <div class="filter-chips" id="difficulty-chips" style="margin-bottom:0;">
+          <button class="chip difficulty active" data-difficulty="">All levels</button>
+          <button class="chip difficulty easy" data-difficulty="easy">Easy</button>
+          <button class="chip difficulty medium" data-difficulty="medium">Medium</button>
+          <button class="chip difficulty hard" data-difficulty="hard">Hard</button>
+        </div>
+      </div>
     </div>
     <div id="problem-session"></div>
   `;
-  app.querySelectorAll('.chip').forEach(chip => {
-    chip.addEventListener('click', () => startProblemSession(chip.dataset.topic));
+  state.problemFilters = { topic: '', difficulty: '' };
+  app.querySelectorAll('#topic-chips .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      app.querySelectorAll('#topic-chips .chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.problemFilters.topic = chip.dataset.topic;
+      startProblemSession(state.problemFilters.topic, state.problemFilters.difficulty);
+    });
   });
-  startProblemSession('');
+  app.querySelectorAll('#difficulty-chips .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      app.querySelectorAll('#difficulty-chips .chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.problemFilters.difficulty = chip.dataset.difficulty;
+      startProblemSession(state.problemFilters.topic, state.problemFilters.difficulty);
+    });
+  });
+  startProblemSession('', '');
 }
 
-function startProblemSession(topicId) {
-  let pool = topicId ? state.problems.filter(p => p.topic === topicId) : state.problems.slice();
+function startProblemSession(topicId, difficulty) {
+  let pool = state.problems.slice();
+  if (topicId) pool = pool.filter(p => p.topic === topicId);
+  if (difficulty) pool = pool.filter(p => p.difficulty === difficulty);
   if (state.view !== 'problems') setViewSilently('problems');
   let mount = document.getElementById('problem-session');
   if (!mount) { renderProblemsHub(document.getElementById('app')); mount = document.getElementById('problem-session'); }
   if (!pool.length) {
-    mount.innerHTML = `<div class="empty-state">No problems in this topic yet — add some to data/problems.json.</div>`;
+    mount.innerHTML = `<div class="empty-state">No problems match this filter yet.</div>`;
     return;
   }
   pool = pool.sort(() => Math.random() - 0.5);
-  state.session = { type: 'problems', queue: pool, index: 0, answered: false, correctCount: 0, topicId };
+  state.session = { type: 'problems', queue: pool, index: 0, answered: false, correctCount: 0, topicId, difficulty, hintShown: false };
   renderProblemSession();
 }
 
@@ -323,27 +372,37 @@ function renderProblemSession() {
   if (!mount || !s) return;
   if (s.index >= s.queue.length) {
     mount.innerHTML = `<div class="empty-state">Quiz complete — ${s.correctCount} / ${s.queue.length} correct.<br><br><button class="btn primary" id="restart-quiz">Try again</button></div>`;
-    document.getElementById('restart-quiz').addEventListener('click', () => startProblemSession(s.topicId));
+    document.getElementById('restart-quiz').addEventListener('click', () => startProblemSession(s.topicId, s.difficulty));
     return;
   }
   const prob = s.queue[s.index];
   const t = topicById(prob.topic);
+  s.hintShown = false;
   mount.innerHTML = `
-    <div class="session-bar"><span>Question ${s.index + 1} of ${s.queue.length}</span><span>Score: ${s.correctCount}/${s.index}</span></div>
+    <div class="session-bar"><span>Question ${s.index + 1} of ${s.queue.length} · <span style="text-transform:capitalize">${prob.difficulty || ''}</span></span><span>Score: ${s.correctCount}/${s.index}</span></div>
     <div class="problem-card" style="--accent:${t.color}">
       <div class="eyebrow">${t.name}</div>
       <div class="problem-question">${prob.question}</div>
       ${prob.choices.map((c, i) => `<button class="choice" data-index="${i}">${c}</button>`).join('')}
+      <div id="hint-slot"></div>
       <div id="explanation-slot"></div>
       <div id="walkthrough-slot"></div>
     </div>
     <div class="session-controls" style="margin-top:16px;">
+      ${prob.hint ? '<button class="btn small" id="hint-btn">💡 Hint</button>' : ''}
       <button class="btn" id="next-question" style="display:none;">Next question →</button>
     </div>
   `;
   mount.querySelectorAll('.choice').forEach(btn => {
     btn.addEventListener('click', () => answerProblem(prob, parseInt(btn.dataset.index, 10)));
   });
+  const hintBtn = document.getElementById('hint-btn');
+  if (hintBtn) {
+    hintBtn.addEventListener('click', () => {
+      document.getElementById('hint-slot').innerHTML = `<div class="hint-box">💡 ${prob.hint}</div>`;
+      hintBtn.style.display = 'none';
+    });
+  }
 }
 
 function answerProblem(prob, chosenIndex) {
@@ -352,11 +411,14 @@ function answerProblem(prob, chosenIndex) {
   s.answered = true;
   const correct = chosenIndex === prob.answerIndex;
   if (correct) s.correctCount += 1;
+  recordProblemResult(prob.topic, prob.difficulty || 'medium', correct);
   document.querySelectorAll('.choice').forEach((btn, i) => {
     btn.disabled = true;
     if (i === prob.answerIndex) btn.classList.add('correct');
     else if (i === chosenIndex) btn.classList.add('incorrect');
   });
+  const hintBtn = document.getElementById('hint-btn');
+  if (hintBtn) hintBtn.style.display = 'none';
   document.getElementById('explanation-slot').innerHTML = `<div class="explanation">${prob.explanation || ''}</div>`;
   if (prob.steps && prob.steps.length) {
     document.getElementById('walkthrough-slot').innerHTML = `
@@ -448,6 +510,106 @@ function renderGuideArticle(topicId) {
     <div class="guide-article">${mdToHtml(md)}</div>
   `;
   document.getElementById('guide-back').addEventListener('click', () => renderGuideHub(app));
+}
+
+/* ---------- PROGRESS DASHBOARD ---------- */
+function computeStreak() {
+  const dates = new Set(state.progress.activityDates);
+  if (dates.size === 0) return 0;
+  const today = new Date();
+  let streak = 0;
+  let cursor = new Date(today);
+  // allow the streak to still count if today has no activity yet, starting from yesterday
+  if (!dates.has(cursor.toISOString().slice(0, 10))) {
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  while (dates.has(cursor.toISOString().slice(0, 10))) {
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streak;
+}
+
+function renderProgressHub(app) {
+  const totalCardsSeen = Object.keys(state.progress.cards).length;
+  const totalCards = state.flashcards.length;
+  const masteredCards = Object.values(state.progress.cards).filter(c => c.box >= 3).length;
+
+  let totalAttempted = 0, totalCorrect = 0;
+  state.topics.forEach(t => {
+    const byDiff = state.progress.problems[t.id] || {};
+    Object.values(byDiff).forEach(d => { totalAttempted += d.attempted; totalCorrect += d.correct; });
+  });
+  const overallAccuracy = totalAttempted ? Math.round((totalCorrect / totalAttempted) * 100) : null;
+  const streak = computeStreak();
+  const daysActive = state.progress.activityDates.length;
+
+  app.innerHTML = `
+    <h1 class="hero">Progress</h1>
+    <p class="hero-sub">How you're doing across topics, and where to spend more time before the exam.</p>
+    <div class="progress-summary-row">
+      <div class="progress-stat"><div class="value">${masteredCards}/${totalCards}</div><div class="label">Cards mastered</div></div>
+      <div class="progress-stat"><div class="value">${totalAttempted}</div><div class="label">Problems attempted</div></div>
+      <div class="progress-stat"><div class="value">${overallAccuracy === null ? '—' : overallAccuracy + '%'}</div><div class="label">Overall accuracy</div></div>
+      <div class="progress-stat"><div class="value">${streak}</div><div class="label">Day streak</div></div>
+      <div class="progress-stat"><div class="value">${daysActive}</div><div class="label">Days studied</div></div>
+    </div>
+    <div id="recommendations"></div>
+    <h3 style="font-family:var(--serif); font-size:1.1rem; margin: 20px 0 10px;">By topic</h3>
+    <div id="topic-progress-list"></div>
+  `;
+
+  // Build per-topic stats and recommendations
+  const topicStats = state.topics.map(t => {
+    const cardsInTopic = state.flashcards.filter(c => c.topic === t.id);
+    const masteredInTopic = cardsInTopic.filter(c => (state.progress.cards[c.id]?.box || 0) >= 3).length;
+    const cardPct = cardsInTopic.length ? Math.round((masteredInTopic / cardsInTopic.length) * 100) : 0;
+
+    const byDiff = state.progress.problems[t.id] || {};
+    let attempted = 0, correct = 0;
+    ['easy', 'medium', 'hard'].forEach(d => { if (byDiff[d]) { attempted += byDiff[d].attempted; correct += byDiff[d].correct; } });
+    const accuracy = attempted ? Math.round((correct / attempted) * 100) : null;
+
+    return { topic: t, cardPct, attempted, correct, accuracy, byDiff };
+  });
+
+  // Recommendations: lowest accuracy (min 3 attempts) first, then untouched topics
+  const withAccuracy = topicStats.filter(s => s.attempted >= 3).sort((a, b) => a.accuracy - b.accuracy);
+  const untouched = topicStats.filter(s => s.attempted === 0);
+  const recEl = document.getElementById('recommendations');
+  let recHtml = '';
+  const weakest = withAccuracy.filter(s => s.accuracy < 70).slice(0, 2);
+  weakest.forEach(s => {
+    recHtml += `<div class="recommendation-card">📌 <strong>${s.topic.name}</strong> — ${s.accuracy}% accuracy over ${s.attempted} problems. Worth another pass before the exam.</div>`;
+  });
+  if (untouched.length) {
+    recHtml += `<div class="recommendation-card">👀 You haven't tried any problems yet in: ${untouched.map(s => s.topic.name).join(', ')}.</div>`;
+  }
+  if (!weakest.length && !untouched.length && totalAttempted > 0) {
+    const strongest = topicStats.filter(s => s.attempted >= 3).sort((a, b) => b.accuracy - a.accuracy)[0];
+    recHtml += `<div class="recommendation-card good">✅ No major weak spots detected — accuracy is holding at 70%+ across topics you've practiced. Keep cycling through all difficulty levels to stay sharp.</div>`;
+  }
+  if (totalAttempted === 0) {
+    recHtml = `<div class="recommendation-card">Try a few problem sets to start seeing personalized recommendations here.</div>`;
+  }
+  recEl.innerHTML = recHtml;
+
+  const list = document.getElementById('topic-progress-list');
+  list.innerHTML = topicStats.map(s => `
+    <div class="progress-topic-row" style="--accent:${s.topic.color}">
+      <div class="row between"><h4>${s.topic.name}</h4><span style="font-family:var(--mono); font-size:0.72rem; color:#8A8265;">${s.attempted} problems attempted</span></div>
+      <div class="progress-bar-row">
+        <span class="label">Flashcards</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:${s.cardPct}%; background:${s.topic.color};"></div></div>
+        <span class="pct">${s.cardPct}% mastered</span>
+      </div>
+      <div class="progress-bar-row">
+        <span class="label">Quiz accuracy</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:${s.accuracy ?? 0}%; background:${s.topic.color};"></div></div>
+        <span class="pct">${s.accuracy === null ? 'no data' : s.accuracy + '%'}</span>
+      </div>
+    </div>
+  `).join('');
 }
 
 /* ---------- INIT ---------- */

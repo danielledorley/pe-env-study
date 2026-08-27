@@ -730,5 +730,431 @@
     "topic": "pm-econ",
     "front": "What's the general idea behind Activity-on-Arrow network scheduling?",
     "back": "Project activities are represented as arrows connecting nodes (events); the network shows the logical sequence and dependencies between activities, allowing calculation of early/late start and finish times, float, and the critical path."
+  },
+  {
+    "id": "q-basics-1",
+    "topic": "basics",
+    "front": "State Boyle's Law.",
+    "back": "The volume of a gas at constant temperature varies inversely with the pressure exerted on it."
+  },
+  {
+    "id": "q-basics-2",
+    "topic": "basics",
+    "front": "State Charles' Law.",
+    "back": "The volume of a fixed mass of gas at constant pressure varies directly with the Kelvin temperature."
+  },
+  {
+    "id": "q-basics-3",
+    "topic": "basics",
+    "front": "State Dalton's Law of partial pressures.",
+    "back": "In a mixture of gases, each gas exerts pressure independently of the others. The resulting 'partial pressure' of each gas is proportional to its amount in the mixture (percent by volume or mole fraction)."
+  },
+  {
+    "id": "q-basics-4",
+    "topic": "basics",
+    "front": "State Henry's Law.",
+    "back": "The amount of any gas that will dissolve in a given volume of liquid at a constant temperature is directly proportional to the pressure that gas exerts above the liquid."
+  },
+  {
+    "id": "q-basics-5",
+    "topic": "basics",
+    "front": "What defines a pathogenic organism, and name some typical microorganism categories found in water.",
+    "back": "Pathogenic = has the potential to transmit disease. Typical microorganisms in water include bacteria, fungi, viruses, worms, protozoa, and algae."
+  },
+  {
+    "id": "q-basics-6",
+    "topic": "basics",
+    "front": "Name some pathogenic microorganisms, and contrast with E. coli.",
+    "back": "Pathogenic: Giardia and Cryptosporidium (protozoa), helminths (worms), viruses, parasites. E. coli is an indicator organism - not itself pathogenic, but its presence signals contamination, and it can cause diarrhea."
+  },
+  {
+    "id": "q-basics-7",
+    "topic": "basics",
+    "front": "Name some pathogens that can be transmitted in water, and some non-pathogenic organisms used as water quality indicators.",
+    "back": "Transmitted in water: Salmonella, Giardia, Polio, Endamoeba. Non-pathogenic (used as indicators/test organisms): E. coli, Ceriodaphnia, Pimephales, Sphaerotilus."
+  },
+  {
+    "id": "q-basics-8",
+    "topic": "basics",
+    "front": "What causes acidity in surface water, and what is alkalinity?",
+    "back": "Acidity: CO2 dissolved in water forms carbonic acid. Alkalinity is the water's ability to neutralize acids, via anions like hydroxide, carbonate, and/or bicarbonate ions."
+  },
+  {
+    "id": "q-basics-9",
+    "topic": "basics",
+    "front": "What causes water hardness?",
+    "back": "Hardness is caused by polyvalent metallic cations, mainly calcium (Ca2+), magnesium (Mg2+), and/or iron (Fe2+)."
+  },
+  {
+    "id": "q-basics-10",
+    "topic": "basics",
+    "front": "What water qualities are typical of groundwater vs. surface water?",
+    "back": "Groundwater: high concentration of dissolved solids, high concentration of dissolved gases, high hardness, no microbial contamination. Surface water: comparatively 'soft,' high turbidity, high suspended solids, microbial contamination."
+  },
+  {
+    "id": "q-aw-1",
+    "topic": "air-waste",
+    "front": "Which oxides create acid rain?",
+    "back": "Sulfur oxide and nitrogen oxide."
+  },
+  {
+    "id": "q-aw-2",
+    "topic": "air-waste",
+    "front": "What are the primary air pollutants, and how do they differ from secondary air pollutants?",
+    "back": "Primary: produced directly by humans and nature (CO, CO2, SO2, NO2, hydrocarbons, particulates). Secondary: produced by reactions primary pollutants undergo (photochemical products like O3 and PAN, plus acids such as H2SO4 and HNO3)."
+  },
+  {
+    "id": "q-aw-3",
+    "topic": "air-waste",
+    "front": "What causes ozone depletion?",
+    "back": "CFCs, methyl chloroform, carbon tetrachloride, halon, and methyl bromide - all of which undergo photolytic decomposition that releases free chlorine atoms, which then react with ozone to form oxygen."
+  },
+  {
+    "id": "q-aw-4",
+    "topic": "air-waste",
+    "front": "What does NESHAP (National Emission Standards for Hazardous Air Pollutants) focus on?",
+    "back": "Specific hazardous pollutants: asbestos, arsenic, benzene, mercury, radionuclides, beryllium, vinyl chloride, and coke oven emissions."
+  },
+  {
+    "id": "q-aw-5",
+    "topic": "air-waste",
+    "front": "What are Emission Reduction Credits (ERCs)?",
+    "back": "Credits businesses earn by applying a higher level of treatment than regulation requires - the credits can then be redeemed through other Clean Air Act programs."
+  },
+  {
+    "id": "q-aw-6",
+    "topic": "air-waste",
+    "front": "Explain the three types of Clean Air Act emission credit trading: Offset, Bubble, and Netting.",
+    "back": "Offset: lets industrial expansion proceed by having a business compensate for new emissions with credits acquired from other existing businesses in the region. Bubble: treats all activities in a single plant (or group of plants) as one unit - emissions can vary by activity as long as the cumulative total doesn't exceed the source's allowable limit. Netting: if a business improves control technology, it can earn credits usable toward plant expansion, as long as there's no significant net increase in emissions."
+  },
+  {
+    "id": "q-aw-7",
+    "topic": "air-waste",
+    "front": "What are the standard methods for removing NOx and SOx from flue gas?",
+    "back": "NOx: selective catalytic reduction, typically using ammonia as the reducing agent. SOx: limestone scrubbing."
+  },
+  {
+    "id": "q-aw-8",
+    "topic": "air-waste",
+    "front": "What is photochemical smog?",
+    "back": "An atmospheric condition formed through a combination of weather conditions and pollution, especially motor vehicle emissions - its primary components are ozone and oxidized hydrocarbons."
+  },
+  {
+    "id": "q-aw-9",
+    "topic": "air-waste",
+    "front": "Describe the four atmospheric lapse rate conditions: superadiabatic, adiabatic, subadiabatic, and inversion.",
+    "back": "Superadiabatic: surrounding air cools faster than the plume as elevation rises - unstable, pollutants disperse readily. Adiabatic: surrounding air and plume cool at the same rate - neutral, no tendency for the plume to rise or fall. Subadiabatic: surrounding air cools slower than the plume - stable, interferes with dispersion. Inversion: lapse rate is inverted (cooler near the ground than aloft) - a stable condition that traps pollutants."
+  },
+  {
+    "id": "q-aw-10",
+    "topic": "air-waste",
+    "front": "Why is PM2.5 considered a greater health risk than larger particulate matter?",
+    "back": "PM2.5 particles are small enough to be inhaled deeply into the lungs and are not readily cleared from the body, making them the greatest inhalation health risk among particulate size classes."
+  },
+  {
+    "id": "q-aw-11",
+    "topic": "air-waste",
+    "front": "In a RCRA Subtitle C hazardous waste landfill, what is the maximum allowed in-place hydraulic conductivity for the low-permeability soil liner, and what is the 'witness zone'?",
+    "back": "Maximum conductivity: 1x10^-7 cm/s. The witness zone is the section of the landfill liner system between the lower and upper flexible membrane liners."
+  },
+  {
+    "id": "q-aw-12",
+    "topic": "air-waste",
+    "front": "What is the minimum solids content required for municipal wastewater sludge to be accepted for landfill disposal?",
+    "back": "20% solids content."
+  },
+  {
+    "id": "q-aw-13",
+    "topic": "air-waste",
+    "front": "What are the sources of leachate in a well-designed landfill cell?",
+    "back": "Precipitation and the water already contained in the solid waste itself."
+  },
+  {
+    "id": "q-aw-14",
+    "topic": "air-waste",
+    "front": "What does NESHAP 40 CFR 61.150 regulate?",
+    "back": "Nonvisible asbestos emissions."
+  },
+  {
+    "id": "q-wr-1",
+    "topic": "water-resources",
+    "front": "What creates thrust force at a pipe junction, and how do you handle a thrust force problem if pressure or velocity/flow data is missing?",
+    "back": "Unbalanced pressure or momentum at a pipe junction creates thrust force. If a thrust force problem gives no information about pressure, or no information about velocity/flow, ignore that part of the equation rather than assuming it's zero-valued in a way that breaks the setup."
+  },
+  {
+    "id": "q-wr-2",
+    "topic": "water-resources",
+    "front": "Write the relationships for mass flow rate and force in a fluid system.",
+    "back": "Mass flow rate = flow x density. Force = mass flow rate x change in velocity."
+  },
+  {
+    "id": "q-wr-3",
+    "topic": "water-resources",
+    "front": "What must be true of a siphon before it will operate, and what can only increase the EGL (energy grade line)?",
+    "back": "A siphon must be completely full before operation. The EGL can only increase with the addition of energy from a pump - it never rises on its own."
+  },
+  {
+    "id": "q-wr-4",
+    "topic": "water-resources",
+    "front": "Define TDH, system curve, and operating point for a pump system.",
+    "back": "TDH (Total Dynamic Head): the energy head added by a pump. System curve: the physical characteristics of a water system (how head loss varies with flow). Operating point: where the pump's performance curve and the system curve intersect - this is where the pump will actually operate."
+  },
+  {
+    "id": "q-wr-5",
+    "topic": "water-resources",
+    "front": "What happens to a pump's performance if you increase its speed, or add a second identical pump in parallel?",
+    "back": "Increasing pump speed moves the pump curve. Adding an identical pump in parallel doubles the flow rate (at a given head) - you'd install a second pump in parallel specifically when you need more flow; you'd add one in series when you need more pressure/head."
+  },
+  {
+    "id": "q-wr-6",
+    "topic": "water-resources",
+    "front": "What are 'affinity laws,' and what are three ways to change a pump's performance?",
+    "back": "Affinity laws are pump equations that use one set of operating conditions to calculate performance under another set (e.g., after a speed change). Performance can be changed by trimming the impeller, adjusting the speed, or replacing the motor."
+  },
+  {
+    "id": "q-wr-7",
+    "topic": "water-resources",
+    "front": "What are pump power, hydraulic power, and motor power also called?",
+    "back": "Pump power = brake power. Hydraulic power = water power / fluid power. Motor power = purchased power."
+  },
+  {
+    "id": "q-wr-8",
+    "topic": "water-resources",
+    "front": "What is cavitation, and what NPSH condition avoids it?",
+    "back": "Cavitation: low pressure in the suction line (or a drop in vapor pressure) causes air/vapor bubbles that implode inside the pump, creating vibration and damage that reduces capacity. To avoid it, NPSH available must be greater than NPSH required."
+  },
+  {
+    "id": "q-wr-9",
+    "topic": "water-resources",
+    "front": "What happens to pressure when two identical pipes are connected in series, and how do head loss and flow behave for pipes in series vs. parallel?",
+    "back": "In series, friction reduces pressure progressively, so pressure in the second pipe is lower than in the first. Head loss for pipes in series adds together; head loss for pipes in parallel is equal across each branch (while flow splits between them)."
+  },
+  {
+    "id": "q-wr-10",
+    "topic": "water-resources",
+    "front": "In a three-reservoir pipe problem, what is ignored at the junction?",
+    "back": "Velocity head - it's considered negligible at the junction node."
+  },
+  {
+    "id": "q-wr-11",
+    "topic": "water-resources",
+    "front": "What are the two classifications of flow rate, and the two classifications of flow depth, in open channel hydraulics?",
+    "back": "Flow rate: steady or unsteady (constant flow = steady; varying flow = unsteady). Flow depth: uniform (constant depth) or varied."
+  },
+  {
+    "id": "q-wr-12",
+    "topic": "water-resources",
+    "front": "What is specific energy in open channel flow, what does it exclude, and what are 'alternate depths'?",
+    "back": "Specific energy = flow depth + velocity head - it does NOT include elevation head/potential energy, since it's measured relative to the channel bottom. Alternate depths are the subcritical and supercritical depths that share the same specific energy value."
+  },
+  {
+    "id": "q-wr-13",
+    "topic": "water-resources",
+    "front": "In an open channel problem with a step in the channel bottom, how does the change in specific energy relate to the change in flow depth?",
+    "back": "The difference in energy is equal to the difference in flow depth (accounting for the step height) - this lets you solve for depth changes across a step using an energy balance."
+  },
+  {
+    "id": "q-wr-14",
+    "topic": "water-resources",
+    "front": "What do Fr=1, Fr>1, and Fr<1 indicate, and under what conditions does critical depth commonly occur?",
+    "back": "Fr=1: critical flow. Fr>1: supercritical flow. Fr<1: subcritical flow. Critical depth commonly occurs at slope transitions, where a channel goes from unrestricted to restricted, just after a sluice gate, and at weirs and spillways."
+  },
+  {
+    "id": "q-wr-15",
+    "topic": "water-resources",
+    "front": "What characterizes a hydraulic jump?",
+    "back": "A hydraulic jump occurs when supercritical flow changes abruptly to subcritical flow (i.e., flow depth jumps from below critical depth to above it). It's turbulent, involves a loss of energy, and conserves momentum (not energy) across the jump."
+  },
+  {
+    "id": "q-wr-16",
+    "topic": "water-resources",
+    "front": "Where are stormwater inlets commonly placed?",
+    "back": "At low points in the road profile, along median barriers, and in curb-and-gutter sections."
+  },
+  {
+    "id": "q-wr-17",
+    "topic": "water-resources",
+    "front": "What is culvert design usually based on, and when are slotted drains used?",
+    "back": "Culvert design is usually based on allowable headwater (sometimes also outlet velocity). Slotted drains are used for sheet flow across wide areas and/or to collect gutter flow with or without curbs."
+  },
+  {
+    "id": "q-wr-18",
+    "topic": "water-resources",
+    "front": "Contrast inlet control and outlet control in culvert hydraulics, and list the factors governing each.",
+    "back": "Inlet control: the inlet itself is the choke point, critical depth occurs at the inlet, the barrel flows partially full, and flow is supercritical. Governing factors: headwater depth, barrel area, and inlet edge condition (submerged or unsubmerged). Outlet control: the barrel may be full or partially full, and flow is subcritical. Governing factors: barrel roughness, barrel slope/length/area, tailwater depth, and inlet characteristics."
+  },
+  {
+    "id": "q-wr-19",
+    "topic": "water-resources",
+    "front": "What does USGS Type 1 culvert flow describe, and what should you use if a pipe is given as partially full (e.g., 40% or 80%)?",
+    "back": "USGS Type 1 flow has a submerged inlet AND submerged outlet. For a pipe flowing partially full, use the Hydraulic Elements Chart to relate that percent-full condition to flow properties."
+  },
+  {
+    "id": "q-wr-20",
+    "topic": "water-resources",
+    "front": "For what watershed sizes are the Rational Method and the NRCS (SCS) Curve Number method typically used?",
+    "back": "Rational Method: small watersheds, generally less than about 200 acres. NRCS Curve Number method: larger watersheds, generally greater than about 200 acres."
+  },
+  {
+    "id": "q-wr-21",
+    "topic": "water-resources",
+    "front": "What is time of concentration (Tc)?",
+    "back": "The time it takes for the hydrologically most remote drop of runoff in a watershed to work its way through the system to the outlet point."
+  },
+  {
+    "id": "q-wt-1",
+    "topic": "water-treatment",
+    "front": "What are the three main components of the Clean Water Act's regulatory approach?",
+    "back": "1) Discharge criteria - treatment standards. 2) Permitting - required for discharge into navigable water bodies. 3) Priority pollutants - a growing regulated list (65 added in 1977, around 129 today)."
+  },
+  {
+    "id": "q-wt-2",
+    "topic": "water-treatment",
+    "front": "What is a priority pollutant, and how do 'stock' and 'fund' pollutants differ?",
+    "back": "A priority pollutant is a chemical with relatively high toxicity and high production volume. A stock pollutant is not absorbed into the environment and accumulates (e.g., lead). A fund pollutant is absorbed into the environment and does not accumulate (e.g., carbon dioxide, human/animal waste)."
+  },
+  {
+    "id": "q-wt-3",
+    "topic": "water-treatment",
+    "front": "What is assimilative capacity?",
+    "back": "The ability of the environment (a receiving water body) to absorb waste discharges without unacceptable degradation."
+  },
+  {
+    "id": "q-wt-4",
+    "topic": "water-treatment",
+    "front": "What does the Safe Drinking Water Act establish, and what does it regulate regarding underground injection?",
+    "back": "It has the EPA establish minimum standards and Maximum Contaminant Levels (MCLs) concerning risk to public health, protecting the public from both naturally-occurring and man-made contaminants - including regulating waste disposal by injection into groundwater."
+  },
+  {
+    "id": "q-wt-5",
+    "topic": "water-treatment",
+    "front": "What is the NPDES program, and what is a TMDL (and its formula)?",
+    "back": "NPDES (National Pollutant Discharge Elimination System) is the permit program for discharging wastewater. TMDL (Total Maximum Daily Load) is the maximum quantity of a pollutant a water body can receive without violating a water quality standard (mass/day): TMDL = waste load allocation + load allocation + margin of safety."
+  },
+  {
+    "id": "q-wt-6",
+    "topic": "water-treatment",
+    "front": "What's the difference between a 'specific' measurement and a 'gross' measurement in water quality testing?",
+    "back": "A specific measurement targets a single characteristic (e.g., a particular heavy metal ion or toxic compound). A gross measurement makes no distinction for what's included (e.g., BOD, suspended solids - lumped totals)."
+  },
+  {
+    "id": "q-wt-7",
+    "topic": "water-treatment",
+    "front": "Write the relationships for alkalinity and total hardness in terms of their components.",
+    "back": "Alkalinity = bicarbonate + carbonate. Total hardness = carbonate hardness + non-carbonate hardness = (as ions) Mg + Ca. Carbonate hardness is also referred to as alkalinity."
+  },
+  {
+    "id": "q-wt-8",
+    "topic": "water-treatment",
+    "front": "How do you know if water needs to be treated, and what is the actual goal of water treatment?",
+    "back": "Water needs treatment when measured contaminant levels exceed NPDWR MCL standards. The goal of treatment is to reduce contamination to acceptable levels - not to eliminate it entirely."
+  },
+  {
+    "id": "q-wt-9",
+    "topic": "water-treatment",
+    "front": "What does fire flow demand depend on, and what qualifies as a 'public water system'?",
+    "back": "Fire flow demand depends on construction type, floor area, and usage/occupancy. A public water system has at least 15 service connections, or regularly serves at least 25 people daily, at least 60 days per year."
+  },
+  {
+    "id": "q-wt-10",
+    "topic": "water-treatment",
+    "front": "What are the overall goals of water treatment, and the physical, chemical, and biological treatment process categories?",
+    "back": "Goals: potable (safe to drink), palatable (pleasing to drink), meets regulatory criteria, and delivered without interruption at reasonable cost. Physical processes: screening, mixing, gas transfer, sedimentation, filtration. Chemical processes: precipitation, disinfection, coagulation, oxidation. Biological processes: activated sludge, trickling filter, oxidation ponds."
+  },
+  {
+    "id": "q-wt-11",
+    "topic": "water-treatment",
+    "front": "How is colloidal (high) turbidity removed, versus turbidity from suspended solids?",
+    "back": "Colloidal turbidity: removed through coagulation and flocculation. Turbidity from suspended solids: removed by sedimentation and filtration. Coagulation is also known as rapid mixing."
+  },
+  {
+    "id": "q-wt-12",
+    "topic": "water-treatment",
+    "front": "What type of mixing does flocculation use, and why? What geometric rule applies to floc dimensions?",
+    "back": "Flocculation uses slow, gentle mixing so the growing flocs aren't broken apart. Floc dimension rule: the floc's length equals its diameter, and the floc's width equals the sedimentation basin's width."
+  },
+  {
+    "id": "q-wt-13",
+    "topic": "water-treatment",
+    "front": "What are overflow rate, hydraulic loading rate, and surface loading rate, and what must settling velocity exceed to remove 100% of particles?",
+    "back": "All three terms describe the same thing: Q/surface area. To remove 100% of particles of a given size, their settling velocity must be higher than the overflow rate."
+  },
+  {
+    "id": "q-wt-14",
+    "topic": "water-treatment",
+    "front": "What are horizontal (approach) velocity and weir loading rate?",
+    "back": "Horizontal/approach velocity = Q / cross-sectional area. Weir loading rate = Q / length of weir (the length may be a straight run or a circumference, pi x diameter, for a circular weir)."
+  },
+  {
+    "id": "q-wt-15",
+    "topic": "water-treatment",
+    "front": "What is solids loading rate, what type of filter is most common, and what are the types of granular media filters?",
+    "back": "Solids loading rate is the mass of solids applied per unit time per unit surface area. Granular media filters are the most common filter type, in three configurations: single-medium (sand), dual-medium (sand & coal), and multimedia (sand & coal & garnet)."
+  },
+  {
+    "id": "q-wt-16",
+    "topic": "water-treatment",
+    "front": "How are rapid sand filters cleaned, and what is the backwash volume formula?",
+    "back": "They're cleaned by backwashing. Backwash volume = filter area x rise rate x backwash time x number of filters."
+  },
+  {
+    "id": "q-wt-17",
+    "topic": "water-treatment",
+    "front": "What are Trihalomethanes (THMs), and what happens to soluble lead in surface water as hardness decreases?",
+    "back": "THMs are compounds that form from the reaction of chlorine or bromine with organic matter in drinking water (a disinfection byproduct). The amount of soluble lead in surface water increases as hardness decreases."
+  },
+  {
+    "id": "q-ww-1",
+    "topic": "wastewater",
+    "front": "Roughly how much BOD is removed during primary treatment at a wastewater plant?",
+    "back": "About 30%."
+  },
+  {
+    "id": "q-ww-2",
+    "topic": "wastewater",
+    "front": "In biological wastewater treatment, what does 'yield' refer to, and what most directly determines bacterial growth rate?",
+    "back": "Yield is the amount of biomass produced per unit of food (substrate) consumed. The specific growth rate of the bacteria is most directly determined by nutrient (substrate) concentration."
+  },
+  {
+    "id": "q-ww-3",
+    "topic": "wastewater",
+    "front": "During which biological growth phase is a conventional activated sludge process designed to operate?",
+    "back": "The endogenous phase - where food is limited relative to the biomass present, encouraging good settling and more complete treatment."
+  },
+  {
+    "id": "q-site-1",
+    "topic": "site",
+    "front": "What did CERCLA (Superfund) establish, and what did SARA (1986) change?",
+    "back": "CERCLA established federal authority for emergency response and cleanup of hazardous substances that have been spilled, improperly disposed of, or released into the environment. SARA (Superfund Amendments and Reauthorization Act of 1986) amended CERCLA based on EPA's early implementation experience - stressing permanent remedies and innovative treatment, requiring Superfund actions to meet other state/federal standards, adding enforcement tools, increasing state involvement and citizen participation, and increasing the trust fund to $8.5 billion."
+  },
+  {
+    "id": "q-site-2",
+    "topic": "site",
+    "front": "True or false: RCRA Subtitle C addresses hazardous waste handling/disposal, while Subtitle D addresses non-hazardous solid waste.",
+    "back": "True."
+  },
+  {
+    "id": "q-site-3",
+    "topic": "site",
+    "front": "What is gamma ray logging used for in site characterization?",
+    "back": "It's used to measure shale content in subsurface soil/rock - gamma readings are lowest for gravel and increase through sand, silt, and are highest for clay (finer-grained, more shale-like material reads higher)."
+  },
+  {
+    "id": "q-site-4",
+    "topic": "site",
+    "front": "What was arsenic historically used for, and why might that matter for a Phase I site assessment?",
+    "back": "Arsenic compounds were used from about 1900 to 1935 to treat insect infestations on cattle (cattle dip vats) - a legacy source of arsenic contamination that a thorough historical records review might uncover at agricultural sites."
+  },
+  {
+    "id": "q-site-5",
+    "topic": "site",
+    "front": "What is Soil Vapor Extraction considered particularly effective for?",
+    "back": "It's considered the most effective treatment for removing organic (volatile) contaminants from soils in the unsaturated zone."
+  },
+  {
+    "id": "q-site-6",
+    "topic": "site",
+    "front": "What field instrument is preferred for lead-based paint inspections?",
+    "back": "An X-ray fluorescence (XRF) analyzer."
   }
 ]
