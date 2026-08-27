@@ -756,22 +756,10 @@
     "back": "The amount of any gas that will dissolve in a given volume of liquid at a constant temperature is directly proportional to the pressure that gas exerts above the liquid."
   },
   {
-    "id": "q-basics-5",
-    "topic": "basics",
-    "front": "What defines a pathogenic organism, and name some typical microorganism categories found in water.",
-    "back": "Pathogenic = has the potential to transmit disease. Typical microorganisms in water include bacteria, fungi, viruses, worms, protozoa, and algae."
-  },
-  {
     "id": "q-basics-6",
     "topic": "basics",
     "front": "Name some pathogenic microorganisms, and contrast with E. coli.",
     "back": "Pathogenic: Giardia and Cryptosporidium (protozoa), helminths (worms), viruses, parasites. E. coli is an indicator organism - not itself pathogenic, but its presence signals contamination, and it can cause diarrhea."
-  },
-  {
-    "id": "q-basics-7",
-    "topic": "basics",
-    "front": "Name some pathogens that can be transmitted in water, and some non-pathogenic organisms used as water quality indicators.",
-    "back": "Transmitted in water: Salmonella, Giardia, Polio, Endamoeba. Non-pathogenic (used as indicators/test organisms): E. coli, Ceriodaphnia, Pimephales, Sphaerotilus."
   },
   {
     "id": "q-basics-8",
@@ -822,12 +810,6 @@
     "back": "Credits businesses earn by applying a higher level of treatment than regulation requires - the credits can then be redeemed through other Clean Air Act programs."
   },
   {
-    "id": "q-aw-6",
-    "topic": "air-waste",
-    "front": "Explain the three types of Clean Air Act emission credit trading: Offset, Bubble, and Netting.",
-    "back": "Offset: lets industrial expansion proceed by having a business compensate for new emissions with credits acquired from other existing businesses in the region. Bubble: treats all activities in a single plant (or group of plants) as one unit - emissions can vary by activity as long as the cumulative total doesn't exceed the source's allowable limit. Netting: if a business improves control technology, it can earn credits usable toward plant expansion, as long as there's no significant net increase in emissions."
-  },
-  {
     "id": "q-aw-7",
     "topic": "air-waste",
     "front": "What are the standard methods for removing NOx and SOx from flue gas?",
@@ -838,12 +820,6 @@
     "topic": "air-waste",
     "front": "What is photochemical smog?",
     "back": "An atmospheric condition formed through a combination of weather conditions and pollution, especially motor vehicle emissions - its primary components are ozone and oxidized hydrocarbons."
-  },
-  {
-    "id": "q-aw-9",
-    "topic": "air-waste",
-    "front": "Describe the four atmospheric lapse rate conditions: superadiabatic, adiabatic, subadiabatic, and inversion.",
-    "back": "Superadiabatic: surrounding air cools faster than the plume as elevation rises - unstable, pollutants disperse readily. Adiabatic: surrounding air and plume cool at the same rate - neutral, no tendency for the plume to rise or fall. Subadiabatic: surrounding air cools slower than the plume - stable, interferes with dispersion. Inversion: lapse rate is inverted (cooler near the ground than aloft) - a stable condition that traps pollutants."
   },
   {
     "id": "q-aw-10",
@@ -876,12 +852,6 @@
     "back": "Nonvisible asbestos emissions."
   },
   {
-    "id": "q-wr-1",
-    "topic": "water-resources",
-    "front": "What creates thrust force at a pipe junction, and how do you handle a thrust force problem if pressure or velocity/flow data is missing?",
-    "back": "Unbalanced pressure or momentum at a pipe junction creates thrust force. If a thrust force problem gives no information about pressure, or no information about velocity/flow, ignore that part of the equation rather than assuming it's zero-valued in a way that breaks the setup."
-  },
-  {
     "id": "q-wr-2",
     "topic": "water-resources",
     "front": "Write the relationships for mass flow rate and force in a fluid system.",
@@ -894,34 +864,10 @@
     "back": "A siphon must be completely full before operation. The EGL can only increase with the addition of energy from a pump - it never rises on its own."
   },
   {
-    "id": "q-wr-4",
-    "topic": "water-resources",
-    "front": "Define TDH, system curve, and operating point for a pump system.",
-    "back": "TDH (Total Dynamic Head): the energy head added by a pump. System curve: the physical characteristics of a water system (how head loss varies with flow). Operating point: where the pump's performance curve and the system curve intersect - this is where the pump will actually operate."
-  },
-  {
-    "id": "q-wr-5",
-    "topic": "water-resources",
-    "front": "What happens to a pump's performance if you increase its speed, or add a second identical pump in parallel?",
-    "back": "Increasing pump speed moves the pump curve. Adding an identical pump in parallel doubles the flow rate (at a given head) - you'd install a second pump in parallel specifically when you need more flow; you'd add one in series when you need more pressure/head."
-  },
-  {
-    "id": "q-wr-6",
-    "topic": "water-resources",
-    "front": "What are 'affinity laws,' and what are three ways to change a pump's performance?",
-    "back": "Affinity laws are pump equations that use one set of operating conditions to calculate performance under another set (e.g., after a speed change). Performance can be changed by trimming the impeller, adjusting the speed, or replacing the motor."
-  },
-  {
     "id": "q-wr-7",
     "topic": "water-resources",
     "front": "What are pump power, hydraulic power, and motor power also called?",
     "back": "Pump power = brake power. Hydraulic power = water power / fluid power. Motor power = purchased power."
-  },
-  {
-    "id": "q-wr-8",
-    "topic": "water-resources",
-    "front": "What is cavitation, and what NPSH condition avoids it?",
-    "back": "Cavitation: low pressure in the suction line (or a drop in vapor pressure) causes air/vapor bubbles that implode inside the pump, creating vibration and damage that reduces capacity. To avoid it, NPSH available must be greater than NPSH required."
   },
   {
     "id": "q-wr-9",
@@ -940,12 +886,6 @@
     "topic": "water-resources",
     "front": "What are the two classifications of flow rate, and the two classifications of flow depth, in open channel hydraulics?",
     "back": "Flow rate: steady or unsteady (constant flow = steady; varying flow = unsteady). Flow depth: uniform (constant depth) or varied."
-  },
-  {
-    "id": "q-wr-12",
-    "topic": "water-resources",
-    "front": "What is specific energy in open channel flow, what does it exclude, and what are 'alternate depths'?",
-    "back": "Specific energy = flow depth + velocity head - it does NOT include elevation head/potential energy, since it's measured relative to the channel bottom. Alternate depths are the subcritical and supercritical depths that share the same specific energy value."
   },
   {
     "id": "q-wr-13",
@@ -978,12 +918,6 @@
     "back": "Culvert design is usually based on allowable headwater (sometimes also outlet velocity). Slotted drains are used for sheet flow across wide areas and/or to collect gutter flow with or without curbs."
   },
   {
-    "id": "q-wr-18",
-    "topic": "water-resources",
-    "front": "Contrast inlet control and outlet control in culvert hydraulics, and list the factors governing each.",
-    "back": "Inlet control: the inlet itself is the choke point, critical depth occurs at the inlet, the barrel flows partially full, and flow is supercritical. Governing factors: headwater depth, barrel area, and inlet edge condition (submerged or unsubmerged). Outlet control: the barrel may be full or partially full, and flow is subcritical. Governing factors: barrel roughness, barrel slope/length/area, tailwater depth, and inlet characteristics."
-  },
-  {
     "id": "q-wr-19",
     "topic": "water-resources",
     "front": "What does USGS Type 1 culvert flow describe, and what should you use if a pipe is given as partially full (e.g., 40% or 80%)?",
@@ -1008,12 +942,6 @@
     "back": "1) Discharge criteria - treatment standards. 2) Permitting - required for discharge into navigable water bodies. 3) Priority pollutants - a growing regulated list (65 added in 1977, around 129 today)."
   },
   {
-    "id": "q-wt-2",
-    "topic": "water-treatment",
-    "front": "What is a priority pollutant, and how do 'stock' and 'fund' pollutants differ?",
-    "back": "A priority pollutant is a chemical with relatively high toxicity and high production volume. A stock pollutant is not absorbed into the environment and accumulates (e.g., lead). A fund pollutant is absorbed into the environment and does not accumulate (e.g., carbon dioxide, human/animal waste)."
-  },
-  {
     "id": "q-wt-3",
     "topic": "water-treatment",
     "front": "What is assimilative capacity?",
@@ -1024,12 +952,6 @@
     "topic": "water-treatment",
     "front": "What does the Safe Drinking Water Act establish, and what does it regulate regarding underground injection?",
     "back": "It has the EPA establish minimum standards and Maximum Contaminant Levels (MCLs) concerning risk to public health, protecting the public from both naturally-occurring and man-made contaminants - including regulating waste disposal by injection into groundwater."
-  },
-  {
-    "id": "q-wt-5",
-    "topic": "water-treatment",
-    "front": "What is the NPDES program, and what is a TMDL (and its formula)?",
-    "back": "NPDES (National Pollutant Discharge Elimination System) is the permit program for discharging wastewater. TMDL (Total Maximum Daily Load) is the maximum quantity of a pollutant a water body can receive without violating a water quality standard (mass/day): TMDL = waste load allocation + load allocation + margin of safety."
   },
   {
     "id": "q-wt-6",
@@ -1048,18 +970,6 @@
     "topic": "water-treatment",
     "front": "How do you know if water needs to be treated, and what is the actual goal of water treatment?",
     "back": "Water needs treatment when measured contaminant levels exceed NPDWR MCL standards. The goal of treatment is to reduce contamination to acceptable levels - not to eliminate it entirely."
-  },
-  {
-    "id": "q-wt-9",
-    "topic": "water-treatment",
-    "front": "What does fire flow demand depend on, and what qualifies as a 'public water system'?",
-    "back": "Fire flow demand depends on construction type, floor area, and usage/occupancy. A public water system has at least 15 service connections, or regularly serves at least 25 people daily, at least 60 days per year."
-  },
-  {
-    "id": "q-wt-10",
-    "topic": "water-treatment",
-    "front": "What are the overall goals of water treatment, and the physical, chemical, and biological treatment process categories?",
-    "back": "Goals: potable (safe to drink), palatable (pleasing to drink), meets regulatory criteria, and delivered without interruption at reasonable cost. Physical processes: screening, mixing, gas transfer, sedimentation, filtration. Chemical processes: precipitation, disinfection, coagulation, oxidation. Biological processes: activated sludge, trickling filter, oxidation ponds."
   },
   {
     "id": "q-wt-11",
@@ -1122,12 +1032,6 @@
     "back": "The endogenous phase - where food is limited relative to the biomass present, encouraging good settling and more complete treatment."
   },
   {
-    "id": "q-site-1",
-    "topic": "site",
-    "front": "What did CERCLA (Superfund) establish, and what did SARA (1986) change?",
-    "back": "CERCLA established federal authority for emergency response and cleanup of hazardous substances that have been spilled, improperly disposed of, or released into the environment. SARA (Superfund Amendments and Reauthorization Act of 1986) amended CERCLA based on EPA's early implementation experience - stressing permanent remedies and innovative treatment, requiring Superfund actions to meet other state/federal standards, adding enforcement tools, increasing state involvement and citizen participation, and increasing the trust fund to $8.5 billion."
-  },
-  {
     "id": "q-site-2",
     "topic": "site",
     "front": "True or false: RCRA Subtitle C addresses hazardous waste handling/disposal, while Subtitle D addresses non-hazardous solid waste.",
@@ -1156,5 +1060,191 @@
     "topic": "site",
     "front": "What field instrument is preferred for lead-based paint inspections?",
     "back": "An X-ray fluorescence (XRF) analyzer."
+  },
+  {
+    "id": "q-site-1a",
+    "topic": "site",
+    "front": "What did CERCLA (Superfund) establish?",
+    "back": "Federal authority for emergency response and cleanup of hazardous substances that have been spilled, improperly disposed of, or released into the environment."
+  },
+  {
+    "id": "q-site-1b",
+    "topic": "site",
+    "front": "What did SARA (1986) do to CERCLA?",
+    "back": "Amended and reauthorized it - added enforcement tools, increased state and citizen involvement, stressed permanent cleanup remedies over temporary ones, and raised the trust fund to $8.5 billion."
+  },
+  {
+    "id": "q-aw-6a",
+    "topic": "air-waste",
+    "front": "What is 'Offset' emission credit trading under the Clean Air Act?",
+    "back": "Lets industrial expansion proceed by having a business compensate for its new emissions with credits acquired from other existing businesses in the region."
+  },
+  {
+    "id": "q-aw-6b",
+    "topic": "air-waste",
+    "front": "What is 'Bubble' emission credit trading?",
+    "back": "Treats all activities in a single plant (or group of plants) as one unit - individual emission sources can vary as long as the cumulative total doesn't exceed the source's allowable limit."
+  },
+  {
+    "id": "q-aw-6c",
+    "topic": "air-waste",
+    "front": "What is 'Netting' emission credit trading?",
+    "back": "If a business improves its control technology, it earns credits it can use toward plant expansion later, as long as there's no significant net increase in emissions."
+  },
+  {
+    "id": "q-aw-9a",
+    "topic": "air-waste",
+    "front": "What is a superadiabatic lapse rate?",
+    "back": "Surrounding air cools faster than the rising plume - an unstable condition where pollutants disperse readily."
+  },
+  {
+    "id": "q-aw-9b",
+    "topic": "air-waste",
+    "front": "What is an adiabatic lapse rate?",
+    "back": "Surrounding air and the plume cool at the same rate - a neutral condition where the plume has no tendency to rise or fall on its own."
+  },
+  {
+    "id": "q-aw-9c",
+    "topic": "air-waste",
+    "front": "What is a subadiabatic lapse rate?",
+    "back": "Surrounding air cools slower than the plume - a stable condition that interferes with dispersion."
+  },
+  {
+    "id": "q-aw-9d",
+    "topic": "air-waste",
+    "front": "What is a temperature inversion (in atmospheric dispersion terms)?",
+    "back": "The lapse rate is inverted - air is cooler near the ground than aloft. A stable condition that traps pollutants near the surface."
+  },
+  {
+    "id": "q-wr-18a",
+    "topic": "water-resources",
+    "front": "What are the defining characteristics of inlet control in a culvert?",
+    "back": "The inlet itself is the choke point, critical depth occurs right at the inlet, the barrel flows only partially full, and flow through it is supercritical."
+  },
+  {
+    "id": "q-wr-18b",
+    "topic": "water-resources",
+    "front": "What are the defining characteristics of outlet control in a culvert?",
+    "back": "The barrel may run full or partially full, and flow through it is subcritical - governed by barrel roughness/slope/length, tailwater depth, and inlet conditions (not just the inlet alone)."
+  },
+  {
+    "id": "q-wr-4a",
+    "topic": "water-resources",
+    "front": "What is TDH (Total Dynamic Head)?",
+    "back": "The energy head a pump adds to the system."
+  },
+  {
+    "id": "q-wr-4b",
+    "topic": "water-resources",
+    "front": "What is a pump 'operating point'?",
+    "back": "The point where the pump's performance curve intersects the system curve (the system's own head-loss-vs-flow characteristic) - this is where the pump actually ends up operating."
+  },
+  {
+    "id": "q-wr-1a",
+    "topic": "water-resources",
+    "front": "What creates thrust force at a pipe junction?",
+    "back": "Unbalanced pressure or momentum at the junction."
+  },
+  {
+    "id": "q-wr-1b",
+    "topic": "water-resources",
+    "front": "In a thrust force problem, what should you do if pressure or velocity/flow data is missing?",
+    "back": "Ignore that term of the equation rather than assuming it's zero in a way that breaks the setup - missing data means that force component isn't part of the problem, not that it contributes nothing."
+  },
+  {
+    "id": "q-wr-5a",
+    "topic": "water-resources",
+    "front": "What happens to a pump's performance curve when you increase its speed?",
+    "back": "The pump curve itself shifts (moves) to reflect the new speed."
+  },
+  {
+    "id": "q-wr-5b",
+    "topic": "water-resources",
+    "front": "When would you add a second pump in parallel vs. in series?",
+    "back": "Parallel: when you need more flow (an identical pump in parallel roughly doubles flow at a given head). Series: when you need more pressure/head."
+  },
+  {
+    "id": "q-wt-5a",
+    "topic": "water-treatment",
+    "front": "What is the NPDES program?",
+    "back": "The National Pollutant Discharge Elimination System - the permit program for discharging wastewater under the Clean Water Act."
+  },
+  {
+    "id": "q-wt-5b",
+    "topic": "water-treatment",
+    "front": "What is a TMDL, and what's its formula?",
+    "back": "Total Maximum Daily Load - the maximum quantity of a pollutant a water body can receive without violating its water quality standard.\nTMDL = waste load allocation + load allocation + margin of safety."
+  },
+  {
+    "id": "q-wt-2a",
+    "topic": "water-treatment",
+    "front": "What is a priority pollutant?",
+    "back": "A chemical with relatively high toxicity and high production volume."
+  },
+  {
+    "id": "q-wt-2b",
+    "topic": "water-treatment",
+    "front": "What's the difference between a 'stock' pollutant and a 'fund' pollutant?",
+    "back": "Stock: not absorbed into the environment, so it accumulates (e.g., lead). Fund: absorbed into the environment and does not accumulate (e.g., carbon dioxide, human/animal waste)."
+  },
+  {
+    "id": "q-wt-10a",
+    "topic": "water-treatment",
+    "front": "What are the four overall goals of water treatment?",
+    "back": "Potable (safe to drink), palatable (pleasing to drink), meets regulatory criteria, and delivered without interruption at reasonable cost."
+  },
+  {
+    "id": "q-wt-10b",
+    "topic": "water-treatment",
+    "front": "Name the physical, chemical, and biological water treatment process categories.",
+    "back": "Physical: screening, mixing, gas transfer, sedimentation, filtration. Chemical: precipitation, disinfection, coagulation, oxidation. Biological: activated sludge, trickling filter, oxidation ponds."
+  },
+  {
+    "id": "q-wt-9a",
+    "topic": "water-treatment",
+    "front": "What does fire flow demand depend on?",
+    "back": "Construction type, floor area, and usage/occupancy."
+  },
+  {
+    "id": "q-wt-9b",
+    "topic": "water-treatment",
+    "front": "What qualifies as a 'public water system'?",
+    "back": "At least 15 service connections, or one that regularly serves at least 25 people daily, at least 60 days per year."
+  },
+  {
+    "id": "q-basics-5a",
+    "topic": "basics",
+    "front": "What does 'pathogenic' mean?",
+    "back": "Has the potential to transmit disease."
+  },
+  {
+    "id": "q-basics-5b",
+    "topic": "basics",
+    "front": "Name the typical categories of microorganisms found in water.",
+    "back": "Bacteria, fungi, viruses, worms, protozoa, and algae."
+  },
+  {
+    "id": "q-basics-7a",
+    "topic": "basics",
+    "front": "Name some pathogens that can be transmitted in water.",
+    "back": "Salmonella, Giardia, Polio, Endamoeba."
+  },
+  {
+    "id": "q-basics-7b",
+    "topic": "basics",
+    "front": "Name some non-pathogenic organisms used as water quality indicators.",
+    "back": "E. coli, Ceriodaphnia, Pimephales, Sphaerotilus."
+  },
+  {
+    "id": "q-wr-6a",
+    "topic": "water-resources",
+    "front": "What are 'affinity laws' for pumps?",
+    "back": "Pump equations that use one set of operating conditions (e.g., speed) to calculate performance under another set."
+  },
+  {
+    "id": "q-wr-6b",
+    "topic": "water-resources",
+    "front": "Name three ways to change a pump's performance.",
+    "back": "Trim the impeller, adjust the speed, or replace the motor."
   }
 ]
