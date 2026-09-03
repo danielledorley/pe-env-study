@@ -1,0 +1,10 @@
+[
+  {"id":"basics","name":"Environmental Engineering Basics","description":"Core units, calculations, chemistry, mass balance, hydraulics, and cross-topic fundamentals.","color":"#0B84B0"},
+  {"id":"air-waste","name":"Air Quality & Waste Management","description":"Air pollution, emissions, controls, solid waste, landfills, and waste-related calculations.","color":"#3A7D44"},
+  {"id":"water-resources","name":"Water Resources","description":"Hydrology, groundwater, surface water, hydraulics, open channels, and water-resource calculations.","color":"#2E6F95"},
+  {"id":"water-treatment","name":"Water Treatment","description":"Drinking-water chemistry, treatment processes, clarification, filtration, disinfection, and design calculations.","color":"#4F7CAC"},
+  {"id":"wastewater","name":"Wastewater Treatment","description":"Wastewater characterization, biological treatment, clarifiers, sludge processes, and treatment calculations.","color":"#6B5B95"},
+  {"id":"site","name":"Site Assessment & Remediation","description":"Site characterization, contaminant transport, remediation technologies, and environmental site assessment.","color":"#8A6D3B"},
+  {"id":"ehs","name":"Environmental Health & Safety","description":"Industrial hygiene, exposure limits, toxicology, radiation, hazardous materials, and safety calculations.","color":"#A44A3F"},
+  {"id":"pm-econ","name":"Project Management & Economics","description":"Engineering economics, project management, cost analysis, depreciation, present worth, and decision-making.","color":"#7A5C61"}
+]
