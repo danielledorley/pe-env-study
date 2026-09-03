@@ -15,11 +15,11 @@ Then visit `http://localhost:8000`.
 git add -A
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/danielledorley/pe-env-study-bench.git
+git remote add origin https://github.com/danielledorley/pe-env-study.git
 git push -u origin main
 ```
 Then in the repo on GitHub: **Settings → Pages → Source → Deploy from branch → main → / (root)**.
-Your app will be live at `https://<your-username>.github.io/pe-env-study-bench/`.
+Your app will be live at `https://danielledorley.github.io/pe-env-study/`.
 
 If you'd rather keep it private, GitHub Pages works on private repos too if you're on a paid plan; otherwise just use it locally, or make the repo private and skip Pages.
 
