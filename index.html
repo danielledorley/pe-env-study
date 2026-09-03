@@ -5,44 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Study Bench — Danielle Dorley, PE Environmental Prep</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=20260903-1" />
 </head>
 <body>
-  <div class="contour" aria-hidden="true"></div>
-
+  <div class="environment-pattern" aria-hidden="true"></div>
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <span class="brand-mark">DD</span>
-        <div class="brand-text">
-          <span class="brand-title">Study Bench</span>
-          <span class="brand-sub">Danielle Dorley · PE Environmental Prep</span>
-        </div>
+        <span class="brand-logo" aria-hidden="true"><svg viewBox="0 0 44 44" role="img"><circle class="logo-ring" cx="22" cy="22" r="19"></circle><path class="logo-drop" d="M22 10 C18 16,13 20,13 26 a9 9 0 0 0 18 0 C31 20,26 16,22 10Z"></path><path class="logo-leaf" d="M27 27 C31 24,34 24,36 25 C34 30,31 32,27 32 C27 30,27 29,27 27Z"></path><path class="logo-vein" d="M27 31 C30 28,32 27,35 26"></path></svg></span>
+        <div class="brand-text"><span class="brand-title">Study Bench</span><span class="brand-sub">Danielle Dorley · PE Environmental Prep</span></div>
       </div>
       <nav class="tabs" id="tabs">
-        <button class="tab active" data-view="home">Overview</button>
-        <button class="tab" data-view="guide">Study Guide</button>
-        <button class="tab" data-view="flashcards">Flashcards</button>
-        <button class="tab" data-view="problems">Problem Sets</button>
-        <button class="tab" data-view="progress">Progress</button>
+        <button class="tab active" data-view="home">Overview</button><button class="tab" data-view="guide">Study Guide</button><button class="tab" data-view="flashcards">Flashcards</button><button class="tab" data-view="problems">Problem Sets</button><button class="tab" data-view="progress">Progress</button>
       </nav>
-      <div id="auth-area" class="auth-area"></div>
     </div>
   </header>
-
   <main id="app"></main>
-
-  <footer class="footer">
-    <span>Data lives in <code>data/*.json</code> — edit those files to add your own cards and problems.</span>
-  </footer>
-
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="app.js"></script>
+  <footer class="footer"><span>Data lives in <code>data/*.json</code> — edit those files to add your own cards and problems.</span></footer>
+  <script src="app.js?v=20260903-1"></script>
 </body>
 </html>
