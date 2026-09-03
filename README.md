@@ -15,7 +15,7 @@ Then visit `http://localhost:8000`.
 git add -A
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/<your-username>/pe-env-study-bench.git
+git remote add origin https://github.com/danielledorley/pe-env-study-bench.git
 git push -u origin main
 ```
 Then in the repo on GitHub: **Settings → Pages → Source → Deploy from branch → main → / (root)**.
