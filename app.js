@@ -26,14 +26,19 @@ function saveCustomCards(cards) {
 function loadProgress() {
   try {
     const p = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-    return { cards: p.cards || {}, problems: p.problems || {}, activityDates: p.activityDates || [] };
+    return { cards: p.cards || {}, problems: p.problems || {}, activityDates: p.activityDates || [], mistakeTypes: p.mistakeTypes || {}, mistakeByProblem: p.mistakeByProblem || {} };
   } catch (e) {
-    return { cards: {}, problems: {}, activityDates: [] };
+    return { cards: {}, problems: {}, activityDates: [], mistakeTypes: {}, mistakeByProblem: {} };
   }
 }
 
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+  if (state.user && firestoreDb) {
+    firestoreDb.collection('users').doc(state.user.uid).set(state.progress).catch((e) => {
+      console.error('Cloud sync failed, progress is still saved locally:', e);
+    });
+  }
 }
 
 function recordActivity() {
@@ -52,8 +57,104 @@ function recordProblemResult(topicId, difficulty, correct) {
   saveProgress();
 }
 
+function recordMistakeType(problemId, mistakeType) {
+  if (!state.progress.mistakeTypes) state.progress.mistakeTypes = {};
+  if (!state.progress.mistakeTypes[mistakeType]) state.progress.mistakeTypes[mistakeType] = 0;
+  state.progress.mistakeTypes[mistakeType] += 1;
+  if (!state.progress.mistakeByProblem) state.progress.mistakeByProblem = {};
+  state.progress.mistakeByProblem[problemId] = mistakeType;
+  saveProgress();
+}
+
 function topicById(id) {
-  return state.topics.find(t => t.id === id) || { name: id, color: '#2E4150' };
+  return state.topics.find(t => t.id === id) || { name: id, color: '#0B84B0' };
+}
+
+/* ---------- FIREBASE AUTH & SYNC ---------- */
+state.user = null;
+state.firebaseReady = false;
+let firestoreDb = null;
+
+function firebaseConfigured() {
+  return typeof FIREBASE_CONFIG !== 'undefined' && FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey !== 'YOUR_API_KEY';
+}
+
+function initAuth() {
+  if (!firebaseConfigured() || typeof firebase === 'undefined') {
+    renderAuthArea();
+    return; // local-only mode — no Firebase project configured yet
+  }
+  try {
+    firebase.initializeApp(FIREBASE_CONFIG);
+    firestoreDb = firebase.firestore();
+    state.firebaseReady = true;
+    firebase.auth().onAuthStateChanged(async (user) => {
+      state.user = user;
+      if (user) {
+        await pullProgressFromCloud(user.uid);
+      } else {
+        state.progress = loadProgress();
+      }
+      renderAuthArea();
+      render();
+    });
+  } catch (e) {
+    console.error('Firebase init failed:', e);
+  }
+  renderAuthArea();
+}
+
+async function pullProgressFromCloud(uid) {
+  try {
+    const doc = await firestoreDb.collection('users').doc(uid).get();
+    if (doc.exists) {
+      const cloud = doc.data();
+      state.progress = { cards: cloud.cards || {}, problems: cloud.problems || {}, activityDates: cloud.activityDates || [] };
+    } else {
+      // First time this account has signed in — seed the cloud with whatever's in this browser already.
+      await firestoreDb.collection('users').doc(uid).set(state.progress);
+    }
+  } catch (e) {
+    console.error('Could not load cloud progress, staying on local copy:', e);
+  }
+}
+
+function signIn() {
+  if (!state.firebaseReady) return;
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).catch((e) => {
+    console.error('Sign-in failed:', e);
+    alert('Sign-in did not go through — check that this site\'s domain is added under Firebase Authentication → Settings → Authorized domains.');
+  });
+}
+
+function signOutUser() {
+  if (!state.firebaseReady) return;
+  firebase.auth().signOut();
+}
+
+function renderAuthArea() {
+  const el = document.getElementById('auth-area');
+  if (!el) return;
+  if (!firebaseConfigured()) {
+    el.innerHTML = '';
+    return;
+  }
+  if (state.user) {
+    const name = state.user.displayName || state.user.email || 'You';
+    const initial = name.trim().charAt(0).toUpperCase();
+    el.innerHTML = `
+      <div class="auth-user">
+        <span class="auth-avatar">${initial}</span>
+        <span>${name.split(' ')[0]}</span>
+        <button class="auth-signout" id="sign-out-btn">Sign out</button>
+      </div>
+    `;
+    document.getElementById('sign-out-btn').addEventListener('click', signOutUser);
+  } else {
+    el.innerHTML = `<button class="auth-btn" id="sign-in-btn">Sign in to sync progress</button>`;
+    document.getElementById('sign-in-btn').addEventListener('click', signIn);
+  }
 }
 
 async function loadData() {
@@ -169,7 +270,7 @@ function renderImportPanel(panel) {
   panel.innerHTML = `
     <div class="problem-card" style="margin-bottom:20px;">
       <div class="eyebrow">Import from Quizlet</div>
-      <p style="font-size:0.85rem; color:#5C6B5E; margin-top:0;">
+      <p style="font-size:0.85rem; color:#55707F; margin-top:0;">
         On Quizlet (website, not the app): open your set → ⋯ menu → <strong>Export</strong> → choose "between term and definition" = <strong>comma</strong>, "between cards" = <strong>new line</strong> → Copy text. Paste it below.
       </p>
       <textarea id="import-text" rows="8" style="width:100%; font-family:var(--mono); font-size:0.82rem; padding:10px; border:1px solid var(--line); border-radius:7px; background:var(--paper-raised);" placeholder="term,definition&#10;term,definition&#10;..."></textarea>
@@ -315,6 +416,7 @@ function renderProblemsHub(app) {
         <span class="filter-group-label">Topic</span>
         <div class="filter-chips" id="topic-chips" style="margin-bottom:0;">
           <button class="chip active" data-topic="">All topics</button>
+          <button class="chip" data-topic="mixed">Mixed PE</button>
           ${state.topics.map(t => `<button class="chip" data-topic="${t.id}">${t.name}</button>`).join('')}
         </div>
       </div>
@@ -376,12 +478,12 @@ function renderProblemSession() {
     return;
   }
   const prob = s.queue[s.index];
-  const t = topicById(prob.topic);
+  const t = topicById(prob.topic) || { id: 'mixed', name: 'Mixed PE', color: '#6B8494' };
   s.hintShown = false;
   mount.innerHTML = `
     <div class="session-bar"><span>Question ${s.index + 1} of ${s.queue.length} · <span style="text-transform:capitalize">${prob.difficulty || ''}</span></span><span>Score: ${s.correctCount}/${s.index}</span></div>
     <div class="problem-card" style="--accent:${t.color}">
-      <div class="eyebrow">${t.name}</div>
+      ${prob.mixed ? '<div class="eyebrow">Mixed PE — identify the method</div>' : `<div class="eyebrow">${t.name}</div>`}
       <div class="problem-question">${prob.question}</div>
       ${prob.choices.map((c, i) => `<button class="choice" data-index="${i}">${c}</button>`).join('')}
       <div id="hint-slot"></div>
@@ -399,7 +501,7 @@ function renderProblemSession() {
   const hintBtn = document.getElementById('hint-btn');
   if (hintBtn) {
     hintBtn.addEventListener('click', () => {
-      document.getElementById('hint-slot').innerHTML = `<div class="hint-box">💡 ${prob.hint}</div>`;
+      document.getElementById('hint-slot').innerHTML = `<div class="hint-box">💡 ${renderMath(prob.hint)}</div>`;
       hintBtn.style.display = 'none';
     });
   }
@@ -419,7 +521,21 @@ function answerProblem(prob, chosenIndex) {
   });
   const hintBtn = document.getElementById('hint-btn');
   if (hintBtn) hintBtn.style.display = 'none';
-  document.getElementById('explanation-slot').innerHTML = `<div class="explanation">${prob.explanation || ''}</div>`;
+  document.getElementById('explanation-slot').innerHTML = `<div class="explanation">${renderMath(prob.explanation || '')}</div>`;
+  if (!correct) {
+    document.getElementById('explanation-slot').innerHTML += `
+      <div class="mistake-box" style="margin-top:12px;">
+        <strong>What caused the miss?</strong>
+        <div class="mistake-options">
+          ${['concept','method','units','arithmetic','misread','setup','careless'].map(x => `<button class="btn small mistake-choice" data-mistake="${x}">${({concept:'Didn\'t know concept',method:'Didn\'t recognize method',units:'Unit conversion',arithmetic:'Arithmetic/calculator',misread:'Misread question',setup:'Formula/setup',careless:'Careless mistake'})[x]}</button>`).join('')}
+        </div>
+      </div>`;
+    document.querySelectorAll('.mistake-choice').forEach(btn => btn.addEventListener('click', () => {
+      recordMistakeType(prob.id, btn.dataset.mistake);
+      document.querySelectorAll('.mistake-choice').forEach(b => b.disabled = true);
+      btn.classList.add('primary');
+    }));
+  }
   if (prob.steps && prob.steps.length) {
     document.getElementById('walkthrough-slot').innerHTML = `
       <button class="btn small" id="show-walkthrough" style="margin-top:12px;">Show step-by-step walkthrough</button>
@@ -427,7 +543,7 @@ function answerProblem(prob, chosenIndex) {
     `;
     document.getElementById('show-walkthrough').addEventListener('click', (e) => {
       e.target.style.display = 'none';
-      startWalkthrough(prob.steps);
+      startWalkthrough(prob);
     });
   }
   const nextBtn = document.getElementById('next-question');
@@ -439,17 +555,58 @@ function answerProblem(prob, chosenIndex) {
   });
 }
 
-function startWalkthrough(steps) {
+function renderMath(text) {
+  if (!text) return '';
+  const parts = String(text).split(/(\$[^$]+\$)/g);
+  const html = parts.map(part => {
+    if (part.length > 1 && part.startsWith('$') && part.endsWith('$')) {
+      const latex = part.slice(1, -1);
+      try {
+        return (typeof katex !== 'undefined')
+          ? katex.renderToString(latex, { throwOnError: false, displayMode: false })
+          : latex;
+      } catch (e) {
+        return latex;
+      }
+    }
+    return part
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }).join('');
+  return html.replace(/\n/g, '<br>');
+}
+
+function startWalkthrough(prob) {
   let revealed = 0;
+  const steps = prob.steps || [];
   const mount = document.getElementById('walkthrough-steps');
+
+  let introHtml = '';
+  if (prob.concept) introHtml += `<div class="walkthrough-concept">${renderMath(prob.concept)}</div>`;
+  if (prob.diagram) {
+    const trimmed = String(prob.diagram).trim();
+    if (trimmed.toLowerCase().startsWith('<svg')) {
+      introHtml += `<div class="walkthrough-diagram-svg">${trimmed}</div>`;
+    } else {
+      introHtml += `<pre class="walkthrough-diagram">${trimmed.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</pre>`;
+    }
+  }
+
   function draw() {
-    mount.innerHTML = steps.slice(0, revealed + 1).map((s, i) => `
-      <div class="explanation" style="border-top:${i === 0 ? 'none' : ''}; padding-top:${i === 0 ? '0' : ''}; margin-top:${i === 0 ? '0' : '10px'};">
-        <strong>Step ${i + 1}: ${s.title}</strong><br>${s.detail}
+    let html = introHtml;
+    html += steps.slice(0, revealed + 1).map((s, i) => `
+      <div class="walkthrough-step">
+        <div class="walkthrough-step-title">Step ${i + 1}: ${s.title}</div>
+        <div class="walkthrough-step-detail">${renderMath(s.detail)}</div>
       </div>
-    `).join('') + (revealed + 1 < steps.length
-      ? `<button class="btn small" id="next-step" style="margin-top:10px;">Next step →</button>`
-      : '');
+    `).join('');
+    if (revealed + 1 < steps.length) {
+      html += `<button class="btn small" id="next-step" style="margin-top:10px;">Next step →</button>`;
+    } else {
+      if (prob.shortcut) html += `<div class="callout-box shortcut"><strong>Shortcut for next time:</strong> ${renderMath(prob.shortcut)}</div>`;
+      if (prob.gotcha) html += `<div class="callout-box gotcha"><strong>Don't do this:</strong> ${renderMath(prob.gotcha)}</div>`;
+    }
+    mount.innerHTML = html;
     const nextStepBtn = document.getElementById('next-step');
     if (nextStepBtn) nextStepBtn.addEventListener('click', () => { revealed += 1; draw(); });
   }
@@ -461,6 +618,8 @@ function mdToHtml(md) {
   const lines = md.split('\n');
   let html = '';
   let inList = false;
+  let sectionIndex = 0;
+  const toc = [];
   const inline = (s) => s
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
@@ -470,7 +629,15 @@ function mdToHtml(md) {
   lines.forEach(raw => {
     const line = raw.trim();
     if (!line) { closeList(); return; }
-    if (line.startsWith('## ')) { closeList(); html += `<h3>${inline(line.slice(3))}</h3>`; return; }
+    if (line.startsWith('## ')) {
+      closeList();
+      const id = `sec-${sectionIndex++}`;
+      const title = inline(line.slice(3));
+      toc.push({ id, title });
+      html += `<h3 id="${id}">${title}</h3>`;
+      return;
+    }
+    if (line.startsWith('### ')) { closeList(); html += `<h4>${inline(line.slice(4))}</h4>`; return; }
     if (line.startsWith('- ')) {
       if (!inList) { html += '<ul>'; inList = true; }
       html += `<li>${inline(line.slice(2))}</li>`;
@@ -480,13 +647,13 @@ function mdToHtml(md) {
     html += `<p>${inline(line)}</p>`;
   });
   closeList();
-  return html;
+  return { html, toc };
 }
 
 function renderGuideHub(app) {
   app.innerHTML = `
     <h1 class="hero">Study Guide</h1>
-    <p class="hero-sub">Prose explanations connecting the concepts within each topic, and to each other, so you can see why a formula applies rather than just memorizing it.</p>
+    <p class="hero-sub">Long-form explanations of concepts, principles, real-world application, and exam strategy for each topic — meant to be read straight through, not drilled like flashcards.</p>
     <div class="guide-topic-list" id="guide-topic-list"></div>
   `;
   const list = document.getElementById('guide-topic-list');
@@ -504,12 +671,27 @@ function renderGuideArticle(topicId) {
   const app = document.getElementById('app');
   const t = topicById(topicId);
   const md = state.guide[topicId] || 'No guide written for this topic yet.';
+  const { html, toc } = mdToHtml(md);
   app.innerHTML = `
     <button class="btn small guide-back-btn" id="guide-back">\u2190 All topics</button>
     <h1 class="hero" style="color:${t.color}">${t.name}</h1>
-    <div class="guide-article">${mdToHtml(md)}</div>
+    ${toc.length ? `
+      <nav class="guide-toc" style="--accent:${t.color}">
+        <span class="guide-toc-label">On this page</span>
+        <div class="guide-toc-links">
+          ${toc.map(s => `<button class="guide-toc-link" data-target="${s.id}">${s.title}</button>`).join('')}
+        </div>
+      </nav>
+    ` : ''}
+    <div class="guide-article">${html}</div>
   `;
   document.getElementById('guide-back').addEventListener('click', () => renderGuideHub(app));
+  app.querySelectorAll('.guide-toc-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 }
 
 /* ---------- PROGRESS DASHBOARD ---------- */
@@ -547,6 +729,7 @@ function renderProgressHub(app) {
   app.innerHTML = `
     <h1 class="hero">Progress</h1>
     <p class="hero-sub">How you're doing across topics, and where to spend more time before the exam.</p>
+    ${renderSyncBannerHtml()}
     <div class="progress-summary-row">
       <div class="progress-stat"><div class="value">${masteredCards}/${totalCards}</div><div class="label">Cards mastered</div></div>
       <div class="progress-stat"><div class="value">${totalAttempted}</div><div class="label">Problems attempted</div></div>
@@ -594,10 +777,18 @@ function renderProgressHub(app) {
   }
   recEl.innerHTML = recHtml;
 
+  const mistakeCounts = state.progress.mistakeTypes || {};
+  const mistakeTotal = Object.values(mistakeCounts).reduce((a,b) => a+b, 0);
+  if (mistakeTotal) {
+    const labels = {concept:'Didn\'t know concept',method:'Didn\'t recognize method',units:'Unit conversion',arithmetic:'Arithmetic/calculator',misread:'Misread question',setup:'Formula/setup',careless:'Careless mistake'};
+    const rows = Object.entries(mistakeCounts).sort((a,b) => b[1]-a[1]).map(([k,v]) => `<div class="row between" style="margin:5px 0;"><span>${labels[k] || k}</span><span style="font-family:var(--mono);">${Math.round(v/mistakeTotal*100)}%</span></div>`).join('');
+    recEl.innerHTML += `<div class="recommendation-card"><strong>Miss classification</strong><div style="margin-top:8px;">${rows}</div></div>`;
+  }
+
   const list = document.getElementById('topic-progress-list');
   list.innerHTML = topicStats.map(s => `
     <div class="progress-topic-row" style="--accent:${s.topic.color}">
-      <div class="row between"><h4>${s.topic.name}</h4><span style="font-family:var(--mono); font-size:0.72rem; color:#8A8265;">${s.attempted} problems attempted</span></div>
+      <div class="row between"><h4>${s.topic.name}</h4><span style="font-family:var(--mono); font-size:0.72rem; color:#6B8494;">${s.attempted} problems attempted</span></div>
       <div class="progress-bar-row">
         <span class="label">Flashcards</span>
         <div class="progress-bar"><div class="progress-fill" style="width:${s.cardPct}%; background:${s.topic.color};"></div></div>
@@ -610,7 +801,21 @@ function renderProgressHub(app) {
       </div>
     </div>
   `).join('');
+
+  const bannerSignInBtn = document.getElementById('sync-banner-signin');
+  if (bannerSignInBtn) bannerSignInBtn.addEventListener('click', signIn);
+}
+
+function renderSyncBannerHtml() {
+  if (!firebaseConfigured()) {
+    return `<div class="sync-banner">📍 Progress is saved in this browser only. Ask whoever set up this site about enabling cross-device sync.</div>`;
+  }
+  if (state.user) {
+    return `<div class="sync-banner">☁️ Signed in as <strong>${state.user.displayName || state.user.email}</strong> — your progress syncs automatically across any device you sign into.</div>`;
+  }
+  return `<div class="sync-banner"><span>📍 Progress is only saved in this browser right now.</span><button class="btn primary small" id="sync-banner-signin">Sign in to sync across devices</button></div>`;
 }
 
 /* ---------- INIT ---------- */
+initAuth();
 loadData().then(render);

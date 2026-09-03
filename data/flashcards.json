@@ -963,7 +963,7 @@
     "id": "q-wt-7",
     "topic": "water-treatment",
     "front": "Write the relationships for alkalinity and total hardness in terms of their components.",
-    "back": "Alkalinity = bicarbonate + carbonate. Total hardness = carbonate hardness + non-carbonate hardness = (as ions) Mg + Ca. Carbonate hardness is also referred to as alkalinity."
+    "back": "Alkalinity is the acid-neutralizing capacity of water, commonly represented by hydroxide + bicarbonate + carbonate (with the exact expression depending on pH/speciation). Total hardness is the sum of carbonate hardness and non-carbonate hardness, commonly reported as CaCO3. Carbonate hardness is the portion of hardness associated with alkalinity."
   },
   {
     "id": "q-wt-8",
@@ -1246,5 +1246,615 @@
     "topic": "water-resources",
     "front": "Name three ways to change a pump's performance.",
     "back": "Trim the impeller, adjust the speed, or replace the motor."
+  },
+  {
+    "id": "lc-site-1",
+    "topic": "site",
+    "front": "What's the difference between a DNAPL and an LNAPL?",
+    "back": "DNAPL (Dense Non-Aqueous Phase Liquid): denser than water and immiscible with it, so it sinks below the water table and pools on top of impermeable layers - hard to locate and remediate. Examples: chlorinated solvents (e.g., TCE), creosote, PCBs. LNAPL (Light Non-Aqueous Phase Liquid): lighter than water, so it floats on top of the water table. Examples: gasoline, benzene, toluene, xylene."
+  },
+  {
+    "id": "lc-site-2",
+    "topic": "site",
+    "front": "Why are DNAPLs generally harder to remediate than LNAPLs?",
+    "back": "DNAPLs sink through the water table and can penetrate deep into an aquifer, pooling on bedrock or other impermeable layers - their location is much harder to characterize and reach than LNAPL, which stays floating near the water table surface."
+  },
+  {
+    "id": "lc-site-3",
+    "topic": "site",
+    "front": "Name several in-situ remedial technologies beyond pump-and-treat and SVE/air sparging.",
+    "back": "Multi-phase extraction, in-situ chemical oxidation, in-situ thermal treatment, permeable reactive barriers (e.g., zero-valent iron walls), slurry-phase bioreactors, bioventing, and phytotechnology (using plants to remediate contaminated soil/groundwater)."
+  },
+  {
+    "id": "lc-site-4",
+    "topic": "site",
+    "front": "What is a Technical Impracticability (TI) Waiver?",
+    "back": "A mechanism allowing cleanup standards to be waived at a site when full restoration is determined not to be technically practicable - used when standard remediation can't realistically achieve target cleanup levels given site conditions."
+  },
+  {
+    "id": "lc-site-5",
+    "topic": "site",
+    "front": "According to EPA guidance, what's the general expectation for Superfund groundwater cleanups?",
+    "back": "Restore to beneficial use wherever practicable; define and contain the plume; take early action as soon as possible; don't rely on institutional controls (like use restrictions) as the only response; and pursue a Technical Impracticability Waiver if restoration truly isn't achievable."
+  },
+  {
+    "id": "lc-site-6",
+    "topic": "site",
+    "front": "What is the oldest federal environmental law in the US, and what did it originally address?",
+    "back": "The Rivers and Harbors Act of 1899 - it made it illegal to discharge refuse into or alter a navigable waterway. Most of its provisions are now handled by the Clean Water Act, though the refuse-dumping portion is technically still in effect."
+  },
+  {
+    "id": "lc-site-7",
+    "topic": "site",
+    "front": "What does a Phase I ESA NOT include, and what's an example of a 'non-scope' consideration?",
+    "back": "A Phase I ESA does not include sampling - it's a records/interview/reconnaissance-based review only. Non-scope considerations (things a standard Phase I doesn't cover, requiring separate assessments) include radon, lead-based paint, and mold; corrosion IS typically a standard consideration."
+  },
+  {
+    "id": "lc-site-8",
+    "topic": "site",
+    "front": "What's the minimum number of site reconnaissance visits required for a Phase I ESA?",
+    "back": "One."
+  },
+  {
+    "id": "lc-site-9",
+    "topic": "site",
+    "front": "Give an example of a historical source and a physical setting source used in a Phase I ESA.",
+    "back": "Historical source: aerial photographs (showing past site use over time). Physical setting source: a USGS 7.5-minute topographic map (showing terrain, drainage, and elevation context)."
+  },
+  {
+    "id": "lc-site-10",
+    "topic": "site",
+    "front": "What are the components of a Phase II ESA?",
+    "back": "Developing a scope of work, conducting assessment activities (sampling/testing), and presenting findings. Selecting remedial actions is NOT part of Phase II - that comes later, once contamination is confirmed and characterized."
+  },
+  {
+    "id": "lc-site-11",
+    "topic": "site",
+    "front": "Under which law(s) do Phase I and Phase II ESAs formally fall?",
+    "back": "CERCLA - conducting them (specifically 'All Appropriate Inquiries') is what establishes a landowner's innocent-purchaser defense to CERCLA liability."
+  },
+  {
+    "id": "lc-site-12",
+    "topic": "site",
+    "front": "Give an example of a field analytical technique used during site investigation.",
+    "back": "A portable photoionization detector (PID) - used to screen for volatile organic compounds in the field. (A borehole monitoring well is sampling infrastructure, not a field analytical technique itself.)"
+  },
+  {
+    "id": "lc-wr-1",
+    "topic": "water-resources",
+    "front": "What is the Reynolds number used for, and what's the general dividing line between laminar and turbulent flow in pipes?",
+    "back": "Reynolds number (Re) predicts whether flow will be laminar or turbulent, based on velocity, pipe diameter, and fluid viscosity. As a general rule of thumb for pipe flow: Re below about 2,000 is laminar, and above about 4,000 is turbulent (the range between is a transition zone)."
+  },
+  {
+    "id": "lc-wr-2",
+    "topic": "water-resources",
+    "front": "What's the practical difference between laminar and turbulent flow?",
+    "back": "Laminar flow moves in smooth, parallel layers with minimal mixing - common at low velocities or in small/viscous-fluid systems. Turbulent flow is chaotic with significant mixing - it's what most real-world water distribution and treatment pipe flows actually are."
+  },
+  {
+    "id": "lc-wr-3",
+    "topic": "water-resources",
+    "front": "What does a Moody diagram provide, and when do you need it?",
+    "back": "It provides the friction factor for the Darcy-Weisbach equation, based on Reynolds number and the pipe's relative roughness. You need it whenever you're using Darcy-Weisbach and don't already have the friction factor given."
+  },
+  {
+    "id": "lc-wr-4",
+    "topic": "water-resources",
+    "front": "What's the difference between a submerged orifice and an orifice freely discharging to atmosphere, in terms of the driving head used?",
+    "back": "Submerged orifice: driving head is the difference in water surface elevation between the two sides of the orifice. Freely discharging orifice: driving head is simply the depth of water above the orifice centerline on the upstream side."
+  },
+  {
+    "id": "lc-wr-5",
+    "topic": "water-resources",
+    "front": "In a multiple (three) reservoir pipe problem, what's the general solution approach?",
+    "back": "Assume a piezometric (energy) elevation at the junction, then check whether the resulting flow directions and continuity (flow in = flow out at the junction) are satisfied - iterating on the assumed junction elevation until they balance."
+  },
+  {
+    "id": "lc-wr-6",
+    "topic": "water-resources",
+    "front": "What is the difference between a floodplain and a floodway?",
+    "back": "The floodplain is the entire area expected to be inundated during a design flood event (e.g., the 100-year flood). The floodway is the more restrictive central portion of the floodplain - the channel plus adjacent area - that must be kept clear to pass the flood flow without significantly increasing flood heights."
+  },
+  {
+    "id": "lc-wr-7",
+    "topic": "water-resources",
+    "front": "What do IDF (Intensity-Duration-Frequency) curves show, and what is 'return period'?",
+    "back": "IDF curves relate rainfall intensity to storm duration for different storm frequencies (e.g., the 10-year storm, the 100-year storm). Return period is the average number of years between storms of a given intensity/duration being equaled or exceeded - a '100-year storm' has a 1% chance of occurring in any given year, not literally once every 100 years."
+  },
+  {
+    "id": "lc-wr-8",
+    "topic": "water-resources",
+    "front": "What does a venturi meter measure, and what's the basic principle it relies on?",
+    "back": "It measures flow rate in a pipe by narrowing the pipe to a throat section and measuring the resulting pressure drop - based on the continuity and energy (Bernoulli) equations: as area decreases, velocity increases and pressure drops, and that pressure difference can be related back to flow rate."
+  },
+  {
+    "id": "rc-01",
+    "topic": "water-resources",
+    "front": "A problem gives pipe diameter and flow rate and asks for velocity. What should you recognize immediately?",
+    "back": "Velocity is flow divided by cross-sectional area; diameter must be converted to radius/area correctly.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-02",
+    "topic": "water-resources",
+    "front": "A problem gives roughness, hydraulic radius, slope, and asks for open-channel velocity. What bucket is it?",
+    "back": "An open-channel resistance calculation using the Manning relationship.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-03",
+    "topic": "water-resources",
+    "front": "Rainfall intensity, drainage area, and runoff coefficient are given and peak flow is requested. What bucket is it?",
+    "back": "A Rational Method peak-runoff problem.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-04",
+    "topic": "water-resources",
+    "front": "Hydraulic conductivity, hydraulic gradient, and cross-sectional area are given. What quantity is most likely being found?",
+    "back": "Groundwater discharge, using Q = KAi.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-05",
+    "topic": "site",
+    "front": "Hydraulic conductivity, gradient, and effective porosity are given. What is the key recognition cue?",
+    "back": "The problem is likely asking for seepage/linear groundwater velocity rather than Darcy flux.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-06",
+    "topic": "site",
+    "front": "Bulk density, porosity, and Kd are given together. What should you expect?",
+    "back": "A contaminant retardation calculation.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-07",
+    "topic": "water-treatment",
+    "front": "Basin volume and flow are given. What is the first quantity to consider?",
+    "back": "Detention time, after making the volume and flow units compatible.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-08",
+    "topic": "water-treatment",
+    "front": "MGD and mg/L are given and the question asks for lb/day. What conversion shortcut should you recall?",
+    "back": "The 8.34 factor: lb/day = 8.34 × MGD × mg/L.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-09",
+    "topic": "wastewater",
+    "front": "Aeration tank, secondary clarifier, RAS, and WAS are mentioned. What process family is being described?",
+    "back": "Activated sludge and its solids inventory/control.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-10",
+    "topic": "ehs",
+    "front": "Several exposure concentrations are given for different portions of a work shift. What should you recognize?",
+    "back": "A time-weighted exposure calculation; use the specified averaging period.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-11",
+    "topic": "ehs",
+    "front": "The same radiation source is measured at two different distances. What pattern should you recognize?",
+    "back": "Intensity changes with the square of the distance ratio.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-12",
+    "topic": "pm-econ",
+    "front": "Cash flows occur in different years and must be compared today. What bucket is this?",
+    "back": "Time-value-of-money/present-worth analysis.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-13",
+    "topic": "pm-econ",
+    "front": "Fixed cost, unit selling price, and unit variable cost are given. What quantity is likely requested?",
+    "back": "Breakeven production quantity.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-14",
+    "topic": "site",
+    "front": "Records review, site reconnaissance, and interviews are described with no sampling. Which assessment phase?",
+    "back": "Phase I ESA.",
+    "type": "recognition"
+  },
+  {
+    "id": "rc-15",
+    "topic": "air-waste",
+    "front": "A fuel, theoretical oxygen requirement, and supplied air are given. What distinction matters first?",
+    "back": "Separate theoretical/stoichiometric air from excess air.",
+    "type": "recognition"
+  },
+  {
+    "id": "un-01",
+    "topic": "basics",
+    "front": "How many feet are in 1 inch?",
+    "back": "1/12 ft = 0.08333 ft.",
+    "type": "unit"
+  },
+  {
+    "id": "un-02",
+    "topic": "water-resources",
+    "front": "What is the common quick conversion from gpm to cfs?",
+    "back": "Multiply gpm by 0.002228 to get cfs.",
+    "type": "unit"
+  },
+  {
+    "id": "un-03",
+    "topic": "water-resources",
+    "front": "What is the common quick conversion from MGD to cfs?",
+    "back": "1 MGD ≈ 1.547 cfs.",
+    "type": "unit"
+  },
+  {
+    "id": "un-04",
+    "topic": "basics",
+    "front": "What is the common environmental-engineering mass conversion from mg/L × MGD to lb/day?",
+    "back": "Multiply by 8.34.",
+    "type": "constant"
+  },
+  {
+    "id": "un-05",
+    "topic": "basics",
+    "front": "How do you convert a percentage to a decimal for calculations?",
+    "back": "Divide by 100; for example, 85% = 0.85.",
+    "type": "unit"
+  },
+  {
+    "id": "un-06",
+    "topic": "basics",
+    "front": "How do you convert minutes to hours?",
+    "back": "Divide minutes by 60.",
+    "type": "unit"
+  },
+  {
+    "id": "un-07",
+    "topic": "basics",
+    "front": "How do you convert Fahrenheit to Kelvin?",
+    "back": "First convert to Celsius with C=(F−32)×5/9, then K=C+273.15.",
+    "type": "unit"
+  },
+  {
+    "id": "un-08",
+    "topic": "site",
+    "front": "What unit check is especially important for groundwater velocity?",
+    "back": "Make sure K, hydraulic gradient, and effective porosity produce velocity units such as ft/day or m/day.",
+    "type": "unit"
+  },
+  {
+    "id": "cc-01",
+    "topic": "water-resources",
+    "front": "Darcy velocity vs seepage velocity: what is the key difference?",
+    "back": "Darcy velocity uses the gross cross-sectional area; seepage velocity accounts for the pore space available for water movement.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-02",
+    "topic": "water-resources",
+    "front": "Pressure head vs elevation head: what is the key difference?",
+    "back": "Pressure head comes from fluid pressure; elevation head comes from physical elevation relative to a datum.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-03",
+    "topic": "water-resources",
+    "front": "Series vs parallel pipes: what happens to flow?",
+    "back": "Series carries the same flow through each segment; parallel branches divide the total flow.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-04",
+    "topic": "water-treatment",
+    "front": "Detention time vs retention time: why should you not treat them as synonyms?",
+    "back": "Detention describes hydraulic holding time; retention can describe how long solids/biomass or another material remains in a process. Context matters.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-05",
+    "topic": "water-resources",
+    "front": "Floodplain vs floodway: which is more restrictive?",
+    "back": "The floodway is the more restrictive conveyance zone within the broader floodplain.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-06",
+    "topic": "wastewater",
+    "front": "BOD vs COD: what is the practical distinction?",
+    "back": "BOD reflects biologically consumed oxygen demand; COD measures chemically oxidizable demand and is generally faster to measure.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-07",
+    "topic": "wastewater",
+    "front": "RAS vs WAS: what does each stream do?",
+    "back": "RAS returns settled biomass to the biological process; WAS removes solids to control the solids inventory.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-08",
+    "topic": "wastewater",
+    "front": "SRT vs HRT: what does each describe?",
+    "back": "SRT tracks solids/biomass residence; HRT tracks water residence.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-09",
+    "topic": "water-treatment",
+    "front": "Primary vs secondary vs tertiary treatment: what is the simplest distinction?",
+    "back": "Primary is mainly physical solids removal; secondary is primarily biological treatment; tertiary/polishing adds targeted removal beyond conventional secondary treatment.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-10",
+    "topic": "site",
+    "front": "LNAPL vs DNAPL: what density distinction matters?",
+    "back": "LNAPL is less dense than water and tends to remain near the water table; DNAPL is denser and can migrate downward through saturated materials.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-11",
+    "topic": "site",
+    "front": "Phase I vs Phase II ESA: what is the decisive boundary?",
+    "back": "Phase I is non-invasive; Phase II adds sampling and laboratory analysis.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-12",
+    "topic": "site",
+    "front": "Pump-and-treat vs SVE: what medium is primarily extracted?",
+    "back": "Pump-and-treat extracts groundwater; SVE applies vacuum to vadose-zone soil gas.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-13",
+    "topic": "ehs",
+    "front": "PEL vs REL vs TLV: who is associated with each?",
+    "back": "PEL is OSHA and enforceable; REL is NIOSH and advisory; TLV is ACGIH and advisory/professional guidance.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-14",
+    "topic": "ehs",
+    "front": "TWA vs STEL: what is the averaging-period difference?",
+    "back": "TWA uses a longer specified averaging period, typically the work shift; STEL is a short-term exposure limit.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-15",
+    "topic": "ehs",
+    "front": "LEL vs UEL: what do the two numbers bound?",
+    "back": "They bound the concentration range in which a combustible mixture can ignite: LEL is the lower bound and UEL the upper bound.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-16",
+    "topic": "pm-econ",
+    "front": "Accuracy vs precision: how are they different?",
+    "back": "Accuracy is closeness to the true value; precision is repeatability/consistency.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-17",
+    "topic": "pm-econ",
+    "front": "Nominal vs effective interest rate: when does the distinction matter?",
+    "back": "It matters when interest compounds within the year; the effective annual rate reflects the actual annual growth after compounding.",
+    "type": "compare"
+  },
+  {
+    "id": "cc-18",
+    "topic": "pm-econ",
+    "front": "Depreciation vs present worth: what is the conceptual distinction?",
+    "back": "Depreciation allocates an asset’s cost for accounting; present worth converts cash flows to a common time basis.",
+    "type": "compare"
+  },
+  {
+    "id": "trap-01",
+    "topic": "water-resources",
+    "front": "What is a classic manometer sign error?",
+    "back": "Adding pressure when moving upward through a fluid, or failing to change specific weight when the fluid changes.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-02",
+    "topic": "water-resources",
+    "front": "What is a classic pipe-geometry mistake?",
+    "back": "Treating diameter as radius or assuming area changes linearly with diameter; area scales with diameter squared.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-03",
+    "topic": "water-resources",
+    "front": "What is a common groundwater-transport mistake?",
+    "back": "Using Darcy velocity as the actual pore-water velocity without accounting for effective porosity.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-04",
+    "topic": "water-treatment",
+    "front": "What is a common clarifier geometry mistake?",
+    "back": "Using weir length for a surface loading calculation, or surface area for a weir loading calculation.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-05",
+    "topic": "water-treatment",
+    "front": "What is a common chemical-dose mistake when the product is not pure?",
+    "back": "Using the desired active dose as though the commercial product were 100% active; divide by the active fraction when appropriate.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-06",
+    "topic": "wastewater",
+    "front": "What is a common activated-sludge mistake with solids concentration?",
+    "back": "Using MLSS when the calculation specifically requires MLVSS, or vice versa.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-07",
+    "topic": "site",
+    "front": "What is a common Phase I/Phase II mistake?",
+    "back": "Treating a Phase I finding as chemical confirmation of contamination; Phase II is the sampling/laboratory stage.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-08",
+    "topic": "ehs",
+    "front": "What is a common TWA mistake?",
+    "back": "Dividing by the time actually spent exposed rather than the specified averaging period.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-09",
+    "topic": "ehs",
+    "front": "What is a common radiation mistake?",
+    "back": "Assuming doubling distance halves intensity; the distance relationship is squared.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-10",
+    "topic": "ehs",
+    "front": "What is a common flammability mistake?",
+    "back": "Treating an LEL or UEL as though it were an exposure limit or alarm setpoint.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-11",
+    "topic": "pm-econ",
+    "front": "What is a common interest-rate mistake?",
+    "back": "Using a nominal annual rate directly in a calculation that requires the effective rate for a stated compounding frequency.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-12",
+    "topic": "pm-econ",
+    "front": "What is a common depreciation mistake?",
+    "back": "Treating depreciation as if it were a cash expense paid each year rather than an accounting allocation.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-13",
+    "topic": "air-waste",
+    "front": "What is a common landfill compaction-ratio mistake?",
+    "back": "Flipping Vi/Vf and therefore reversing the meaning of the ratio.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-14",
+    "topic": "basics",
+    "front": "What is a common concentration mistake?",
+    "back": "Mixing mass concentration, molar concentration, ppm by mass, and ppmV as though they were interchangeable.",
+    "type": "trap"
+  },
+  {
+    "id": "trap-15",
+    "topic": "water-treatment",
+    "front": "What is a common detention-time mistake?",
+    "back": "Mixing gallons with cubic feet or minutes with hours without converting to compatible units.",
+    "type": "trap"
+  },
+  {
+    "id": "frm-01",
+    "topic": "water-resources",
+    "front": "A problem gives Q and pipe diameter and asks for velocity. Which relationship family should you reach for?",
+    "back": "Flow equals cross-sectional area times velocity. Compute area from diameter, then solve for velocity.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-02",
+    "topic": "water-resources",
+    "front": "A problem gives n, R, S and asks for open-channel velocity. Which relationship family should you reach for?",
+    "back": "The Manning relationship for open-channel flow.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-03",
+    "topic": "water-resources",
+    "front": "A problem gives C, i, and A for a drainage basin and asks for peak flow. Which relationship family should you reach for?",
+    "back": "The Rational Method.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-04",
+    "topic": "water-resources",
+    "front": "A problem gives K, i, and A and asks for groundwater flow. Which relationship family should you reach for?",
+    "back": "Darcy groundwater flow: Q=KAi.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-05",
+    "topic": "site",
+    "front": "A problem gives K, i, and ne and asks how quickly groundwater moves. Which relationship family should you reach for?",
+    "back": "Seepage/linear velocity: v=Ki/ne.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-06",
+    "topic": "site",
+    "front": "A problem gives rho_b, n, and Kd and asks how much slower a contaminant travels. Which relationship family should you reach for?",
+    "back": "The retardation-factor relationship, followed by contaminant velocity if requested.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-07",
+    "topic": "water-treatment",
+    "front": "A problem gives basin volume and flow and asks for residence time. Which relationship family should you reach for?",
+    "back": "Detention time = volume/flow.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-08",
+    "topic": "water-treatment",
+    "front": "A problem gives MGD and mg/L and asks for lb/day. Which relationship family should you reach for?",
+    "back": "The standard 8.34 conversion relationship.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-09",
+    "topic": "wastewater",
+    "front": "A problem gives BOD concentration and flow and asks for lb/day. Which relationship family should you reach for?",
+    "back": "Mass loading from concentration × flow, using the appropriate unit conversion.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-10",
+    "topic": "ehs",
+    "front": "A problem gives several exposure concentrations and durations and asks for an 8-hour average. Which relationship family should you reach for?",
+    "back": "Time-weighted average exposure.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-11",
+    "topic": "ehs",
+    "front": "A problem compares radiation at two distances from the same source. Which relationship family should you reach for?",
+    "back": "Inverse-square distance relationship.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-12",
+    "topic": "pm-econ",
+    "front": "A problem gives a future cost and an interest rate and asks what it is worth today. Which relationship family should you reach for?",
+    "back": "Present-worth conversion.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-13",
+    "topic": "pm-econ",
+    "front": "A problem gives fixed cost, selling price, and variable cost and asks when profit becomes zero. Which relationship family should you reach for?",
+    "back": "Breakeven analysis.",
+    "type": "formula-recognition"
+  },
+  {
+    "id": "frm-14",
+    "topic": "pm-econ",
+    "front": "A problem gives first cost, salvage value, and useful life and asks for annual depreciation. Which relationship family should you reach for?",
+    "back": "Straight-line depreciation.",
+    "type": "formula-recognition"
   }
 ]
