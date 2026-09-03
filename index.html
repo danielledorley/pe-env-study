@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Study Bench — Danielle Dorley, PE Environmental Prep</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260903-4">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260903-5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="styles.css?v=20260903-4" />
+<link rel="stylesheet" href="styles.css?v=20260903-5" />
 </head>
 <body>
   <div class="environment-pattern" aria-hidden="true"></div>
@@ -27,86 +27,28 @@
   </header>
   <main id="app"></main>
   <footer class="footer"></footer>
-  <script src="app.js?v=20260903-4"></script>
+  <script src="app.js?v=20260903-5"></script>
   <script>
-    // Normalize the Study Guide's legacy plain-text equations into LaTeX
-    // before KaTeX renders. This keeps the existing study-guide prose intact
-    // while giving every formula the same polished mathematical treatment.
     (function () {
-      function normalizePlainMath(root) {
-        if (!root) return;
-        var replacements = [
-          ['6.022x10^23', '$6.022\\times10^{23}$'],
-          ['mg/L = (mol/L) x (molecular weight, g/mol) x 1,000', '$mg/L=(mol/L)\\times(MW\\,/\\,g\\!\\cdot\\!mol^{-1})\\times1{,}000$'],
-          ['Kw = [H+][OH-] = 1.0x10^-14', '$K_w=[H^+][OH^-]=1.0\\times10^{-14}$'],
-          ['pH + pOH = 14', '$pH+pOH=14$'],
-          ['pH = -log[H+]', '$pH=-\\log[H^+]$'],
-          ['C = C0 x e^(-kt)', '$C=C_0e^{-kt}$'],
-          ['C = C0 e^(-kt) form', '$C=C_0e^{-kt}$ form'],
-          ['C = C0 e^(-kt) form especially close', '$C=C_0e^{-kt}$ form especially close'],
-          ['PV = nRT', '$PV=nRT$'],
-          ['efficiency = (Cin - Cout)/Cin', '$\\mathrm{efficiency}=(C_{in}-C_{out})/C_{in}$'],
-          ['CR = Vi/Vf', '$CR=V_i/V_f$'],
-          ['[(Vi - Vf)/Vi] x 100', '$[(V_i-V_f)/V_i]\\times100$'],
-          ['SWp = SWi + p/(a + bp)', '$SW_p=SW_i+\\dfrac{p}{a+bp}$'],
-          ['nu = mu/rho', '$\\nu=\\mu/\\rho$'],
-          ['A1v1 = A2v2', '$A_1v_1=A_2v_2$'],
-          ['Q = Av', '$Q=Av$'],
-          ['v^2/2g', '$v^2/(2g)$'],
-          ['P/gamma', '$P/\\gamma$'],
-          ['Q = Cd x A x sqrt(2gh)', '$Q=C_dA\\sqrt{2gh}$'],
-          ['v = (1.49/n) R^(2/3) S^(1/2)', '$v=(1.49/n)R^{2/3}S^{1/2}$'],
-          ['Q = CiA', '$Q=CiA$'],
-          ['Q = KAi', '$Q=KAi$'],
-          ['v = Ki', '$v=Ki$'],
-          ['Fr < 1', '$Fr<1$'],
-          ['Fr = 1', '$Fr=1$'],
-          ['Fr > 1', '$Fr>1$'],
-          ['T = K x b', '$T=Kb$'],
-          ['T = K x b', '$T=Kb$'],
-          ['v_c=v_s/R', '$v_c=v_s/R$'],
-          ['v_c = v_s/R', '$v_c=v_s/R$'],
-          ['N = N0 x (1/2)^(t/half-life)', '$N=N_0(1/2)^{t/t_{1/2}}$'],
-          ['F = P(1+i)^n', '$F=P(1+i)^n$'],
-          ['P = F/(1+i)^n', '$P=F/(1+i)^n$'],
-          ['Capitalized Cost = A/i', '$\\mathrm{Capitalized\\ Cost}=A/i$'],
-          ['B/C = present worth of benefits / present worth of costs', '$B/C=PW_{benefits}/PW_{costs}$'],
-          ['breakeven units = Fixed Costs / (Price per unit - Variable cost per unit)', '$Q_{BE}=F/(p-v)$'],
-          ['Cost_new = Cost_old x (Index_new / Index_old)', '$Cost_{new}=Cost_{old}(Index_{new}/Index_{old})$'],
-          ['annual depreciation = (Cost - Salvage Value) / Useful Life', '$D=(C-S)/N$'],
-          ['effective rate = (1 + nominal/m)^m - 1', '$i_{eff}=(1+i_{nom}/m)^m-1$'],
-          ['F = Pe^(rn)', '$F=Pe^{rn}$'],
-          ['TMDL = waste load allocation + load allocation + margin of safety', '$TMDL=WLA+LA+MOS$'],
-          ['backwash volume = filter area x rise rate x backwash time x number of filters', '$V_{backwash}=A_f r t N$'],
-          ['dose = demand + residual', '$D=Demand+Residual$'],
-          ['Total hardness = carbonate hardness + non-carbonate hardness', '$TH=CH+NCH$'],
-          ['hardness = carbonate hardness + non-carbonate hardness', '$TH=CH+NCH$'],
-          ['alkalinity = bicarbonate + carbonate', '$Alk\\approx[HCO_3^-]+[CO_3^{2-}]$'],
-          ['lb/day = dose (mg/L) x flow (MGD) x 8.34', '$W_{lb/day}=8.34QC$'],
-          ['lb/day = concentration x flow x 8.34', '$W_{lb/day}=8.34QC$'],
-          ['lb/day = mg/L x MGD x 8.34', '$W_{lb/day}=8.34QC$'],
-          ['BOD5) = initial DO minus final DO', '$BOD_5=DO_i-DO_f$'],
-          ['SRT = total solids in the system divided by solids wasted per day', '$SRT=\\dfrac{\\text{total solids in system}}{\\text{solids wasted per day}}$'],
-          ['V = Qt', '$V=Qt$'],
-          ['V=Qt', '$V=Qt$'],
-          ['Koc = 0.63 x Kow', '$K_{oc}=0.63K_{ow}$'],
-          ['R = 1 + (bulk density / porosity) x Kd', '$R=1+(\\rho_b/n)K_d$'],
-          ['Q = KAi, or v = Ki', '$Q=KAi$, or $v=Ki$'],
-          ['T = K x b', '$T=Kb$'],
-          ['IR = (number of recordable incidents x 200,000) / total hours worked', '$IR=\\dfrac{N_i\\times200{,}000}{H}$'],
-          ['I2 = I1 x (d1/d2)^2', '$I_2=I_1(d_1/d_2)^2$']
-        ];
+      var replacements = [
+        ['H2O <-> H+ + OH-', '$H_2O \\rightleftharpoons H^+ + OH^-$'],
+        ['Kw = [H+][OH-] = 1.0x10^-14 at 25degC', '$K_w=[H^+][OH^-]=1.0\\times10^{-14}$ at $25^\\circ\\mathrm{C}$'],
+        ['Kw = [H+][OH-] = 1.0x10^-14', '$K_w=[H^+][OH^-]=1.0\\times10^{-14}$'],
+        ['pH + pOH = 14', '$pH+pOH=14$'],
+        ['pH itself is just -log[H+]', 'pH itself is just $-\\log[H^+]$'],
+        ['pH = -log[H+]', '$pH=-\\log[H^+]$'],
+        ['pOH = -log[OH-]', '$pOH=-\\log[OH^-]$']
+      ];
 
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-          acceptNode: function (node) {
-            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-            var p = node.parentElement;
-            if (!p || p.closest('.katex, code, pre')) return NodeFilter.FILTER_REJECT;
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        });
+      function normalizeWaterIonization(root) {
+        if (!root) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
         var nodes = [];
-        while (walker.nextNode()) nodes.push(walker.currentNode);
+        while (walker.nextNode()) {
+          var n = walker.currentNode;
+          var p = n.parentElement;
+          if (p && !p.closest('.katex, code, pre')) nodes.push(n);
+        }
         nodes.forEach(function (node) {
           var text = node.nodeValue;
           replacements.forEach(function (pair) {
@@ -116,11 +58,10 @@
         });
       }
 
-      function renderGuideMath() {
-        if (typeof renderMathInElement !== 'function') return;
+      function renderStudyMath() {
         var app = document.getElementById('app');
-        if (!app) return;
-        normalizePlainMath(app);
+        if (!app || typeof renderMathInElement !== 'function') return;
+        normalizeWaterIonization(app);
         renderMathInElement(app, {
           delimiters: [
             {left: '$$', right: '$$', display: true},
@@ -133,10 +74,8 @@
       }
 
       var app = document.getElementById('app');
-      if (app) {
-        new MutationObserver(function () { renderGuideMath(); }).observe(app, { childList: true, subtree: true });
-      }
-      window.addEventListener('load', renderGuideMath);
+      if (app) new MutationObserver(function () { renderStudyMath(); }).observe(app, {childList:true, subtree:true});
+      window.addEventListener('load', renderStudyMath);
     })();
   </script>
 </body>
