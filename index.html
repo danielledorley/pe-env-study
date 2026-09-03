@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Study Bench — Danielle Dorley, PE Environmental Prep</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260903-2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260903-3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="styles.css?v=20260903-2" />
+<link rel="stylesheet" href="styles.css?v=20260903-3" />
 </head>
 <body>
   <div class="environment-pattern" aria-hidden="true"></div>
@@ -27,14 +27,70 @@
   </header>
   <main id="app"></main>
   <footer class="footer"></footer>
-  <script src="app.js?v=20260903-2"></script>
+  <script src="app.js?v=20260903-3"></script>
   <script>
-    // Render LaTeX in Study Guide content whenever the app replaces its page content.
+    // Study Guide formulas exist in two forms: explicit LaTeX ($...$) and
+    // older plain-text equations. Normalize the latter before KaTeX renders.
     (function () {
+      function normalizePlainMath(root) {
+        if (!root) return;
+        var replacements = [
+          ['mg/L = (mol/L) x (molecular weight, g/mol) x 1,000', '$mg/L = (mol/L)\\times (molecular\ weight,\ g/mol)\\times 1{,}000$'],
+          ['Kw = [H+][OH-] = 1.0x10^-14', '$K_w=[H^+][OH^-]=1.0\\times10^{-14}$'],
+          ['pH + pOH = 14', '$pH+pOH=14$'],
+          ['C = C0 x e^(-kt)', '$C=C_0e^{-kt}$'],
+          ['C = C0 e^(-kt)', '$C=C_0e^{-kt}$'],
+          ['PV = nRT', '$PV=nRT$'],
+          ['efficiency = (Cin - Cout)/Cin', '$\\mathrm{efficiency}=(C_{in}-C_{out})/C_{in}$'],
+          ['CR = Vi/Vf', '$CR=V_i/V_f$'],
+          ['nu = mu/rho', '$\\nu=\\mu/\\rho$'],
+          ['A1v1 = A2v2', '$A_1v_1=A_2v_2$'],
+          ['Q = Av', '$Q=Av$'],
+          ['Q = Cd x A x sqrt(2gh)', '$Q=C_dA\\sqrt{2gh}$'],
+          ['v = (1.49/n) R^(2/3) S^(1/2)', '$v=(1.49/n)R^{2/3}S^{1/2}$'],
+          ['Q = CiA', '$Q=CiA$'],
+          ['Q = KAi', '$Q=KAi$'],
+          ['v = Ki', '$v=Ki$'],
+          ['T = K x b', '$T=Kb$'],
+          ['v_c=v_s/R', '$v_c=v_s/R$'],
+          ['v_c = v_s/R', '$v_c=v_s/R$'],
+          ['N = N0 x (1/2)^(t/half-life)', '$N=N_0(1/2)^{t/t_{1/2}}$'],
+          ['F = P(1+i)^n', '$F=P(1+i)^n$'],
+          ['P = F/(1+i)^n', '$P=F/(1+i)^n$'],
+          ['Capitalized Cost = A/i', '$\\mathrm{Capitalized\\ Cost}=A/i$'],
+          ['Cost_new = Cost_old x (Index_new / Index_old)', '$Cost_{new}=Cost_{old}(Index_{new}/Index_{old})$'],
+          ['annual depreciation = (Cost - Salvage Value) / Useful Life', '$D=(C-S)/N$'],
+          ['effective rate = (1 + nominal/m)^m - 1', '$i_{eff}=(1+i_{nom}/m)^m-1$'],
+          ['F = Pe^(rn)', '$F=Pe^{rn}$'],
+          ['SRT = total solids in the system divided by solids wasted per day', '$SRT=\\dfrac{\\text{total solids in system}}{\\text{solids wasted per day}}$'],
+          ['Koc = 0.63 x Kow', '$K_{oc}=0.63K_{ow}$'],
+          ['R = 1 + (bulk density / porosity) x Kd', '$R=1+(\\rho_b/n)K_d$'],
+          ['I2 = I1 x (d1/d2)^2', '$I_2=I_1(d_1/d_2)^2$']
+        ];
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            var p = node.parentElement;
+            if (!p || p.closest('.katex, code, pre')) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function (node) {
+          var text = node.nodeValue;
+          replacements.forEach(function (pair) {
+            if (text.indexOf(pair[0]) !== -1) text = text.split(pair[0]).join(pair[1]);
+          });
+          if (text !== node.nodeValue) node.nodeValue = text;
+        });
+      }
+
       function renderGuideMath() {
         if (typeof renderMathInElement !== 'function') return;
         var app = document.getElementById('app');
         if (!app) return;
+        normalizePlainMath(app);
         renderMathInElement(app, {
           delimiters: [
             {left: '$$', right: '$$', display: true},
@@ -45,6 +101,7 @@
           throwOnError: false
         });
       }
+
       var app = document.getElementById('app');
       if (app) {
         new MutationObserver(function () { renderGuideMath(); }).observe(app, { childList: true, subtree: true });
