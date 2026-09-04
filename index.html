@@ -24,6 +24,33 @@
 <script src="annotations.js?v=20260903-9"></script>
 <script src="guide-explanations.js?v=20260904-1"></script>
 <script src="guide-review-sheet.js?v=20260904-1"></script>
-<script src="guide-static-diagrams.js?v=20260904-2"></script>
+<!-- The diagram renderer watches #app because the study guide is rendered dynamically. Guard its observer so rendering diagrams does not trigger an infinite mutation loop. -->
+<script>
+(function(){
+  const NativeMutationObserver = window.MutationObserver;
+  if (!NativeMutationObserver) return;
+  window.MutationObserver = class SafeMutationObserver {
+    constructor(callback){
+      this.callback = callback;
+      this.native = new NativeMutationObserver((mutations, observer) => {
+        this.disconnect();
+        try { callback(mutations, observer); } finally {
+          if (this.target) this.native.observe(this.target, this.options);
+        }
+      });
+      this.target = null;
+      this.options = null;
+    }
+    observe(target, options){
+      this.target = target;
+      this.options = options;
+      this.native.observe(target, options);
+    }
+    disconnect(){ this.native.disconnect(); }
+    takeRecords(){ return this.native.takeRecords(); }
+  };
+})();
+</script>
+<script src="guide-static-diagrams.js?v=20260904-3"></script>
 </body>
 </html>
