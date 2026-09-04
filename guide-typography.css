@@ -1,0 +1,20 @@
+/* Study Guide typography cleanup: crisp sans for small section headings. */
+.guide-article h2,
+.guide-article h3,
+.guide-article h4,
+.guide-topic-item,
+.guide-article .sg-title,
+.guide-article .sg-kicker {
+  font-family: 'DM Sans', sans-serif !important;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+.guide-article h3,
+.guide-article h4 { font-weight: 600 !important; }
+.static-guide-diagram{margin:18px 0 24px;padding:16px;border:1px solid #d8e4e8;border-radius:14px;background:#fff;box-shadow:0 6px 16px rgba(36,61,85,.06)}
+.sg-kicker{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#2E6F95;font-weight:700;margin-bottom:4px}
+.sg-title{font-size:1.05rem;color:#243D55;font-weight:600;margin-bottom:2px}
+.sg-eq{font-family:Georgia,'Times New Roman',serif;font-size:1rem;text-align:center;color:#173b63;padding:7px 4px}
+.static-guide-diagram svg{display:block;width:100%;height:auto}
+.sg-takeaway{margin-top:9px;padding:9px 11px;border-radius:8px;background:#eef6f2;color:#38574a;font-size:.78rem;line-height:1.5}
